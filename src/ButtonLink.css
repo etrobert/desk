@@ -1,8 +1,4 @@
 .ButtonLink {
-  padding: 0.5rem 1rem;
-  border-radius: 0.75rem;
-  background-color: rgba(0, 0, 0, 0.25);
   color: inherit;
   text-decoration: inherit;
-  font-size: 0.75em;
 }

@@ -1,10 +1,11 @@
+import Button from '../Button';
 import ButtonLink from '../ButtonLink';
 
 const Do = () => {
   return (
     <div>
       <p>1:59:59</p>
-      <button>Done</button>
+      <Button>Done</Button>
       <ButtonLink to="..">Cancel</ButtonLink>
     </div>
   );

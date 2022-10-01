@@ -1,3 +1,4 @@
+import Button from '../Button';
 import ButtonLink from '../ButtonLink';
 
 const Actions = () => {
@@ -5,10 +6,10 @@ const Actions = () => {
     <>
       <ButtonLink to="delete">Delete</ButtonLink>
       <ButtonLink to="do">Do</ButtonLink>
-      <button disabled>Delegate</button>
-      <button disabled>Defer</button>
-      <button disabled>Archive</button>
-      <button disabled>Incubate</button>
+      <Button>Delegate</Button>
+      <Button disabled>Defer</Button>
+      <Button disabled>Archive</Button>
+      <Button disabled>Incubate</Button>
     </>
   );
 };
