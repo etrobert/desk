@@ -1,10 +1,10 @@
-import { Link } from 'react-router-dom';
+import ButtonLink from '../ButtonLink';
 
 const Actions = () => {
   return (
     <>
-      <Link to="delete">Delete</Link>
-      <Link to="do">Do</Link>
+      <ButtonLink to="delete">Delete</ButtonLink>
+      <ButtonLink to="do">Do</ButtonLink>
       <button disabled>Delegate</button>
       <button disabled>Defer</button>
       <button disabled>Archive</button>

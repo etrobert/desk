@@ -1,13 +1,13 @@
-import { Link } from 'react-router-dom';
+import ButtonLink from './ButtonLink';
 
 const Menu = () => {
   return (
     <ul>
       <li>
-        <Link to="capture">Capture</Link>
+        <ButtonLink to="capture">Capture</ButtonLink>
       </li>
       <li>
-        <Link to="process">Process</Link>
+        <ButtonLink to="process">Process</ButtonLink>
       </li>
     </ul>
   );

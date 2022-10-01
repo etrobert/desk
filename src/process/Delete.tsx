@@ -1,11 +1,11 @@
-import { Link } from 'react-router-dom';
+import ButtonLink from '../ButtonLink';
 
 const Delete = () => {
   return (
     <div>
       <h2>Delete?</h2>
       <button>Confirm</button>
-      <Link to="..">Cancel</Link>
+      <ButtonLink to="..">Cancel</ButtonLink>
     </div>
   );
 };
