@@ -9,8 +9,8 @@ const Menu = () => {
       <ButtonGroup>
         <ButtonLink to="capture">Capture</ButtonLink>
         <ButtonLink to="process">Process</ButtonLink>
+        <ButtonLink to="engage">Engage</ButtonLink>
         <Button disabled>Reflect</Button>
-        <Button disabled>Act</Button>
       </ButtonGroup>
     </>
   );
