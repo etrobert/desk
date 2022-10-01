@@ -1,11 +1,11 @@
-import Button from '../Button';
+import ButtonLink from '../ButtonLink';
 import tasks from '../tasks';
 
 const TaskList = () => (
   <ul>
     {tasks.map(({ id, title }) => (
       <li key={id}>
-        <Button disabled>{title}</Button>
+        <ButtonLink to={id}>{title}</ButtonLink>
       </li>
     ))}
   </ul>
