@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 
-const ProcessIndex = () => {
+const Actions = () => {
   return (
     <>
       <Link to="delete">Delete</Link>
@@ -13,4 +13,4 @@ const ProcessIndex = () => {
   );
 };
 
-export default ProcessIndex;
+export default Actions;

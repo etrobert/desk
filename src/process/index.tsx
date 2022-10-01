@@ -1,9 +1,9 @@
 import { Route, Routes } from 'react-router';
 
-import items from './items';
+import items from '../items';
 
 import Delete from './Delete';
-import ProcessIndex from './ProcessIndex';
+import Actions from './Actions';
 
 const Process = () => {
   return (
@@ -11,7 +11,7 @@ const Process = () => {
       <h1>Process</h1>
       <p>{items[0]}</p>
       <Routes>
-        <Route index element={<ProcessIndex />} />
+        <Route index element={<Actions />} />
         <Route path="delete" element={<Delete />} />
       </Routes>
     </div>

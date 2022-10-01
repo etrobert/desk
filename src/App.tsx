@@ -2,7 +2,7 @@ import { Route, Routes } from 'react-router';
 
 import Capture from './Capture';
 import Menu from './Menu';
-import Process from './Process';
+import Process from './process';
 
 import './App.css';
 
