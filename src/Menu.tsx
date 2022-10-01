@@ -1,15 +1,12 @@
+import ButtonGroup from './ButtonGroup';
 import ButtonLink from './ButtonLink';
 
 const Menu = () => {
   return (
-    <ul>
-      <li>
-        <ButtonLink to="capture">Capture</ButtonLink>
-      </li>
-      <li>
-        <ButtonLink to="process">Process</ButtonLink>
-      </li>
-    </ul>
+    <ButtonGroup>
+      <ButtonLink to="capture">Capture</ButtonLink>
+      <ButtonLink to="process">Process</ButtonLink>
+    </ButtonGroup>
   );
 };
 
