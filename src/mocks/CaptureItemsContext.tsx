@@ -4,12 +4,14 @@ type CaptureItemsContextValue = {
   addItem: (newItem: string) => void;
   popItem: () => void;
   latestItem: string | undefined;
+  itemsCount: number;
 };
 
 const initialValue = {
   addItem: () => {},
   popItem: () => {},
   latestItem: undefined,
+  itemsCount: 0,
 };
 
 const CaptureItemsContext =
@@ -34,8 +36,12 @@ const CaptureItemsContextProvider = ({ children }: Props) => {
     []
   );
 
+  const itemsCount = items.length;
+
   return (
-    <CaptureItemsContext.Provider value={{ latestItem, addItem, popItem }}>
+    <CaptureItemsContext.Provider
+      value={{ latestItem, addItem, popItem, itemsCount }}
+    >
       {children}
     </CaptureItemsContext.Provider>
   );
