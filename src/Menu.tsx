@@ -1,3 +1,4 @@
+import Button from './Button';
 import ButtonGroup from './ButtonGroup';
 import ButtonLink from './ButtonLink';
 
@@ -8,6 +9,8 @@ const Menu = () => {
       <ButtonGroup>
         <ButtonLink to="capture">Capture</ButtonLink>
         <ButtonLink to="process">Process</ButtonLink>
+        <Button disabled>Reflect</Button>
+        <Button disabled>Act</Button>
       </ButtonGroup>
     </>
   );
