@@ -1,4 +1,4 @@
-import Capture from './Capture';
+import Process from './Process';
 
 import './App.css';
 
@@ -6,7 +6,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <Capture />
+        <Process />
       </header>
     </div>
   );
