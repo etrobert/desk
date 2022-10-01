@@ -7,7 +7,7 @@ const Actions = () => {
     <ButtonGroup>
       <ButtonLink to="delete">Delete</ButtonLink>
       <ButtonLink to="do">Do</ButtonLink>
-      <Button disabled>Delegate</Button>
+      <ButtonLink to="delegate">Delegate</ButtonLink>
       <Button disabled>Defer</Button>
       <Button disabled>Archive</Button>
       <ButtonLink to="incubate">Incubate</ButtonLink>
