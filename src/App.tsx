@@ -1,12 +1,11 @@
-import Process from './Process';
-
 import './App.css';
+import Delete from './Delete';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <Process />
+        <Delete />
       </header>
     </div>
   );

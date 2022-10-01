@@ -1,8 +1,4 @@
-const items = [
-  'Call Grandma',
-  'Office number is 0612345254',
-  'Water the plants',
-];
+import items from './items';
 
 const Process = () => {
   return (
