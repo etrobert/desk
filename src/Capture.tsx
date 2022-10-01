@@ -1,13 +1,15 @@
-import { useContext, useState } from 'react';
+import { useState } from 'react';
 
 import Button from './Button';
-import { CaptureItemsContext } from './mocks/CaptureItemsContext';
+import useCaptureItemsCount from './useCaptureItemsCount';
 
 import './Capture.css';
 
 const Capture = () => {
   const [item, setItem] = useState('');
-  const { addItem, itemsCount } = useContext(CaptureItemsContext);
+  const itemsCount = useCaptureItemsCount();
+
+  if (itemsCount === null) return <>Loading...</>;
 
   return (
     <>
@@ -17,7 +19,7 @@ const Capture = () => {
         onSubmit={(event) => {
           event.preventDefault();
           if (item.trim() === '') return;
-          addItem(item);
+          // addItem(item);
           setItem('');
         }}
       >

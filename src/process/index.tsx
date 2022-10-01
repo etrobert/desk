@@ -1,7 +1,7 @@
-import { useContext, useEffect } from 'react';
+import { useEffect } from 'react';
 import { Route, Routes, useNavigate } from 'react-router';
 
-import { CaptureItemsContext } from '../mocks/CaptureItemsContext';
+import useCaptureItems from '../useCaptureItems';
 
 import Actions from './Actions';
 import Delegate from './Delegate';
@@ -10,17 +10,23 @@ import Do from './Do';
 import Incubate from './Incubate';
 
 const Process = () => {
-  const { latestItem } = useContext(CaptureItemsContext);
+  const captureItems = useCaptureItems();
+
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (latestItem === undefined) navigate('/');
-  }, [latestItem, navigate]);
+    if (captureItems !== null && captureItems.length === 0) navigate('/');
+  }, [captureItems, navigate]);
+
+  if (captureItems === null) return <>Loading...</>;
+
+  // TODO: Handle the empty array case
+  const latestItem = captureItems[0];
 
   return (
     <div>
       <h1>Process</h1>
-      <p>{latestItem}</p>
+      <p>{latestItem.value}</p>
       <Routes>
         <Route index element={<Actions />} />
         <Route path="delete" element={<Delete />} />
