@@ -4,7 +4,7 @@ const Actions = () => {
   return (
     <>
       <Link to="delete">Delete</Link>
-      <button disabled>Do</button>
+      <Link to="do">Do</Link>
       <button disabled>Delegate</button>
       <button disabled>Defer</button>
       <button disabled>Archive</button>

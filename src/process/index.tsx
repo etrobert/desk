@@ -2,8 +2,9 @@ import { Route, Routes } from 'react-router';
 
 import items from '../items';
 
-import Delete from './Delete';
 import Actions from './Actions';
+import Delete from './Delete';
+import Do from './Do';
 
 const Process = () => {
   return (
@@ -13,6 +14,7 @@ const Process = () => {
       <Routes>
         <Route index element={<Actions />} />
         <Route path="delete" element={<Delete />} />
+        <Route path="do" element={<Do />} />
       </Routes>
     </div>
   );
