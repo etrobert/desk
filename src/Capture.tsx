@@ -7,7 +7,7 @@ import './Capture.css';
 
 const Capture = () => {
   const [item, setItem] = useState('');
-  const { addItem } = useContext(CaptureItemsContext);
+  const { addItem, itemsCount } = useContext(CaptureItemsContext);
 
   return (
     <>
@@ -28,6 +28,7 @@ const Capture = () => {
         />
         <Button type="submit">OK</Button>
       </form>
+      <p>Capture Items: {itemsCount}</p>
     </>
   );
 };
