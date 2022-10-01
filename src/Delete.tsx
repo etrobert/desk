@@ -1,10 +1,7 @@
-import items from './items';
-
 const Delete = () => {
   return (
     <div>
-      <h1>Delete</h1>
-      <p>{items[0]}</p>
+      <h2>Delete?</h2>
       <button>Confirm</button>
       <button>Cancel</button>
     </div>

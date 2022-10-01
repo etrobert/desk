@@ -1,16 +1,19 @@
+import { Route, Routes } from 'react-router';
+
 import items from './items';
+
+import Delete from './Delete';
+import ProcessIndex from './ProcessIndex';
 
 const Process = () => {
   return (
     <div>
       <h1>Process</h1>
       <p>{items[0]}</p>
-      <button>Delete</button>
-      <button disabled>Do</button>
-      <button disabled>Delegate</button>
-      <button disabled>Defer</button>
-      <button disabled>Archive</button>
-      <button disabled>Incubate</button>
+      <Routes>
+        <Route index element={<ProcessIndex />} />
+        <Route path="delete" element={<Delete />} />
+      </Routes>
     </div>
   );
 };

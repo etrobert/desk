@@ -12,7 +12,7 @@ function App() {
       <header className="App-header">
         <Routes>
           <Route path="capture" element={<Capture />} />
-          <Route path="process" element={<Process />} />
+          <Route path="process/*" element={<Process />} />
           <Route path="*" element={<Menu />} />
         </Routes>
       </header>
