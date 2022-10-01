@@ -11,7 +11,7 @@ const Delete = () => {
 
   const onDelete = () => {
     popItem();
-    navigate('..');
+    navigate(-1);
   };
 
   return (
