@@ -1,6 +1,6 @@
 import { Route, Routes } from 'react-router';
 
-import items from '../items';
+import items from '../mocks/items';
 
 import Actions from './Actions';
 import Delegate from './Delegate';

@@ -1,5 +1,5 @@
 import ButtonLink from '../ButtonLink';
-import tasks from '../tasks';
+import tasks from '../mocks/tasks';
 
 const TaskList = () => (
   <ul>

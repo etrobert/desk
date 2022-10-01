@@ -1,4 +1,4 @@
-import tasks from '../tasks';
+import tasks from '../mocks/tasks';
 
 const useTask = (id: string | undefined) =>
   id === undefined ? undefined : tasks.find((task) => task.id === id);
