@@ -1,5 +1,8 @@
 import { useState } from 'react';
 
+import ActionOrCancel from './ActionOrCancel';
+import Button from './Button';
+
 const Capture = () => {
   const [item, setItem] = useState('');
 
@@ -15,6 +18,9 @@ const Capture = () => {
         }}
       >
         <input value={item} onChange={(event) => setItem(event.target.value)} />
+        <ActionOrCancel>
+          <Button type="submit">Capture</Button>
+        </ActionOrCancel>
       </form>
     </>
   );
