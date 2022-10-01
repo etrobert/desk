@@ -1,4 +1,5 @@
 .ButtonLink {
+  display: inline-block;
   color: inherit;
   text-decoration: inherit;
 }

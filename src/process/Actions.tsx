@@ -1,16 +1,30 @@
 import Button from '../Button';
 import ButtonLink from '../ButtonLink';
 
+import './Actions.css';
+
 const Actions = () => {
   return (
-    <>
-      <ButtonLink to="delete">Delete</ButtonLink>
-      <ButtonLink to="do">Do</ButtonLink>
-      <Button>Delegate</Button>
-      <Button disabled>Defer</Button>
-      <Button disabled>Archive</Button>
-      <Button disabled>Incubate</Button>
-    </>
+    <ul className="ProcessActions">
+      <li>
+        <ButtonLink to="delete">Delete</ButtonLink>
+      </li>
+      <li>
+        <ButtonLink to="do">Do</ButtonLink>
+      </li>
+      <li>
+        <Button>Delegate</Button>
+      </li>
+      <li>
+        <Button disabled>Defer</Button>
+      </li>
+      <li>
+        <Button disabled>Archive</Button>
+      </li>
+      <li>
+        <Button disabled>Incubate</Button>
+      </li>
+    </ul>
   );
 };
 
