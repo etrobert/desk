@@ -1,6 +1,5 @@
 import Button from '../Button';
-import ButtonGroup from '../ButtonGroup';
-import ButtonLink from '../ButtonLink';
+import ActionOrCancel from '../ActionOrCancel';
 
 import './Delegate.css';
 
@@ -12,12 +11,11 @@ const Delegate = () => (
     <label>
       Due: <input type="date" />
     </label>
-    <ButtonGroup>
+    <ActionOrCancel>
       <Button disabled type="submit">
         Delegate
       </Button>
-      <ButtonLink to="..">Cancel</ButtonLink>
-    </ButtonGroup>
+    </ActionOrCancel>
   </form>
 );
 

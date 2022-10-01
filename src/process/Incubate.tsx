@@ -1,18 +1,16 @@
 import Button from '../Button';
-import ButtonGroup from '../ButtonGroup';
-import ButtonLink from '../ButtonLink';
+import ActionOrCancel from '../ActionOrCancel';
 
 const Incubate = () => {
   return (
     <form>
       <p>When do you want this item to resurface?</p>
       <input type="date" />
-      <ButtonGroup>
+      <ActionOrCancel>
         <Button disabled type="submit">
           Incubate
         </Button>
-        <ButtonLink to="..">Cancel</ButtonLink>
-      </ButtonGroup>
+      </ActionOrCancel>
     </form>
   );
 };

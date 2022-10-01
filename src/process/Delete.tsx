@@ -1,15 +1,13 @@
-import ButtonGroup from '../ButtonGroup';
 import Button from '../Button';
-import ButtonLink from '../ButtonLink';
+import ActionOrCancel from '../ActionOrCancel';
 
 const Delete = () => {
   return (
     <div>
       <h2>Delete?</h2>
-      <ButtonGroup>
+      <ActionOrCancel>
         <Button disabled>Confirm</Button>
-        <ButtonLink to="..">Cancel</ButtonLink>
-      </ButtonGroup>
+      </ActionOrCancel>
     </div>
   );
 };

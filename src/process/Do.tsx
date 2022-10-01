@@ -1,15 +1,13 @@
 import Button from '../Button';
-import ButtonGroup from '../ButtonGroup';
-import ButtonLink from '../ButtonLink';
+import ActionOrCancel from '../ActionOrCancel';
 
 const Do = () => {
   return (
     <div>
       <p>1:59:59</p>
-      <ButtonGroup>
+      <ActionOrCancel>
         <Button disabled>Done</Button>
-        <ButtonLink to="..">Cancel</ButtonLink>
-      </ButtonGroup>
+      </ActionOrCancel>
     </div>
   );
 };
