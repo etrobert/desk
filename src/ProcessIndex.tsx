@@ -1,7 +1,9 @@
+import { Link } from 'react-router-dom';
+
 const ProcessIndex = () => {
   return (
     <>
-      <button>Delete</button>
+      <Link to="delete">Delete</Link>
       <button disabled>Do</button>
       <button disabled>Delegate</button>
       <button disabled>Defer</button>
