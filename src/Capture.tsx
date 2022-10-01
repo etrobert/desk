@@ -16,6 +16,7 @@ const Capture = () => {
         className="Capture__form"
         onSubmit={(event) => {
           event.preventDefault();
+          if (item.trim() === '') return;
           addItem(item);
           setItem('');
         }}
