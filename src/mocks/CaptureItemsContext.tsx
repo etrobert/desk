@@ -3,13 +3,13 @@ import { createContext, ReactNode, useCallback, useState } from 'react';
 type CaptureItemsContextValue = {
   addItem: (newItem: string) => void;
   popItem: () => void;
-  latestItem: string;
+  latestItem: string | undefined;
 };
 
 const initialValue = {
   addItem: () => {},
   popItem: () => {},
-  latestItem: '',
+  latestItem: undefined,
 };
 
 const CaptureItemsContext =
@@ -22,7 +22,7 @@ type Props = {
 const CaptureItemsContextProvider = ({ children }: Props) => {
   const [items, setItems] = useState<string[]>([]);
 
-  const latestItem = items[0];
+  const latestItem = items.length === 0 ? undefined : items[0];
 
   const addItem = useCallback(
     (newItem: string) => setItems((value) => [newItem, ...value]),
