@@ -1,11 +1,12 @@
-import { useContext } from 'react';
 import Button from './Button';
 import ButtonGroup from './ButtonGroup';
 import ButtonLink from './ButtonLink';
-import { CaptureItemsContext } from './mocks/CaptureItemsContext';
+import useCaptureItemsCount from './useCaptureItemsCount';
 
 const Menu = () => {
-  const { itemsCount } = useContext(CaptureItemsContext);
+  const itemsCount = useCaptureItemsCount();
+
+  if (itemsCount === null) return <>Loading...</>;
 
   return (
     <>
