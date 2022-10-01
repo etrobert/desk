@@ -13,7 +13,7 @@ const Actions = () => {
         <ButtonLink to="do">Do</ButtonLink>
       </li>
       <li>
-        <Button>Delegate</Button>
+        <Button disabled>Delegate</Button>
       </li>
       <li>
         <Button disabled>Defer</Button>

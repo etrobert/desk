@@ -5,7 +5,7 @@ const Delete = () => {
   return (
     <div>
       <h2>Delete?</h2>
-      <Button>Confirm</Button>
+      <Button disabled>Confirm</Button>
       <ButtonLink to="..">Cancel</ButtonLink>
     </div>
   );

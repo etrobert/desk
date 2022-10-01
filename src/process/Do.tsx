@@ -5,7 +5,7 @@ const Do = () => {
   return (
     <div>
       <p>1:59:59</p>
-      <Button>Done</Button>
+      <Button disabled>Done</Button>
       <ButtonLink to="..">Cancel</ButtonLink>
     </div>
   );
