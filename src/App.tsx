@@ -1,11 +1,14 @@
 import './App.css';
-import Delete from './Delete';
+import { Route, Routes } from 'react-router';
+import Capture from './Capture';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <Delete />
+        <Routes>
+          <Route path={'capture'} element={<Capture />} />
+        </Routes>
       </header>
     </div>
   );
