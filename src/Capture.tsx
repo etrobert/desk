@@ -21,6 +21,7 @@ const Capture = () => {
         }}
       >
         <input
+          autoFocus
           className="Capture__input"
           value={item}
           onChange={(event) => setItem(event.target.value)}
