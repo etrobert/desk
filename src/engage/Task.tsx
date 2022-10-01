@@ -1,7 +1,8 @@
 import { Navigate, useParams } from 'react-router-dom';
+
+import BackButton from '../BackButton';
 import Button from '../Button';
 import ButtonGroup from '../ButtonGroup';
-import ButtonLink from '../ButtonLink';
 
 import useTask from './useTask';
 
@@ -18,7 +19,7 @@ const Task = () => {
       {title}
       <ButtonGroup>
         <Button disabled>Done</Button>
-        <ButtonLink to="..">Back</ButtonLink>
+        <BackButton>Back</BackButton>
       </ButtonGroup>
     </>
   );
