@@ -16,7 +16,7 @@ function App() {
         <Routes>
           <Route path="capture" element={<Capture />} />
           <Route path="process/*" element={<Process />} />
-          <Route path="engage" element={<Engage />} />
+          <Route path="engage/*" element={<Engage />} />
           <Route path="*" element={<Menu />} />
         </Routes>
       </header>
