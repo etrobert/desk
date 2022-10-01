@@ -1,8 +1,9 @@
 import { useContext } from 'react';
 import { useNavigate } from 'react-router';
 
+import ButtonGroup from '../ButtonGroup';
 import Button from '../Button';
-import ActionOrCancel from '../ActionOrCancel';
+import BackButton from '../BackButton';
 import { CaptureItemsContext } from '../mocks/CaptureItemsContext';
 
 const Delete = () => {
@@ -17,9 +18,10 @@ const Delete = () => {
   return (
     <div>
       <h2>Delete?</h2>
-      <ActionOrCancel>
+      <ButtonGroup>
         <Button onClick={onDelete}>Confirm</Button>
-      </ActionOrCancel>
+        <BackButton>Cancel</BackButton>
+      </ButtonGroup>
     </div>
   );
 };
