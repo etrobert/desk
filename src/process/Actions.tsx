@@ -10,7 +10,7 @@ const Actions = () => {
       <Button disabled>Delegate</Button>
       <Button disabled>Defer</Button>
       <Button disabled>Archive</Button>
-      <Button disabled>Incubate</Button>
+      <ButtonLink to="incubate">Incubate</ButtonLink>
     </ButtonGroup>
   );
 };
