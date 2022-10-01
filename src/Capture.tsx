@@ -1,10 +1,12 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 
 import ActionOrCancel from './ActionOrCancel';
 import Button from './Button';
+import { CaptureItemsContext } from './mocks/CaptureItemsContext';
 
 const Capture = () => {
   const [item, setItem] = useState('');
+  const { addItem } = useContext(CaptureItemsContext);
 
   return (
     <>
@@ -12,8 +14,7 @@ const Capture = () => {
       <form
         onSubmit={(event) => {
           event.preventDefault();
-          // TODO: Add Item
-          console.log(item);
+          addItem(item);
           setItem('');
         }}
       >
