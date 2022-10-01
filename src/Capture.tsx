@@ -1,8 +1,9 @@
 import { useContext, useState } from 'react';
 
-import ActionOrCancel from './ActionOrCancel';
 import Button from './Button';
 import { CaptureItemsContext } from './mocks/CaptureItemsContext';
+
+import './Capture.css';
 
 const Capture = () => {
   const [item, setItem] = useState('');
@@ -12,16 +13,19 @@ const Capture = () => {
     <>
       <h1>Capture</h1>
       <form
+        className="Capture__form"
         onSubmit={(event) => {
           event.preventDefault();
           addItem(item);
           setItem('');
         }}
       >
-        <input value={item} onChange={(event) => setItem(event.target.value)} />
-        <ActionOrCancel>
-          <Button type="submit">Capture</Button>
-        </ActionOrCancel>
+        <input
+          className="Capture__input"
+          value={item}
+          onChange={(event) => setItem(event.target.value)}
+        />
+        <Button type="submit">OK</Button>
       </form>
     </>
   );
