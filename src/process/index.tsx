@@ -1,5 +1,5 @@
-import { useContext } from 'react';
-import { Route, Routes } from 'react-router';
+import { useContext, useEffect } from 'react';
+import { Route, Routes, useNavigate } from 'react-router';
 
 import { CaptureItemsContext } from '../mocks/CaptureItemsContext';
 
@@ -11,6 +11,12 @@ import Incubate from './Incubate';
 
 const Process = () => {
   const { latestItem } = useContext(CaptureItemsContext);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (latestItem === undefined) navigate('/');
+  }, [latestItem, navigate]);
+
   return (
     <div>
       <h1>Process</h1>
