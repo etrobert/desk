@@ -1,32 +1,13 @@
-import { collection, onSnapshot, orderBy, query } from 'firebase/firestore';
-import { useEffect, useState } from 'react';
+import { collection, orderBy, query } from 'firebase/firestore';
 import firestore from '../firestore';
-import type { CaptureItem } from '../types';
+import { CaptureItem } from '../types';
+import useCollection from './useCollection';
 
 const q = query(
   collection(firestore, 'capture-items'),
   orderBy('createdAt', 'desc')
 );
 
-const useCaptureItems = () => {
-  const [captureItems, setCaptureItems] = useState<CaptureItem[] | null>(null);
-
-  useEffect(
-    () =>
-      onSnapshot(q, (querySnapshot) => {
-        const captureItems: CaptureItem[] = [];
-        querySnapshot.forEach((captureItem) => {
-          captureItems.push({
-            ...captureItem.data(),
-            id: captureItem.id,
-          } as CaptureItem);
-        });
-        setCaptureItems(captureItems);
-      }),
-    []
-  );
-
-  return captureItems;
-};
+const useCaptureItems = () => useCollection<CaptureItem>(q);
 
 export default useCaptureItems;
