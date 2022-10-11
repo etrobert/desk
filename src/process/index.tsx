@@ -6,6 +6,8 @@ import Delegate from './Delegate';
 import Delete from './Delete';
 import Do from './Do';
 import Incubate from './Incubate';
+import Defer from './Defer';
+
 import useLatestCaptureItem from '../data/useLatestCaptureItem';
 
 const Process = () => {
@@ -30,6 +32,7 @@ const Process = () => {
         <Route path="do" element={<Do />} />
         <Route path="incubate" element={<Incubate />} />
         <Route path="delegate" element={<Delegate />} />
+        <Route path="defer" element={<Defer />} />
       </Routes>
     </div>
   );

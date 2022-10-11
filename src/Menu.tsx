@@ -18,7 +18,7 @@ const Menu = () => {
         ) : (
           <ButtonLink to="process">Process ({itemsCount})</ButtonLink>
         )}
-        <Button disabled>Engage</Button>
+        <ButtonLink to="engage">Engage</ButtonLink>
         <Button disabled>Reflect</Button>
       </ButtonGroup>
     </>
