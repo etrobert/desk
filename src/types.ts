@@ -12,6 +12,7 @@ type CaptureItem = {
 type Task = {
   id: string;
   title: string;
+  createdAt: Timestamp;
 };
 
 export type { CaptureItem, Task };
