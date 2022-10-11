@@ -1,6 +1,6 @@
-import Button from './Button';
-import ButtonGroup from './ButtonGroup';
-import ButtonLink from './ButtonLink';
+import Button from './components/Button';
+import ButtonGroup from './components/ButtonGroup';
+import ButtonLink from './components/ButtonLink';
 import useCaptureItemsCount from './data/capture-items/useCaptureItemsCount';
 
 const Menu = () => {

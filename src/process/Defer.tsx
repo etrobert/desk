@@ -1,10 +1,10 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-import Button from '../Button';
-import ButtonGroup from '../ButtonGroup';
-import BackButton from '../BackButton';
-import TextInput from '../TextInput';
+import Button from '../components/Button';
+import ButtonGroup from '../components/ButtonGroup';
+import BackButton from '../components/BackButton';
+import TextInput from '../components/TextInput';
 
 import useDeleteLatestCaptureItem from '../data/capture-items/useDeleteLatestCaptureItem';
 import addTask from '../data/tasks/addTask';

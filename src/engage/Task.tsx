@@ -1,8 +1,8 @@
 import { Navigate, useParams } from 'react-router-dom';
 
-import BackButton from '../BackButton';
-import Button from '../Button';
-import ButtonGroup from '../ButtonGroup';
+import BackButton from '../components/BackButton';
+import Button from '../components/Button';
+import ButtonGroup from '../components/ButtonGroup';
 
 import deleteTask from '../data/tasks/deleteTask';
 import useTask from '../data/tasks/useTask';

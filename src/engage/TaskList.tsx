@@ -1,4 +1,4 @@
-import ButtonLink from '../ButtonLink';
+import ButtonLink from '../components/ButtonLink';
 import useTasks from '../data/tasks/useTasks';
 
 import './TaskList.css';

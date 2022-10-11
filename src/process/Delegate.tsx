@@ -1,8 +1,8 @@
-import Button from '../Button';
+import Button from '../components/Button';
 
 import './Delegate.css';
-import ButtonGroup from '../ButtonGroup';
-import BackButton from '../BackButton';
+import ButtonGroup from '../components/ButtonGroup';
+import BackButton from '../components/BackButton';
 
 const Delegate = () => (
   <form className="ProcessDelegate">

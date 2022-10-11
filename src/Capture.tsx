@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
-import Button from './Button';
-import TextInput from './TextInput';
+import Button from './components/Button';
+import TextInput from './components/TextInput';
 import useCaptureItemsCount from './data/capture-items/useCaptureItemsCount';
 import addCaptureItem from './data/capture-items/addCaptureItem';
 
