@@ -1,32 +1,29 @@
 import { useEffect } from 'react';
 import { Route, Routes, useNavigate } from 'react-router';
 
-import useCaptureItems from '../useCaptureItems';
-
 import Actions from './Actions';
 import Delegate from './Delegate';
 import Delete from './Delete';
 import Do from './Do';
 import Incubate from './Incubate';
+import useLatestCaptureItem from '../useLatestCaptureItem';
 
 const Process = () => {
-  const captureItems = useCaptureItems();
-
+  const { isLoading, latestCaptureItem } = useLatestCaptureItem();
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (captureItems !== null && captureItems.length === 0) navigate('/');
-  }, [captureItems, navigate]);
+    if (!isLoading && latestCaptureItem === null) navigate('/');
+  }, [isLoading, latestCaptureItem, navigate]);
 
-  if (captureItems === null) return <>Loading...</>;
+  if (isLoading) return <>Loading...</>;
 
-  // TODO: Handle the empty array case
-  const latestItem = captureItems[0];
+  if (latestCaptureItem === null) return null;
 
   return (
     <div>
       <h1>Process</h1>
-      <p>{latestItem.value}</p>
+      <p>{latestCaptureItem.value}</p>
       <Routes>
         <Route index element={<Actions />} />
         <Route path="delete" element={<Delete />} />
