@@ -1,4 +1,5 @@
 type CaptureItem = {
+  id: string;
   value: string;
 };
 

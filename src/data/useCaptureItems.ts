@@ -12,9 +12,12 @@ const useCaptureItems = () => {
     () =>
       onSnapshot(q, (querySnapshot) => {
         const captureItems: CaptureItem[] = [];
-        querySnapshot.forEach((captureItem) =>
-          captureItems.push(captureItem.data() as CaptureItem)
-        );
+        querySnapshot.forEach((captureItem) => {
+          captureItems.push({
+            ...captureItem.data(),
+            id: captureItem.id,
+          } as CaptureItem);
+        });
         setCaptureItems(captureItems);
       }),
     []
