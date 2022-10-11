@@ -4,13 +4,14 @@ import BackButton from '../BackButton';
 import Button from '../Button';
 import ButtonGroup from '../ButtonGroup';
 
+import deleteTask from '../data/deleteTask';
 import useTask from '../data/useTask';
 
 const Task = () => {
   const { id } = useParams<'id'>();
   const task = useTask(id);
 
-  if (task === undefined) return <Navigate to=".." />;
+  if (id === undefined || task === undefined) return <Navigate to=".." />;
   if (task === null) return <>Loading...</>;
 
   const { title } = task;
@@ -19,7 +20,7 @@ const Task = () => {
     <>
       <p>{title}</p>
       <ButtonGroup>
-        <Button disabled>Done</Button>
+        <Button onClick={() => deleteTask(id)}>Done</Button>
         <BackButton>Back</BackButton>
       </ButtonGroup>
     </>
