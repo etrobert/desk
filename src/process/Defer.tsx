@@ -6,8 +6,8 @@ import ButtonGroup from '../ButtonGroup';
 import BackButton from '../BackButton';
 import TextInput from '../TextInput';
 
-import useDeleteLatestCaptureItem from '../data/useDeleteLatestCaptureItem';
-import addTask from '../data/addTask';
+import useDeleteLatestCaptureItem from '../data/capture-items/useDeleteLatestCaptureItem';
+import addTask from '../data/tasks/addTask';
 
 import './Defer.css';
 

@@ -4,8 +4,8 @@ import BackButton from '../BackButton';
 import Button from '../Button';
 import ButtonGroup from '../ButtonGroup';
 
-import deleteTask from '../data/deleteTask';
-import useTask from '../data/useTask';
+import deleteTask from '../data/tasks/deleteTask';
+import useTask from '../data/tasks/useTask';
 
 const Task = () => {
   const { id } = useParams<'id'>();

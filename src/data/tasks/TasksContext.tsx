@@ -1,8 +1,8 @@
 import { collection, orderBy, query } from 'firebase/firestore';
 import { createContext, ReactNode } from 'react';
-import useCollection from './useCollection';
-import firestore from '../firestore';
-import { Task } from '../types';
+import useCollection from '../useCollection';
+import firestore from '../../firestore';
+import { Task } from '../../types';
 
 const TasksContext = createContext<Task[] | null>(null);
 

@@ -8,7 +8,7 @@ import Do from './Do';
 import Incubate from './Incubate';
 import Defer from './Defer';
 
-import useLatestCaptureItem from '../data/useLatestCaptureItem';
+import useLatestCaptureItem from '../data/capture-items/useLatestCaptureItem';
 
 const Process = () => {
   const { isLoading, latestCaptureItem } = useLatestCaptureItem();

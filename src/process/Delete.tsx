@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router';
 import ButtonGroup from '../ButtonGroup';
 import Button from '../Button';
 import BackButton from '../BackButton';
-import useDeleteLatestCaptureItem from '../data/useDeleteLatestCaptureItem';
+import useDeleteLatestCaptureItem from '../data/capture-items/useDeleteLatestCaptureItem';
 
 const Delete = () => {
   const navigate = useNavigate();

@@ -5,8 +5,8 @@ import Menu from './Menu';
 import Process from './process';
 import Engage from './engage';
 import HomeButton from './HomeButton';
-import { CaptureItemsContextProvider } from './data/CaptureItemsContext';
-import { TasksContextProvider } from './data/TasksContext';
+import { CaptureItemsContextProvider } from './data/capture-items/CaptureItemsContext';
+import { TasksContextProvider } from './data/tasks/TasksContext';
 
 import './App.css';
 

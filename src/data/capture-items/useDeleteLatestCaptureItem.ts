@@ -1,6 +1,6 @@
 import { deleteDoc, doc } from 'firebase/firestore';
 import { useCallback } from 'react';
-import firestore from '../firestore';
+import firestore from '../../firestore';
 import useLatestCaptureItem from './useLatestCaptureItem';
 
 const useDeleteLatestCaptureItem = () => {
