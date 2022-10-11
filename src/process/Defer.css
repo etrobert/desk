@@ -1,0 +1,10 @@
+.ProcessDefer__Form {
+  display: grid;
+  gap: 1rem;
+}
+
+.ProcessDefer__Title {
+  display: grid;
+  grid-auto-flow: column;
+  gap: 0.5rem;
+}
