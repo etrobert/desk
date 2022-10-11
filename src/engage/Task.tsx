@@ -17,7 +17,7 @@ const Task = () => {
 
   return (
     <>
-      {title}
+      <p>{title}</p>
       <ButtonGroup>
         <Button disabled>Done</Button>
         <BackButton>Back</BackButton>
