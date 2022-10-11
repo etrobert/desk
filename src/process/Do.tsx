@@ -1,11 +1,12 @@
 import Button from '../Button';
 import ButtonGroup from '../ButtonGroup';
 import BackButton from '../BackButton';
+import Countdown from './Countdown';
 
 const Do = () => {
   return (
     <div>
-      <p>1:59:59</p>
+      <Countdown />
       <ButtonGroup>
         <Button disabled>Done</Button>
         <BackButton>Cancel</BackButton>
