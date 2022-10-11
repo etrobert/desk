@@ -2,6 +2,7 @@ import { useState } from 'react';
 
 import Button from './Button';
 import useCaptureItemsCount from './useCaptureItemsCount';
+import addCaptureItem from './addCaptureItem';
 
 import './Capture.css';
 
@@ -19,7 +20,7 @@ const Capture = () => {
         onSubmit={(event) => {
           event.preventDefault();
           if (item.trim() === '') return;
-          // addItem(item);
+          addCaptureItem({ value: item });
           setItem('');
         }}
       >

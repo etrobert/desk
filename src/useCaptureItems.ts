@@ -1,10 +1,7 @@
 import { collection, onSnapshot, query } from 'firebase/firestore';
 import { useEffect, useState } from 'react';
 import firestore from './firestore';
-
-type CaptureItem = {
-  value: string;
-};
+import type { CaptureItem } from './types';
 
 const q = query(collection(firestore, 'capture-items'));
 
