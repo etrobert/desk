@@ -3,12 +3,14 @@ import { useNavigate } from 'react-router';
 import ButtonGroup from '../ButtonGroup';
 import Button from '../Button';
 import BackButton from '../BackButton';
+import useDeleteLatestCaptureItem from '../data/useDeleteLatestCaptureItem';
 
 const Delete = () => {
   const navigate = useNavigate();
+  const deleteLatestCaptureItem = useDeleteLatestCaptureItem();
 
   const onDelete = () => {
-    // popItem();
+    deleteLatestCaptureItem();
     navigate(-1);
   };
 
@@ -16,9 +18,7 @@ const Delete = () => {
     <div>
       <h2>Delete?</h2>
       <ButtonGroup>
-        <Button disabled onClick={onDelete}>
-          Confirm
-        </Button>
+        <Button onClick={onDelete}>Confirm</Button>
         <BackButton>Cancel</BackButton>
       </ButtonGroup>
     </div>
