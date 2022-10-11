@@ -6,7 +6,7 @@ const Actions = () => {
   return (
     <ButtonGroup>
       <ButtonLink to="delete">Delete</ButtonLink>
-      <Button disabled>Do</Button>
+      <ButtonLink to="do">Do</ButtonLink>
       <Button disabled>Delegate</Button>
       <ButtonLink to="defer">Defer</ButtonLink>
       <Button disabled>Archive</Button>
