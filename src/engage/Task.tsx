@@ -4,13 +4,14 @@ import BackButton from '../BackButton';
 import Button from '../Button';
 import ButtonGroup from '../ButtonGroup';
 
-import useTask from './useTask';
+import useTask from '../data/useTask';
 
 const Task = () => {
   const { id } = useParams<'id'>();
   const task = useTask(id);
 
   if (task === undefined) return <Navigate to=".." />;
+  if (task === null) return <>Loading...</>;
 
   const { title } = task;
 

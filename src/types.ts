@@ -9,4 +9,9 @@ type CaptureItem = {
   createdAt: Timestamp;
 };
 
-export type { CaptureItem };
+type Task = {
+  id: string;
+  title: string;
+};
+
+export type { CaptureItem, Task };
