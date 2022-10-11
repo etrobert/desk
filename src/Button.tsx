@@ -8,8 +8,12 @@ type Props = DetailedHTMLProps<
   HTMLButtonElement
 >;
 
-const Button = ({ className, ...props }: Props) => (
-  <button className={`${className} Button ButtonShared`} {...props} />
+const Button = ({ className, type, ...props }: Props) => (
+  <button
+    className={`${className} Button ButtonShared`}
+    type={type ?? 'button'}
+    {...props}
+  />
 );
 
 export default Button;
