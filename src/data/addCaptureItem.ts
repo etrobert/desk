@@ -1,10 +1,15 @@
-import { collection, addDoc } from 'firebase/firestore';
+import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
 import firestore from '../firestore';
 import type { CaptureItem } from '../types';
 
-const addCaptureItem = async (captureItem: Omit<CaptureItem, 'id'>) => {
+const addCaptureItem = async (
+  captureItem: Omit<CaptureItem, 'id' | 'createdAt'>
+) => {
   // Add a new document with a generated id.
-  await addDoc(collection(firestore, 'capture-items'), captureItem);
+  await addDoc(collection(firestore, 'capture-items'), {
+    ...captureItem,
+    createdAt: serverTimestamp(),
+  });
 };
 
 export default addCaptureItem;
