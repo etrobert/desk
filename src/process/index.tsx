@@ -6,7 +6,7 @@ import Delegate from './Delegate';
 import Delete from './Delete';
 import Do from './Do';
 import Incubate from './Incubate';
-import useLatestCaptureItem from '../useLatestCaptureItem';
+import useLatestCaptureItem from '../data/useLatestCaptureItem';
 
 const Process = () => {
   const { isLoading, latestCaptureItem } = useLatestCaptureItem();

@@ -1,8 +1,8 @@
 import { useState } from 'react';
 
 import Button from './Button';
-import useCaptureItemsCount from './useCaptureItemsCount';
-import addCaptureItem from './addCaptureItem';
+import useCaptureItemsCount from './data/useCaptureItemsCount';
+import addCaptureItem from './data/addCaptureItem';
 
 import './Capture.css';
 
