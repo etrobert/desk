@@ -1,10 +1,6 @@
-import { collection, query } from 'firebase/firestore';
-import firestore from '../firestore';
-import useCollection from './useCollection';
+import { useContext } from 'react';
+import { TasksContext } from './TasksContext';
 
-import type { Task } from '../types';
-
-const useTasks = () =>
-  useCollection<Task>(query(collection(firestore, 'tasks')));
+const useTasks = () => useContext(TasksContext);
 
 export default useTasks;
