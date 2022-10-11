@@ -3,9 +3,3 @@
   grid-auto-flow: column;
   gap: 0.5rem;
 }
-
-.Capture__input {
-  border: none;
-  border-radius: 0.5rem;
-  padding: 0.5rem 1rem;
-}

@@ -1,6 +1,7 @@
 import { useState } from 'react';
 
 import Button from './Button';
+import TextInput from './TextInput';
 import useCaptureItemsCount from './data/useCaptureItemsCount';
 import addCaptureItem from './data/addCaptureItem';
 
@@ -24,9 +25,8 @@ const Capture = () => {
           setItem('');
         }}
       >
-        <input
+        <TextInput
           autoFocus
-          className="Capture__input"
           value={item}
           onChange={(event) => setItem(event.target.value)}
         />
