@@ -6,11 +6,11 @@ const Actions = () => {
   return (
     <ButtonGroup>
       <ButtonLink to="delete">Delete</ButtonLink>
-      <ButtonLink to="do">Do</ButtonLink>
-      <ButtonLink to="delegate">Delegate</ButtonLink>
+      <Button disabled>Do</Button>
+      <Button disabled>Delegate</Button>
       <Button disabled>Defer</Button>
       <Button disabled>Archive</Button>
-      <ButtonLink to="incubate">Incubate</ButtonLink>
+      <Button disabled>Incubate</Button>
     </ButtonGroup>
   );
 };
