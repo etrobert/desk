@@ -1,11 +1,14 @@
 import ButtonGroup from '../ButtonGroup';
 import Button from '../Button';
 import ButtonLink from '../ButtonLink';
+import useDeleteLatestCaptureItem from '../data/capture-items/useDeleteLatestCaptureItem';
 
 const Actions = () => {
+  const deleteLatestCaptureItem = useDeleteLatestCaptureItem();
+
   return (
     <ButtonGroup>
-      <ButtonLink to="delete">Delete</ButtonLink>
+      <Button onClick={deleteLatestCaptureItem}>Delete</Button>
       <ButtonLink to="do">Do</ButtonLink>
       <Button disabled>Delegate</Button>
       <ButtonLink to="defer">Defer</ButtonLink>
