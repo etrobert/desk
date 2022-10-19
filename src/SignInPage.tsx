@@ -6,9 +6,9 @@ import Button from './components/Button';
 import TextInput from './components/TextInput';
 import { auth } from './firebase';
 
-import './Login.css';
+import './SignInPage.css';
 
-const Login = () => {
+const SignInPage = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState<FirebaseError | null>(null);
@@ -24,10 +24,10 @@ const Login = () => {
 
   return (
     <>
-      <h1>Login</h1>
+      <h1>Sign In</h1>
       {error?.message}
       <form
-        className="Login__form"
+        className="SignInPage__form"
         onSubmit={(event) => {
           event.preventDefault();
           signIn();
@@ -46,10 +46,10 @@ const Login = () => {
           required
           placeholder="Password"
         />
-        <Button type="submit">Login</Button>
+        <Button type="submit">Sign In</Button>
       </form>
     </>
   );
 };
 
-export default Login;
+export default SignInPage;
