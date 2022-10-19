@@ -1,5 +1,5 @@
 import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
-import firestore from '../../firestore';
+import { firestore } from '../../firebase';
 import type { CaptureItem } from '../../types';
 
 const addCaptureItem = async (
