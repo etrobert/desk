@@ -15,15 +15,13 @@ function App() {
     <div className="App">
       <CaptureItemsContextProvider>
         <TasksContextProvider>
-          <header className="App-header">
-            <HomeButton />
-            <Routes>
-              <Route path="capture" element={<Capture />} />
-              <Route path="process/*" element={<Process />} />
-              <Route path="engage/*" element={<Engage />} />
-              <Route path="*" element={<Menu />} />
-            </Routes>
-          </header>
+          <HomeButton />
+          <Routes>
+            <Route path="capture" element={<Capture />} />
+            <Route path="process/*" element={<Process />} />
+            <Route path="engage/*" element={<Engage />} />
+            <Route path="*" element={<Menu />} />
+          </Routes>
         </TasksContextProvider>
       </CaptureItemsContextProvider>
     </div>
