@@ -1,23 +1,20 @@
 import { collection, query, QueryConstraint } from 'firebase/firestore';
 import { useMemo } from 'react';
 import { firestore } from '../firebase';
-import useAuth from '../useAuth';
+import useUserPath from './useUserPath';
 import useCollection from './useCollection';
 
 const useUserCollection = <T>(
   path: string[],
   queryConstraints: QueryConstraint[]
 ) => {
-  const { user } = useAuth();
+  const userPath = useUserPath();
 
   const q = useMemo(
     () =>
-      user &&
-      query(
-        collection(firestore, 'users', user.uid, ...path),
-        ...queryConstraints
-      ),
-    [user, path, queryConstraints]
+      userPath &&
+      query(collection(firestore, ...userPath, ...path), ...queryConstraints),
+    [userPath, path, queryConstraints]
   );
 
   return useCollection<T>(q);

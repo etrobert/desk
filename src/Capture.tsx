@@ -3,13 +3,14 @@ import { useState } from 'react';
 import Button from './components/Button';
 import TextInput from './components/TextInput';
 import useCaptureItemsCount from './data/capture-items/useCaptureItemsCount';
-import addCaptureItem from './data/capture-items/addCaptureItem';
+import useAddCaptureItem from './data/capture-items/useAddCaptureItem';
 
 import './Capture.css';
 
 const Capture = () => {
   const [item, setItem] = useState('');
   const itemsCount = useCaptureItemsCount();
+  const addCaptureItem = useAddCaptureItem();
 
   if (itemsCount === null) return <>Loading...</>;
 
