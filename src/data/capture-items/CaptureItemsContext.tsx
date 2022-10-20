@@ -9,11 +9,11 @@ type Props = {
   children: ReactNode;
 };
 
+const path = ['capture-items'];
+const queryConstraints = [orderBy('createdAt', 'desc')];
+
 function CaptureItemsContextProvider({ children }: Props) {
-  const captureItems = useUserCollection<CaptureItem>(
-    ['capture-items'],
-    [orderBy('createdAt', 'desc')]
-  );
+  const captureItems = useUserCollection<CaptureItem>(path, queryConstraints);
 
   return (
     <CaptureItemsContext.Provider value={captureItems}>
