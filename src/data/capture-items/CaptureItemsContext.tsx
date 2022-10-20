@@ -1,9 +1,7 @@
-import { collection, orderBy, query } from 'firebase/firestore';
-import { createContext, ReactNode, useMemo } from 'react';
-import useCollection from '../useCollection';
-import { firestore } from '../../firebase';
+import { orderBy } from 'firebase/firestore';
+import { createContext, ReactNode } from 'react';
 import { CaptureItem } from '../../types';
-import useAuth from '../../useAuth';
+import useUserCollection from '../useUserCollection';
 
 const CaptureItemsContext = createContext<CaptureItem[] | null>(null);
 
@@ -12,18 +10,10 @@ type Props = {
 };
 
 function CaptureItemsContextProvider({ children }: Props) {
-  const { user } = useAuth();
-  const q = useMemo(
-    () =>
-      user === null
-        ? null
-        : query(
-            collection(firestore, 'users', user.uid, 'capture-items'),
-            orderBy('createdAt', 'desc')
-          ),
-    [user]
+  const captureItems = useUserCollection<CaptureItem>(
+    ['capture-items'],
+    [orderBy('createdAt', 'desc')]
   );
-  const captureItems = useCollection<CaptureItem>(q);
 
   return (
     <CaptureItemsContext.Provider value={captureItems}>
