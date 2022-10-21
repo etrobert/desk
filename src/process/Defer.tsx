@@ -7,7 +7,7 @@ import BackButton from '../components/BackButton';
 import TextInput from '../components/TextInput';
 
 import useDeleteLatestCaptureItem from '../data/capture-items/useDeleteLatestCaptureItem';
-import addTask from '../data/tasks/addTask';
+import useAddTask from '../data/tasks/useAddTask';
 
 import './Defer.css';
 
@@ -15,6 +15,7 @@ const Defer = () => {
   const [title, setTitle] = useState('');
   const navigate = useNavigate();
   const deleteLatestCaptureItem = useDeleteLatestCaptureItem();
+  const addTask = useAddTask();
 
   return (
     <form

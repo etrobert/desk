@@ -1,8 +1,7 @@
-import { collection, orderBy, query } from 'firebase/firestore';
+import { orderBy } from 'firebase/firestore';
 import { createContext, ReactNode } from 'react';
-import useCollection from '../useCollection';
-import firestore from '../../firestore';
 import { Task } from '../../types';
+import useUserCollection from '../useUserCollection';
 
 const TasksContext = createContext<Task[] | null>(null);
 
@@ -10,10 +9,11 @@ type Props = {
   children: ReactNode;
 };
 
-const q = query(collection(firestore, 'tasks'), orderBy('createdAt', 'desc'));
+const path = ['tasks'];
+const queryConstraints = [orderBy('createdAt', 'desc')];
 
 function TasksContextProvider({ children }: Props) {
-  const tasks = useCollection<Task>(q);
+  const tasks = useUserCollection<Task>(path, queryConstraints);
 
   return (
     <TasksContext.Provider value={tasks}>{children}</TasksContext.Provider>

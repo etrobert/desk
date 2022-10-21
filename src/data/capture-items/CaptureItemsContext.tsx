@@ -1,8 +1,7 @@
-import { collection, orderBy, query } from 'firebase/firestore';
+import { orderBy } from 'firebase/firestore';
 import { createContext, ReactNode } from 'react';
-import useCollection from '../useCollection';
-import firestore from '../../firestore';
 import { CaptureItem } from '../../types';
+import useUserCollection from '../useUserCollection';
 
 const CaptureItemsContext = createContext<CaptureItem[] | null>(null);
 
@@ -10,13 +9,11 @@ type Props = {
   children: ReactNode;
 };
 
-const q = query(
-  collection(firestore, 'capture-items'),
-  orderBy('createdAt', 'desc')
-);
+const path = ['capture-items'];
+const queryConstraints = [orderBy('createdAt', 'desc')];
 
 function CaptureItemsContextProvider({ children }: Props) {
-  const captureItems = useCollection<CaptureItem>(q);
+  const captureItems = useUserCollection<CaptureItem>(path, queryConstraints);
 
   return (
     <CaptureItemsContext.Provider value={captureItems}>
