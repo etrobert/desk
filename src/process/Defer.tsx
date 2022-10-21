@@ -13,6 +13,7 @@ import './Defer.css';
 
 const Defer = () => {
   const [title, setTitle] = useState('');
+  const [priority, setPriority] = useState('medium');
   const navigate = useNavigate();
   const deleteLatestCaptureItem = useDeleteLatestCaptureItem();
   const addTask = useAddTask();
@@ -28,14 +29,29 @@ const Defer = () => {
         navigate(-1);
       }}
     >
-      <label className="ProcessDefer__Title">
+      <label className="ProcessDefer__Title" htmlFor="title">
         Title:
-        <TextInput
-          value={title}
-          onChange={(event) => setTitle(event.target.value)}
-        />
       </label>
-      <ButtonGroup>
+      <TextInput
+        id="title"
+        value={title}
+        onChange={(event) => setTitle(event.target.value)}
+      />
+      <label htmlFor="priority">Priority:</label>
+      <select
+        id="priority"
+        value={priority}
+        onChange={(event) => setPriority(event.target.value)}
+      >
+        <option value="very high">Very High</option>
+        <option value="high">High</option>
+        <option value="medium" defaultChecked>
+          Medium
+        </option>
+        <option value="low">Low</option>
+        <option value="very low">Very Low</option>
+      </select>
+      <ButtonGroup className="ProcessDefer__Buttons">
         <Button type="submit">Defer</Button>
         <BackButton>Cancel</BackButton>
       </ButtonGroup>
