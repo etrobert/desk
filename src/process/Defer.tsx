@@ -29,9 +29,7 @@ const Defer = () => {
         navigate(-1);
       }}
     >
-      <label className="ProcessDefer__Title" htmlFor="title">
-        Title:
-      </label>
+      <label htmlFor="title">Title:</label>
       <TextInput
         id="title"
         value={title}

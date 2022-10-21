@@ -4,12 +4,6 @@
   gap: 1rem;
 }
 
-.ProcessDefer__Title {
-  display: grid;
-  grid-auto-flow: column;
-  gap: 0.5rem;
-}
-
 .ProcessDefer__Buttons {
   grid-column-start: 1;
   grid-column-end: -1;
