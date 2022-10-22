@@ -28,7 +28,7 @@ const Defer = () => {
       onSubmit={(event) => {
         event.preventDefault();
         if (title === '') return;
-        addTask({ title });
+        addTask({ title, priority });
         deleteLatestCaptureItem();
         navigate(-1);
       }}
