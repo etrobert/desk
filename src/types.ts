@@ -1,3 +1,7 @@
+import { priorities } from './constants';
+
+type Priority = typeof priorities[number];
+
 type Timestamp = {
   seconds: number;
   nanoseconds: number;
@@ -15,4 +19,4 @@ type Task = {
   createdAt: Timestamp;
 };
 
-export type { CaptureItem, Task };
+export type { Priority, CaptureItem, Task };

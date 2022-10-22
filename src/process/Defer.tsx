@@ -9,11 +9,15 @@ import TextInput from '../components/TextInput';
 import useDeleteLatestCaptureItem from '../data/capture-items/useDeleteLatestCaptureItem';
 import useAddTask from '../data/tasks/useAddTask';
 
+import { priorities } from '../constants';
+
+import type { Priority } from '../types';
+
 import './Defer.css';
 
 const Defer = () => {
   const [title, setTitle] = useState('');
-  const [priority, setPriority] = useState('medium');
+  const [priority, setPriority] = useState<Priority>('medium');
   const navigate = useNavigate();
   const deleteLatestCaptureItem = useDeleteLatestCaptureItem();
   const addTask = useAddTask();
@@ -43,15 +47,13 @@ const Defer = () => {
       <select
         id="priority"
         value={priority}
-        onChange={(event) => setPriority(event.target.value)}
+        onChange={(event) => setPriority(event.target.value as Priority)}
       >
-        <option value="very high">Very High</option>
-        <option value="high">High</option>
-        <option value="medium" defaultChecked>
-          Medium
-        </option>
-        <option value="low">Low</option>
-        <option value="very low">Very Low</option>
+        {priorities.map((value) => (
+          <option key={value} value={value}>
+            {value}
+          </option>
+        ))}
       </select>
       <ButtonGroup className="ProcessDefer__Buttons">
         <Button type="submit">Defer</Button>
