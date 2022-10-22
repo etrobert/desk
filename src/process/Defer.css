@@ -4,6 +4,10 @@
   gap: 1rem;
 }
 
+.ProcessDefer__Label {
+  justify-self: end;
+}
+
 .ProcessDefer__Buttons {
   grid-column-start: 1;
   grid-column-end: -1;

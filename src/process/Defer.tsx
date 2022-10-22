@@ -29,13 +29,17 @@ const Defer = () => {
         navigate(-1);
       }}
     >
-      <label htmlFor="title">Title:</label>
+      <label className="ProcessDefer__Label" htmlFor="title">
+        Title:
+      </label>
       <TextInput
         id="title"
         value={title}
         onChange={(event) => setTitle(event.target.value)}
       />
-      <label htmlFor="priority">Priority:</label>
+      <label className="ProcessDefer__Label" htmlFor="priority">
+        Priority:
+      </label>
       <select
         id="priority"
         value={priority}
