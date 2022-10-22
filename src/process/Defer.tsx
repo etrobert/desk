@@ -15,6 +15,11 @@ import type { Priority } from '../types';
 
 import './Defer.css';
 
+const capitalize = (s: string) => `${s[0].toUpperCase()}${s.substr(1)}`;
+const mapWords = (modifier: (word: string) => string) => (sentence: string) =>
+  sentence.split(' ').map(modifier).join(' ');
+const capitalizeSentence = mapWords(capitalize);
+
 const Defer = () => {
   const [title, setTitle] = useState('');
   const [priority, setPriority] = useState<Priority>('medium');
@@ -51,7 +56,7 @@ const Defer = () => {
       >
         {priorities.map((value) => (
           <option key={value} value={value}>
-            {value}
+            {capitalizeSentence(value)}
           </option>
         ))}
       </select>
