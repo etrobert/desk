@@ -16,7 +16,6 @@ type CaptureItem = {
 type Task = {
   id: string;
   title: string;
-  priority: Priority;
   createdAt: Timestamp;
 };
 

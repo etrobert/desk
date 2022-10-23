@@ -41,7 +41,6 @@ const PriorityField = ({ priority, setPriority }: PriorityFieldProps) => (
 
 const Defer = () => {
   const [title, setTitle] = useState('');
-  const [priority, setPriority] = useState<Priority>('medium');
   const navigate = useNavigate();
   const deleteLatestCaptureItem = useDeleteLatestCaptureItem();
   const addTask = useAddTask();
@@ -52,7 +51,7 @@ const Defer = () => {
       onSubmit={(event) => {
         event.preventDefault();
         if (title === '') return;
-        addTask({ title, priority });
+        addTask({ title });
         deleteLatestCaptureItem();
         navigate(-1);
       }}
@@ -65,7 +64,6 @@ const Defer = () => {
         value={title}
         onChange={(event) => setTitle(event.target.value)}
       />
-      <PriorityField priority={priority} setPriority={setPriority} />
       <ButtonGroup className="ProcessDefer__Buttons">
         <Button type="submit">Defer</Button>
         <BackButton>Cancel</BackButton>
