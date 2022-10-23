@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { Dispatch, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import Button from '../components/Button';
@@ -15,6 +15,29 @@ import capitalizeWords from '../capitalizeWords';
 import type { Priority } from '../types';
 
 import './Defer.css';
+
+type PriorityFieldProps = {
+  priority: Priority;
+  setPriority: Dispatch<Priority>;
+};
+const PriorityField = ({ priority, setPriority }: PriorityFieldProps) => (
+  <>
+    <label className="ProcessDefer__Label" htmlFor="priority">
+      Priority:
+    </label>
+    <select
+      id="priority"
+      value={priority}
+      onChange={(event) => setPriority(event.target.value as Priority)}
+    >
+      {priorities.map((value) => (
+        <option key={value} value={value}>
+          {capitalizeWords(value)}
+        </option>
+      ))}
+    </select>
+  </>
+);
 
 const Defer = () => {
   const [title, setTitle] = useState('');
@@ -42,20 +65,7 @@ const Defer = () => {
         value={title}
         onChange={(event) => setTitle(event.target.value)}
       />
-      <label className="ProcessDefer__Label" htmlFor="priority">
-        Priority:
-      </label>
-      <select
-        id="priority"
-        value={priority}
-        onChange={(event) => setPriority(event.target.value as Priority)}
-      >
-        {priorities.map((value) => (
-          <option key={value} value={value}>
-            {capitalizeWords(value)}
-          </option>
-        ))}
-      </select>
+      <PriorityField priority={priority} setPriority={setPriority} />
       <ButtonGroup className="ProcessDefer__Buttons">
         <Button type="submit">Defer</Button>
         <BackButton>Cancel</BackButton>
