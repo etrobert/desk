@@ -18,7 +18,7 @@ import './Defer.css';
 const capitalize = (s: string) => `${s[0].toUpperCase()}${s.substr(1)}`;
 const mapWords = (modifier: (word: string) => string) => (sentence: string) =>
   sentence.split(' ').map(modifier).join(' ');
-const capitalizeSentence = mapWords(capitalize);
+const capitalizeWords = mapWords(capitalize);
 
 const Defer = () => {
   const [title, setTitle] = useState('');
@@ -56,7 +56,7 @@ const Defer = () => {
       >
         {priorities.map((value) => (
           <option key={value} value={value}>
-            {capitalizeSentence(value)}
+            {capitalizeWords(value)}
           </option>
         ))}
       </select>
