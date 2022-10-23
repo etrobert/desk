@@ -10,15 +10,11 @@ import useDeleteLatestCaptureItem from '../data/capture-items/useDeleteLatestCap
 import useAddTask from '../data/tasks/useAddTask';
 
 import { priorities } from '../constants';
+import capitalizeWords from '../capitalizeWords';
 
 import type { Priority } from '../types';
 
 import './Defer.css';
-
-const capitalize = (s: string) => `${s[0].toUpperCase()}${s.substr(1)}`;
-const mapWords = (modifier: (word: string) => string) => (sentence: string) =>
-  sentence.split(' ').map(modifier).join(' ');
-const capitalizeWords = mapWords(capitalize);
 
 const Defer = () => {
   const [title, setTitle] = useState('');
