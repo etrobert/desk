@@ -1,11 +1,8 @@
 import { priorities } from './constants';
 
-type Priority = typeof priorities[number];
+import type { Timestamp } from 'firebase/firestore';
 
-type Timestamp = {
-  seconds: number;
-  nanoseconds: number;
-};
+type Priority = typeof priorities[number];
 
 type CaptureItem = {
   id: string;
