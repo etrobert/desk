@@ -21,7 +21,7 @@ const Task = () => {
     <>
       <p>{title}</p>
       <ButtonGroup>
-        <Button onClick={() => deleteTask(id)}>Done</Button>
+        <Button onClick={() => deleteTask(id)}>Delete</Button>
         <BackButton>Back</BackButton>
       </ButtonGroup>
     </>
