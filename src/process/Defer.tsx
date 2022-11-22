@@ -12,7 +12,7 @@ import useAddTask from '../data/tasks/useAddTask';
 import { priorities } from '../constants';
 import capitalizeWords from '../capitalizeWords';
 
-import type { Priority } from '../types';
+import type { CaptureItem, Priority } from '../types';
 
 import './Defer.css';
 
@@ -39,8 +39,12 @@ const PriorityField = ({ priority, setPriority }: PriorityFieldProps) => (
   </>
 );
 
-const Defer = () => {
-  const [title, setTitle] = useState('');
+type Props = {
+  captureItem: CaptureItem;
+};
+
+const Defer = ({ captureItem }: Props) => {
+  const [title, setTitle] = useState(captureItem.value);
   const navigate = useNavigate();
   const deleteLatestCaptureItem = useDeleteLatestCaptureItem();
   const addTask = useAddTask();

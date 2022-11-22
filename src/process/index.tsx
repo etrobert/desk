@@ -30,7 +30,10 @@ const Process = () => {
         <Route path="do" element={<Do />} />
         <Route path="incubate" element={<Incubate />} />
         <Route path="delegate" element={<Delegate />} />
-        <Route path="defer" element={<Defer />} />
+        <Route
+          path="defer"
+          element={<Defer captureItem={latestCaptureItem} />}
+        />
       </Routes>
     </div>
   );
