@@ -1,8 +1,6 @@
-import { priorities, statuses } from './constants';
+import { statuses } from './constants';
 
 import type { Timestamp } from 'firebase/firestore';
-
-type Priority = typeof priorities[number];
 
 type CaptureItem = {
   id: string;
@@ -19,4 +17,4 @@ type Task = {
   createdAt: Timestamp;
 };
 
-export type { Priority, CaptureItem, Task };
+export type { CaptureItem, Task };
