@@ -21,5 +21,11 @@
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
     
+    <script>
+      if (window.location.hash.length > 1) {
+        const path = window.location.hash.replace('#', '');
+        history.replaceState(null, '', '/desk' + path);
+      }
+    </script>
   </body>
 </html>
