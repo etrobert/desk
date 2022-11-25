@@ -17,7 +17,12 @@ function TasksContextProvider({ children }: Props) {
 
   const sortedTasks = useMemo(
     () =>
-      tasks && tasks.sort((a, b) => a.createdAt.seconds - b.createdAt.seconds),
+      tasks &&
+      tasks.sort((a, b) =>
+        a.createdAt === null || b.createdAt === null
+          ? 0
+          : a.createdAt.seconds - b.createdAt.seconds
+      ),
     [tasks]
   );
 
