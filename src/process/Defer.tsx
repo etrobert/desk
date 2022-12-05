@@ -22,6 +22,7 @@ type Props = {
 const Tag = ({ name }: { name: string }) => (
   <div
     style={{
+      fontSize: '0.8em',
       padding: '0.5rem 1rem',
       borderRadius: '0.75rem',
       backgroundColor: 'rgba(255, 255, 255, 0.10)',
@@ -66,13 +67,13 @@ const Defer = ({ captureItem }: Props) => {
         Add Tag:
       </label>
       <TagInput onNewTag={addTag} />
+      <label className="ProcessDefer__Label">Tags:</label>
       <section
         style={{
           display: 'grid',
           gridAutoFlow: 'column',
           gap: '1rem',
-          gridColumnStart: 1,
-          gridColumnEnd: -1,
+          justifyContent: 'start',
         }}
       >
         {tags.map((tag) => (
