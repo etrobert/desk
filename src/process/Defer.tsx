@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useCallback, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import Button from '../components/Button';
@@ -9,6 +9,8 @@ import TextInput from '../components/TextInput';
 import useDeleteLatestCaptureItem from '../data/capture-items/useDeleteLatestCaptureItem';
 import useAddTask from '../data/tasks/useAddTask';
 
+import TagInput from './TagInput';
+
 import type { CaptureItem } from '../types';
 
 import './Defer.css';
@@ -17,11 +19,29 @@ type Props = {
   captureItem: CaptureItem;
 };
 
+const Tag = ({ name }: { name: string }) => (
+  <div
+    style={{
+      padding: '0.5rem 1rem',
+      borderRadius: '0.75rem',
+      backgroundColor: 'rgba(255, 255, 255, 0.10)',
+    }}
+  >
+    {name}
+  </div>
+);
+
 const Defer = ({ captureItem }: Props) => {
   const [title, setTitle] = useState(captureItem.value);
   const navigate = useNavigate();
   const deleteLatestCaptureItem = useDeleteLatestCaptureItem();
   const addTask = useAddTask();
+  const [tags, setTags] = useState<string[]>([]);
+
+  const addTag = useCallback(
+    (newTag: string) => setTags((tags) => [...tags, newTag]),
+    []
+  );
 
   return (
     <form
@@ -42,6 +62,23 @@ const Defer = ({ captureItem }: Props) => {
         value={title}
         onChange={(event) => setTitle(event.target.value)}
       />
+      <label className="ProcessDefer__Label" htmlFor="tags">
+        Add Tag:
+      </label>
+      <TagInput onNewTag={addTag} />
+      <section
+        style={{
+          display: 'grid',
+          gridAutoFlow: 'column',
+          gap: '1rem',
+          gridColumnStart: 1,
+          gridColumnEnd: -1,
+        }}
+      >
+        {tags.map((tag) => (
+          <Tag key={tag} name={tag} />
+        ))}
+      </section>
       <ButtonGroup className="ProcessDefer__Buttons">
         <Button type="submit">Defer</Button>
         <BackButton>Cancel</BackButton>
