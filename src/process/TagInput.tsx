@@ -12,6 +12,7 @@ const TagInput = ({ onNewTag }: { onNewTag: (tag: string) => void }) => {
         onKeyDown={(event) => {
           if (event.key !== 'Enter') return;
           event.preventDefault();
+          if (newTag === '') return;
           onNewTag(newTag);
           setNewTag('');
         }}
