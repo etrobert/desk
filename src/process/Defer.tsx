@@ -31,6 +31,12 @@ const Defer = ({ captureItem }: Props) => {
     []
   );
 
+  const removeTag = useCallback(
+    (tagToRemove: string) =>
+      setTags((tags) => tags.filter((tag) => tag !== tagToRemove)),
+    []
+  );
+
   return (
     <form
       className="ProcessDefer__Form"
@@ -64,7 +70,11 @@ const Defer = ({ captureItem }: Props) => {
         }}
       >
         {tags.map((tag) => (
-          <Button className="ProcessDefer__Tag" key={tag}>
+          <Button
+            className="ProcessDefer__Tag"
+            key={tag}
+            onClick={() => removeTag(tag)}
+          >
             {tag}
           </Button>
         ))}
