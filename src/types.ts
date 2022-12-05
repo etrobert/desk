@@ -13,6 +13,7 @@ type Status = typeof statuses[number];
 type Task = {
   id: string;
   title: string;
+  tags: string[];
   status: Status;
   createdAt: Timestamp | null;
 };

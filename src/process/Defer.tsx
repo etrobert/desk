@@ -50,7 +50,7 @@ const Defer = ({ captureItem }: Props) => {
       onSubmit={(event) => {
         event.preventDefault();
         if (title === '') return;
-        addTask({ title });
+        addTask({ title, tags });
         deleteLatestCaptureItem();
         navigate(-1);
       }}
