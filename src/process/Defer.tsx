@@ -1,10 +1,12 @@
-import { useCallback, useState } from 'react';
+import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import Button from '../components/Button';
 import ButtonGroup from '../components/ButtonGroup';
 import BackButton from '../components/BackButton';
 import TextInput from '../components/TextInput';
+
+import useTags from '../hooks/useTags';
 
 import useDeleteLatestCaptureItem from '../data/capture-items/useDeleteLatestCaptureItem';
 import useAddTask from '../data/tasks/useAddTask';
@@ -24,18 +26,7 @@ const Defer = ({ captureItem }: Props) => {
   const navigate = useNavigate();
   const deleteLatestCaptureItem = useDeleteLatestCaptureItem();
   const addTask = useAddTask();
-  const [tags, setTags] = useState<string[]>([]);
-
-  const addTag = useCallback(
-    (newTag: string) => setTags((tags) => [...tags, newTag]),
-    []
-  );
-
-  const removeTag = useCallback(
-    (tagToRemove: string) =>
-      setTags((tags) => tags.filter((tag) => tag !== tagToRemove)),
-    []
-  );
+  const { tags, addTag, removeTag } = useTags();
 
   return (
     <form
