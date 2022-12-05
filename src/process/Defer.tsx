@@ -19,19 +19,6 @@ type Props = {
   captureItem: CaptureItem;
 };
 
-const Tag = ({ name }: { name: string }) => (
-  <div
-    style={{
-      fontSize: '0.8em',
-      padding: '0.5rem 1rem',
-      borderRadius: '0.75rem',
-      backgroundColor: 'rgba(255, 255, 255, 0.10)',
-    }}
-  >
-    {name}
-  </div>
-);
-
 const Defer = ({ captureItem }: Props) => {
   const [title, setTitle] = useState(captureItem.value);
   const navigate = useNavigate();
@@ -77,7 +64,9 @@ const Defer = ({ captureItem }: Props) => {
         }}
       >
         {tags.map((tag) => (
-          <Tag key={tag} name={tag} />
+          <Button className="ProcessDefer__Tag" key={tag}>
+            {tag}
+          </Button>
         ))}
       </section>
       <ButtonGroup className="ProcessDefer__Buttons">
