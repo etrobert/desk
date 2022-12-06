@@ -19,7 +19,7 @@ const TagInput = ({ onNewTag }: Props) => {
       }}
       onChange={(event) => setNewTag(event.target.value)}
       value={newTag}
-      id="tags"
+      id="new-tag"
     />
   );
 };

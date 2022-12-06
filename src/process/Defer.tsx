@@ -48,7 +48,7 @@ const Defer = ({ captureItem }: Props) => {
         value={title}
         onChange={(event) => setTitle(event.target.value)}
       />
-      <label className="ProcessDefer__Label" htmlFor="tags">
+      <label className="ProcessDefer__Label" htmlFor="new-tag">
         Add Tag:
       </label>
       <TagInput onNewTag={addTag} />
