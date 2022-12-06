@@ -8,14 +8,7 @@ type Props = {
 };
 
 const TagList = ({ tags, onTagClick }: Props) => (
-  <ul
-    style={{
-      display: 'grid',
-      gridAutoFlow: 'column',
-      gap: '1rem',
-      justifyContent: 'start',
-    }}
-  >
+  <ul className="TagList">
     {tags.map((tag) => (
       <li key={tag}>
         <Button className="TagList__Tag" onClick={() => onTagClick(tag)}>
