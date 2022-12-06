@@ -3,4 +3,12 @@
   gap: 0.5rem;
   overflow: auto;
   padding-bottom: 0.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  max-width: 45rem;
+}
+
+.TaskList__Task {
+  display: grid;
+  text-align: start;
 }
