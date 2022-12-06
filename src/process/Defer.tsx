@@ -12,6 +12,7 @@ import useDeleteLatestCaptureItem from '../data/capture-items/useDeleteLatestCap
 import useAddTask from '../data/tasks/useAddTask';
 
 import TagInput from './TagInput';
+import TagList from './TagList';
 
 import type { CaptureItem } from '../types';
 
@@ -47,29 +48,12 @@ const Defer = ({ captureItem }: Props) => {
         value={title}
         onChange={(event) => setTitle(event.target.value)}
       />
-      <label className="ProcessDefer__Label" htmlFor="tags">
+      <label className="ProcessDefer__Label" htmlFor="new-tag">
         Add Tag:
       </label>
       <TagInput onNewTag={addTag} />
       <label className="ProcessDefer__Label">Tags:</label>
-      <section
-        style={{
-          display: 'grid',
-          gridAutoFlow: 'column',
-          gap: '1rem',
-          justifyContent: 'start',
-        }}
-      >
-        {tags.map((tag) => (
-          <Button
-            className="ProcessDefer__Tag"
-            key={tag}
-            onClick={() => removeTag(tag)}
-          >
-            {tag}
-          </Button>
-        ))}
-      </section>
+      <TagList tags={tags} onTagClick={removeTag} />
       <ButtonGroup className="ProcessDefer__Buttons">
         <Button type="submit">Defer</Button>
         <BackButton>Cancel</BackButton>

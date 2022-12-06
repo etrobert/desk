@@ -3,7 +3,11 @@ import TextInput from '../components/TextInput';
 
 const existingTags = ['Work', 'Personal', 'Errands', 'Chores'];
 
-const TagInput = ({ onNewTag }: { onNewTag: (tag: string) => void }) => {
+type Props = {
+  onNewTag: (tag: string) => void;
+};
+
+const TagInput = ({ onNewTag }: Props) => {
   const [newTag, setNewTag] = useState('');
 
   return (
@@ -18,8 +22,7 @@ const TagInput = ({ onNewTag }: { onNewTag: (tag: string) => void }) => {
         }}
         onChange={(event) => setNewTag(event.target.value)}
         value={newTag}
-        list="existing-tags"
-        id="tags"
+        id="new-tag"
       />
       <datalist id="existing-tags">
         {existingTags.map((tag) => (
