@@ -5,6 +5,7 @@ import Button from '../components/Button';
 import ButtonGroup from '../components/ButtonGroup';
 import BackButton from '../components/BackButton';
 import TextInput from '../components/TextInput';
+import TagList from '../components/TagList';
 
 import useTags from '../hooks/useTags';
 
@@ -12,7 +13,6 @@ import useDeleteLatestCaptureItem from '../data/capture-items/useDeleteLatestCap
 import useAddTask from '../data/tasks/useAddTask';
 
 import TagInput from './TagInput';
-import TagList from './TagList';
 
 import type { CaptureItem } from '../types';
 

@@ -11,4 +11,7 @@
 .TaskList__Task {
   display: grid;
   text-align: start;
+  grid-template-columns: 1fr auto;
+  align-items: baseline;
+  gap: 0.5rem;
 }
