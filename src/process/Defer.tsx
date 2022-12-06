@@ -52,7 +52,7 @@ const Defer = ({ captureItem }: Props) => {
       </label>
       <TagInput onNewTag={addTag} />
       <label className="ProcessDefer__Label">Tags:</label>
-      <section
+      <ul
         style={{
           display: 'grid',
           gridAutoFlow: 'column',
@@ -61,15 +61,16 @@ const Defer = ({ captureItem }: Props) => {
         }}
       >
         {tags.map((tag) => (
-          <Button
-            className="ProcessDefer__Tag"
-            key={tag}
-            onClick={() => removeTag(tag)}
-          >
-            {tag}
-          </Button>
+          <li key={tag}>
+            <Button
+              className="ProcessDefer__Tag"
+              onClick={() => removeTag(tag)}
+            >
+              {tag}
+            </Button>
+          </li>
         ))}
-      </section>
+      </ul>
       <ButtonGroup className="ProcessDefer__Buttons">
         <Button type="submit">Defer</Button>
         <BackButton>Cancel</BackButton>
