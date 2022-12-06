@@ -6,8 +6,13 @@ import ButtonGroup from '../components/ButtonGroup';
 import BackButton from '../components/BackButton';
 import TextInput from '../components/TextInput';
 
+import useTags from '../hooks/useTags';
+
 import useDeleteLatestCaptureItem from '../data/capture-items/useDeleteLatestCaptureItem';
 import useAddTask from '../data/tasks/useAddTask';
+
+import TagInput from './TagInput';
+import TagList from './TagList';
 
 import type { CaptureItem } from '../types';
 
@@ -22,6 +27,7 @@ const Defer = ({ captureItem }: Props) => {
   const navigate = useNavigate();
   const deleteLatestCaptureItem = useDeleteLatestCaptureItem();
   const addTask = useAddTask();
+  const { tags, addTag, removeTag } = useTags();
 
   return (
     <form
@@ -29,7 +35,7 @@ const Defer = ({ captureItem }: Props) => {
       onSubmit={(event) => {
         event.preventDefault();
         if (title === '') return;
-        addTask({ title });
+        addTask({ title, tags });
         deleteLatestCaptureItem();
         navigate(-1);
       }}
@@ -42,6 +48,12 @@ const Defer = ({ captureItem }: Props) => {
         value={title}
         onChange={(event) => setTitle(event.target.value)}
       />
+      <label className="ProcessDefer__Label" htmlFor="new-tag">
+        Add Tag:
+      </label>
+      <TagInput onNewTag={addTag} />
+      <label className="ProcessDefer__Label">Tags:</label>
+      <TagList tags={tags} onTagClick={removeTag} />
       <ButtonGroup className="ProcessDefer__Buttons">
         <Button type="submit">Defer</Button>
         <BackButton>Cancel</BackButton>
