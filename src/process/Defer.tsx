@@ -12,6 +12,7 @@ import useDeleteLatestCaptureItem from '../data/capture-items/useDeleteLatestCap
 import useAddTask from '../data/tasks/useAddTask';
 
 import TagInput from './TagInput';
+import TagList from './TagList';
 
 import type { CaptureItem } from '../types';
 
@@ -52,25 +53,7 @@ const Defer = ({ captureItem }: Props) => {
       </label>
       <TagInput onNewTag={addTag} />
       <label className="ProcessDefer__Label">Tags:</label>
-      <ul
-        style={{
-          display: 'grid',
-          gridAutoFlow: 'column',
-          gap: '1rem',
-          justifyContent: 'start',
-        }}
-      >
-        {tags.map((tag) => (
-          <li key={tag}>
-            <Button
-              className="ProcessDefer__Tag"
-              onClick={() => removeTag(tag)}
-            >
-              {tag}
-            </Button>
-          </li>
-        ))}
-      </ul>
+      <TagList tags={tags} onTagClick={removeTag} />
       <ButtonGroup className="ProcessDefer__Buttons">
         <Button type="submit">Defer</Button>
         <BackButton>Cancel</BackButton>
