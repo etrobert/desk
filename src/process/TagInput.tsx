@@ -1,7 +1,11 @@
 import { useState } from 'react';
 import TextInput from '../components/TextInput';
 
-const TagInput = ({ onNewTag }: { onNewTag: (tag: string) => void }) => {
+type Props = {
+  onNewTag: (tag: string) => void;
+};
+
+const TagInput = ({ onNewTag }: Props) => {
   const [newTag, setNewTag] = useState('');
 
   return (
