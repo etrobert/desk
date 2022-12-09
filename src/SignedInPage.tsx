@@ -2,6 +2,7 @@ import { Route, Routes } from 'react-router';
 
 import { CaptureItemsContextProvider } from './data/capture-items/CaptureItemsContext';
 import { TasksContextProvider } from './data/tasks/TasksContext';
+import { TasksFiltersContextProvider } from './data/tasks/TasksFiltersContext';
 import Capture from './Capture';
 import Menu from './Menu';
 import Process from './process';
@@ -13,17 +14,19 @@ import UserEmail from './UserEmail';
 function SignedInPage() {
   return (
     <CaptureItemsContextProvider>
-      <TasksContextProvider>
-        <HomeButton />
-        <LogOutButton />
-        <UserEmail />
-        <Routes>
-          <Route path="capture" element={<Capture />} />
-          <Route path="process/*" element={<Process />} />
-          <Route path="engage/*" element={<Engage />} />
-          <Route path="*" element={<Menu />} />
-        </Routes>
-      </TasksContextProvider>
+      <TasksFiltersContextProvider>
+        <TasksContextProvider>
+          <HomeButton />
+          <LogOutButton />
+          <UserEmail />
+          <Routes>
+            <Route path="capture" element={<Capture />} />
+            <Route path="process/*" element={<Process />} />
+            <Route path="engage/*" element={<Engage />} />
+            <Route path="*" element={<Menu />} />
+          </Routes>
+        </TasksContextProvider>
+      </TasksFiltersContextProvider>
     </CaptureItemsContextProvider>
   );
 }

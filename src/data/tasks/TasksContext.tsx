@@ -1,7 +1,7 @@
-import { where } from 'firebase/firestore';
 import { createContext, ReactNode, useMemo } from 'react';
 import { Task } from '../../types';
 import useUserCollection from '../useUserCollection';
+import useQueryConstraints from './useQueryConstraints';
 
 const TasksContext = createContext<Task[] | null>(null);
 
@@ -10,9 +10,9 @@ type Props = {
 };
 
 const path = ['tasks'];
-const queryConstraints = [where('status', '!=', 'done')];
 
 function TasksContextProvider({ children }: Props) {
+  const queryConstraints = useQueryConstraints();
   const tasks = useUserCollection<Task>(path, queryConstraints);
 
   const sortedTasks = useMemo(
