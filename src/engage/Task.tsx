@@ -1,9 +1,10 @@
-import { Navigate, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 
 import BackButton from '../components/BackButton';
 import Button from '../components/Button';
 import ButtonGroup from '../components/ButtonGroup';
 import TagList from '../components/TagList';
+import NavigateBack from '../components/NavigateBack';
 
 import useUpdateTask from '../data/tasks/useUpdateTask';
 import useDeleteTask from '../data/tasks/useDeleteTask';
@@ -17,7 +18,7 @@ const Task = () => {
   const updateTask = useUpdateTask();
   const deleteTask = useDeleteTask();
 
-  if (id === undefined || task === undefined) return <Navigate to=".." />;
+  if (id === undefined || task === undefined) return <NavigateBack />;
   if (task === null) return <>Loading...</>;
 
   const { title, tags } = task;
