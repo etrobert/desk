@@ -1,0 +1,8 @@
+.Task__title {
+  margin: 0;
+}
+
+.Task__content {
+  display: grid;
+  gap: 1rem;
+}
