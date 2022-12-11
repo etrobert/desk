@@ -9,15 +9,17 @@ import BackButton from './BackButton';
 
 import useTags from '../hooks/useTags';
 
+import type { Task } from '../types';
+
 import './TaskEdit.css';
 
-type Props = {
-  task: { title: string };
-  onSubmit: (task: { title: string; tags: string[] }) => void;
+type Props<T extends Partial<Task>> = {
+  task: T;
+  onSubmit: (task: T & { title: string; tags: string[] }) => void;
 };
 
-const TaskEdit = ({ task, onSubmit }: Props) => {
-  const [title, setTitle] = useState(task.title);
+const TaskEdit = <T extends Partial<Task>>({ task, onSubmit }: Props<T>) => {
+  const [title, setTitle] = useState(task.title ?? '');
   const { tags, addTag, removeTag } = useTags();
 
   return (
