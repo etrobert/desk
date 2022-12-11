@@ -7,8 +7,6 @@ import useAddTask from '../data/tasks/useAddTask';
 
 import type { CaptureItem } from '../types';
 
-import './Defer.css';
-
 type Props = {
   captureItem: CaptureItem;
 };

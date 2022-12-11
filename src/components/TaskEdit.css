@@ -1,15 +1,15 @@
-.ProcessDefer__Form {
+.TaskEdit__Form {
   display: grid;
   grid-template-columns: auto 1fr;
   gap: 1rem;
   align-items: baseline;
 }
 
-.ProcessDefer__Label {
+.TaskEdit__Label {
   justify-self: end;
 }
 
-.ProcessDefer__Buttons {
+.TaskEdit__Buttons {
   grid-column-start: 1;
   grid-column-end: -1;
 }

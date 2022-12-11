@@ -9,6 +9,8 @@ import BackButton from './BackButton';
 
 import useTags from '../hooks/useTags';
 
+import './TaskEdit.css';
+
 type Props = {
   task: { title: string };
   onSubmit: (task: { title: string; tags: string[] }) => void;
@@ -20,14 +22,14 @@ const TaskEdit = ({ task, onSubmit }: Props) => {
 
   return (
     <form
-      className="ProcessDefer__Form"
+      className="TaskEdit__Form"
       onSubmit={(event) => {
         event.preventDefault();
         if (title === '') return;
         onSubmit({ ...task, title, tags });
       }}
     >
-      <label className="ProcessDefer__Label" htmlFor="title">
+      <label className="TaskEdit__Label" htmlFor="title">
         Title:
       </label>
       <TextInput
@@ -35,13 +37,13 @@ const TaskEdit = ({ task, onSubmit }: Props) => {
         value={title}
         onChange={(event) => setTitle(event.target.value)}
       />
-      <label className="ProcessDefer__Label" htmlFor="new-tag">
+      <label className="TaskEdit__Label" htmlFor="new-tag">
         Add Tag:
       </label>
       <TagInput onNewTag={addTag} />
-      <label className="ProcessDefer__Label">Tags:</label>
+      <label className="TaskEdit__Label">Tags:</label>
       <TagList tags={tags} onTagClick={removeTag} />
-      <ButtonGroup className="ProcessDefer__Buttons">
+      <ButtonGroup className="TaskEdit__Buttons">
         <Button type="submit">Defer</Button>
         <BackButton>Cancel</BackButton>
       </ButtonGroup>
