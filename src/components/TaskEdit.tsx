@@ -44,7 +44,7 @@ const TaskEdit = ({ task, onSubmit }: Props) => {
       <label className="TaskEdit__Label">Tags:</label>
       <TagList tags={tags} onTagClick={removeTag} />
       <ButtonGroup className="TaskEdit__Buttons">
-        <Button type="submit">Defer</Button>
+        <Button type="submit">Confirm</Button>
         <BackButton>Cancel</BackButton>
       </ButtonGroup>
     </form>
