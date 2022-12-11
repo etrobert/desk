@@ -2,6 +2,7 @@ import { Navigate, useParams } from 'react-router-dom';
 
 import BackButton from '../components/BackButton';
 import Button from '../components/Button';
+import ButtonLink from '../components/ButtonLink';
 import ButtonGroup from '../components/ButtonGroup';
 import TagList from '../components/TagList';
 
@@ -31,6 +32,7 @@ const Task = () => {
           <Button onClick={() => updateTask({ ...task, status: 'done' })}>
             Done
           </Button>
+          <ButtonLink to={'edit'}>Edit</ButtonLink>
           <Button onClick={() => deleteTask(id)}>Delete</Button>
           <BackButton>Back</BackButton>
         </ButtonGroup>
