@@ -1,10 +1,10 @@
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import ButtonLink from '../components/ButtonLink';
-import TagList from '../components/TagList';
-import useTasks from '../data/tasks/useTasks';
+import ButtonLink from '../../components/ButtonLink';
+import TagList from '../../components/TagList';
+import useTasks from '../../data/tasks/useTasks';
 
-import type { Task } from '../types';
+import type { Task } from '../../types';
 
 import './TaskList.css';
 

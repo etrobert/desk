@@ -1,7 +1,7 @@
 import { Route, Routes } from 'react-router';
 
 import Task from '../../engage/Task';
-import TaskList from '../../engage/TaskList';
+import EngagePage from './page';
 import EngageTaskEdit from '../../engage/EngageTaskEdit';
 
 const EngageLayout = () => (
@@ -10,7 +10,7 @@ const EngageLayout = () => (
     <Routes>
       <Route path="/:id/edit" element={<EngageTaskEdit />} />
       <Route path="/:id" element={<Task />} />
-      <Route index element={<TaskList />} />
+      <Route index element={<EngagePage />} />
     </Routes>
   </>
 );
