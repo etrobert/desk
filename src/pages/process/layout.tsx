@@ -1,13 +1,13 @@
 import { useEffect } from 'react';
 import { Route, Routes, useNavigate } from 'react-router';
 
-import Actions from './Actions';
-import Delegate from './Delegate';
-import Do from './Do';
-import Incubate from './Incubate';
-import Defer from './Defer';
+import Actions from '../../process/Actions';
+import Delegate from '../../process/Delegate';
+import Do from '../../process/Do';
+import Incubate from '../../process/Incubate';
+import Defer from '../../process/Defer';
 
-import useLatestCaptureItem from '../data/capture-items/useLatestCaptureItem';
+import useLatestCaptureItem from '../../data/capture-items/useLatestCaptureItem';
 
 const Process = () => {
   const { isLoading, latestCaptureItem } = useLatestCaptureItem();
