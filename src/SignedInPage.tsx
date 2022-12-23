@@ -4,9 +4,9 @@ import { CaptureItemsContextProvider } from './data/capture-items/CaptureItemsCo
 import { TasksContextProvider } from './data/tasks/TasksContext';
 import { TasksFiltersContextProvider } from './data/tasks/TasksFiltersContext';
 import Capture from './pages/capture/page';
+import Engage from './pages/engage/layout';
 import Menu from './Menu';
 import Process from './process';
-import Engage from './engage';
 import HomeButton from './HomeButton';
 import LogOutButton from './LogOutButton';
 import UserEmail from './UserEmail';
