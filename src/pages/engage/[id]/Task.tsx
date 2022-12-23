@@ -1,24 +1,27 @@
 import { Navigate, useParams } from 'react-router-dom';
 
-import BackButton from '../components/BackButton';
-import Button from '../components/Button';
-import ButtonLink from '../components/ButtonLink';
-import ButtonGroup from '../components/ButtonGroup';
-import TagList from '../components/TagList';
+import BackButton from '../../../components/BackButton';
+import Button from '../../../components/Button';
+import ButtonLink from '../../../components/ButtonLink';
+import ButtonGroup from '../../../components/ButtonGroup';
+import TagList from '../../../components/TagList';
 
-import useUpdateTask from '../data/tasks/useUpdateTask';
-import useDeleteTask from '../data/tasks/useDeleteTask';
-import useTask from '../data/tasks/useTask';
+import useUpdateTask from '../../../data/tasks/useUpdateTask';
+import useDeleteTask from '../../../data/tasks/useDeleteTask';
+import useTask from '../../../data/tasks/useTask';
 
 import './Task.css';
 
-const Task = () => {
-  const { id } = useParams<'id'>();
+type Props = {
+  id: string;
+};
+
+const Task = ({ id }: Props) => {
   const task = useTask(id);
   const updateTask = useUpdateTask();
   const deleteTask = useDeleteTask();
 
-  if (id === undefined || task === undefined) return <Navigate to=".." />;
+  if (task === undefined) return <Navigate to=".." />;
   if (task === null) return <>Loading...</>;
 
   const { title, tags } = task;
