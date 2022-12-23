@@ -3,7 +3,7 @@ import { Route, Routes } from 'react-router';
 import { CaptureItemsContextProvider } from './data/capture-items/CaptureItemsContext';
 import { TasksContextProvider } from './data/tasks/TasksContext';
 import { TasksFiltersContextProvider } from './data/tasks/TasksFiltersContext';
-import Capture from './Capture';
+import Capture from './pages/capture/page';
 import Menu from './Menu';
 import Process from './process';
 import Engage from './engage';
