@@ -7,9 +7,9 @@ import Capture from './capture/page';
 import Engage from './engage/layout';
 import Process from './process/layout';
 import Menu from '../Menu';
-import HomeButton from '../HomeButton';
-import LogOutButton from '../LogOutButton';
-import UserEmail from '../UserEmail';
+import HomeButton from './HomeButton';
+import LogOutButton from './LogOutButton';
+import UserEmail from './UserEmail';
 
 function SignedInLayout() {
   return (
