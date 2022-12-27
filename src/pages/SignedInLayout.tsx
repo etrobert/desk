@@ -6,7 +6,7 @@ import { TasksFiltersContextProvider } from '../data/tasks/TasksFiltersContext';
 import Capture from './capture/page';
 import Engage from './engage/layout';
 import Process from './process/layout';
-import Menu from '../Menu';
+import Menu from './page';
 import HomeButton from './HomeButton';
 import LogOutButton from './LogOutButton';
 import UserEmail from './UserEmail';
