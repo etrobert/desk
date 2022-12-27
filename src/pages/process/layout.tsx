@@ -5,7 +5,7 @@ import Actions from './page';
 import Delegate from '../../process/Delegate';
 import Do from './do/page';
 import Incubate from '../../process/Incubate';
-import Defer from '../../process/Defer';
+import Defer from './defer/page';
 
 import useLatestCaptureItem from '../../data/capture-items/useLatestCaptureItem';
 
