@@ -1,17 +1,17 @@
 import { Route, Routes } from 'react-router';
 
-import { CaptureItemsContextProvider } from './data/capture-items/CaptureItemsContext';
-import { TasksContextProvider } from './data/tasks/TasksContext';
-import { TasksFiltersContextProvider } from './data/tasks/TasksFiltersContext';
-import Capture from './pages/capture/page';
-import Engage from './pages/engage/layout';
-import Process from './pages/process/layout';
-import Menu from './Menu';
-import HomeButton from './HomeButton';
-import LogOutButton from './LogOutButton';
-import UserEmail from './UserEmail';
+import { CaptureItemsContextProvider } from '../data/capture-items/CaptureItemsContext';
+import { TasksContextProvider } from '../data/tasks/TasksContext';
+import { TasksFiltersContextProvider } from '../data/tasks/TasksFiltersContext';
+import Capture from './capture/page';
+import Engage from './engage/layout';
+import Process from './process/layout';
+import Menu from '../Menu';
+import HomeButton from '../HomeButton';
+import LogOutButton from '../LogOutButton';
+import UserEmail from '../UserEmail';
 
-function SignedInPage() {
+function SignedInLayout() {
   return (
     <CaptureItemsContextProvider>
       <TasksFiltersContextProvider>
@@ -31,4 +31,4 @@ function SignedInPage() {
   );
 }
 
-export default SignedInPage;
+export default SignedInLayout;

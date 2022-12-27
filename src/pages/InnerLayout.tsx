@@ -1,6 +1,6 @@
 import useAuth from '../useAuth';
 import SignInPage from '../SignInPage';
-import SignedInPage from '../SignedInPage';
+import SignedInLayout from './SignedInLayout';
 
 function InnerLayout() {
   const { initialized, user } = useAuth();
@@ -8,7 +8,7 @@ function InnerLayout() {
   if (!initialized) return <>Loading...</>;
   if (initialized && user === null) return <SignInPage />;
 
-  return <SignedInPage />;
+  return <SignedInLayout />;
 }
 
 export default InnerLayout;
