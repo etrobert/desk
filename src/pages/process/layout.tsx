@@ -4,7 +4,6 @@ import { Route, Routes, useNavigate } from 'react-router';
 import Actions from './page';
 import Delegate from '../../process/Delegate';
 import Do from './do/page';
-import Incubate from '../../process/Incubate';
 import Defer from './defer/page';
 
 import useLatestCaptureItem from '../../data/capture-items/useLatestCaptureItem';
@@ -28,7 +27,6 @@ const Process = () => {
       <Routes>
         <Route index element={<Actions />} />
         <Route path="do" element={<Do />} />
-        <Route path="incubate" element={<Incubate />} />
         <Route path="delegate" element={<Delegate />} />
         <Route
           path="defer"
