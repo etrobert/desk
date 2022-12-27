@@ -1,4 +1,4 @@
-import useCountdown from '../hooks/useCountdown';
+import useCountdown from '../../../hooks/useCountdown';
 
 const formatNumber = (num: number) =>
   Math.floor(num).toString().padStart(2, '0');

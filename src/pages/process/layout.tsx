@@ -3,7 +3,7 @@ import { Route, Routes, useNavigate } from 'react-router';
 
 import Actions from '../../process/Actions';
 import Delegate from '../../process/Delegate';
-import Do from '../../process/Do';
+import Do from './do/page';
 import Incubate from '../../process/Incubate';
 import Defer from '../../process/Defer';
 
