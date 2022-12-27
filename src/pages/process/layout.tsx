@@ -2,7 +2,6 @@ import { useEffect } from 'react';
 import { Route, Routes, useNavigate } from 'react-router';
 
 import Actions from './page';
-import Delegate from '../../process/Delegate';
 import Do from './do/page';
 import Defer from './defer/page';
 
@@ -27,7 +26,6 @@ const Process = () => {
       <Routes>
         <Route index element={<Actions />} />
         <Route path="do" element={<Do />} />
-        <Route path="delegate" element={<Delegate />} />
         <Route
           path="defer"
           element={<Defer captureItem={latestCaptureItem} />}
