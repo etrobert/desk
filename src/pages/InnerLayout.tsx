@@ -1,5 +1,5 @@
 import useAuth from '../useAuth';
-import SignInPage from '../SignInPage';
+import SignInPage from './SignInPage';
 import SignedInLayout from './SignedInLayout';
 
 function InnerLayout() {
