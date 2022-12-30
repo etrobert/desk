@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
 
-import AppLayout from './pages/layout';
+import AppLayout from './app/layout';
 
 import './index.css';
 
