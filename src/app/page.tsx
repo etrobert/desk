@@ -1,8 +1,8 @@
-import Button from './components/Button';
-import ButtonGroup from './components/ButtonGroup';
-import ButtonLink from './components/ButtonLink';
-import useCaptureItemsCount from './data/capture-items/useCaptureItemsCount';
-import useTasks from './data/tasks/useTasks';
+import Button from '../components/Button';
+import ButtonGroup from '../components/ButtonGroup';
+import ButtonLink from '../components/ButtonLink';
+import useCaptureItemsCount from '../data/capture-items/useCaptureItemsCount';
+import useTasks from '../data/tasks/useTasks';
 
 const Menu = () => {
   const itemsCount = useCaptureItemsCount();

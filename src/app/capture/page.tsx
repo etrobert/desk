@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
-import Button from './components/Button';
-import TextInput from './components/TextInput';
-import useCaptureItemsCount from './data/capture-items/useCaptureItemsCount';
-import useAddCaptureItem from './data/capture-items/useAddCaptureItem';
+import Button from '../../components/Button';
+import TextInput from '../../components/TextInput';
+import useCaptureItemsCount from '../../data/capture-items/useCaptureItemsCount';
+import useAddCaptureItem from '../../data/capture-items/useAddCaptureItem';
 
-import './Capture.css';
+import './page.css';
 
 const Capture = () => {
   const [item, setItem] = useState('');

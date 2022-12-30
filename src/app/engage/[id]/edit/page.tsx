@@ -1,11 +1,11 @@
 import { Navigate, useNavigate, useParams } from 'react-router-dom';
 
-import TaskEdit from '../components/TaskEdit';
+import TaskEdit from '../../../../components/TaskEdit';
 
-import useTask from '../data/tasks/useTask';
-import useUpdateTask from '../data/tasks/useUpdateTask';
+import useTask from '../../../../data/tasks/useTask';
+import useUpdateTask from '../../../../data/tasks/useUpdateTask';
 
-const EngageTaskEdit = () => {
+const TaskEditPage = () => {
   const { id } = useParams<'id'>();
   const task = useTask(id);
   const updateTask = useUpdateTask();
@@ -25,4 +25,4 @@ const EngageTaskEdit = () => {
   );
 };
 
-export default EngageTaskEdit;
+export default TaskEditPage;

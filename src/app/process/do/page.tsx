@@ -1,8 +1,8 @@
-import Button from '../components/Button';
-import ButtonGroup from '../components/ButtonGroup';
-import BackButton from '../components/BackButton';
+import Button from '../../../components/Button';
+import ButtonGroup from '../../../components/ButtonGroup';
+import BackButton from '../../../components/BackButton';
 import Countdown from './Countdown';
-import useDeleteLatestCaptureItem from '../data/capture-items/useDeleteLatestCaptureItem';
+import useDeleteLatestCaptureItem from '../../../data/capture-items/useDeleteLatestCaptureItem';
 import { useNavigate } from 'react-router';
 
 const Do = () => {

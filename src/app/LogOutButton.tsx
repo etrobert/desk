@@ -1,7 +1,7 @@
 import { signOut } from 'firebase/auth';
 
-import Button from './components/Button';
-import { auth } from './firebase';
+import Button from '../components/Button';
+import { auth } from '../firebase';
 
 import './LogOutButton.css';
 

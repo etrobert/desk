@@ -1,15 +1,14 @@
-import useAuth from './useAuth';
+import useAuth from '../useAuth';
 import SignInPage from './SignInPage';
+import SignedInLayout from './SignedInLayout';
 
-import SignedInPage from './SignedInPage';
-
-function LandingPage() {
+function InnerLayout() {
   const { initialized, user } = useAuth();
 
   if (!initialized) return <>Loading...</>;
   if (initialized && user === null) return <SignInPage />;
 
-  return <SignedInPage />;
+  return <SignedInLayout />;
 }
 
-export default LandingPage;
+export default InnerLayout;

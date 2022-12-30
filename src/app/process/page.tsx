@@ -1,7 +1,7 @@
-import ButtonGroup from '../components/ButtonGroup';
-import Button from '../components/Button';
-import ButtonLink from '../components/ButtonLink';
-import useDeleteLatestCaptureItem from '../data/capture-items/useDeleteLatestCaptureItem';
+import ButtonGroup from '../../components/ButtonGroup';
+import Button from '../../components/Button';
+import ButtonLink from '../../components/ButtonLink';
+import useDeleteLatestCaptureItem from '../../data/capture-items/useDeleteLatestCaptureItem';
 
 const Actions = () => {
   const deleteLatestCaptureItem = useDeleteLatestCaptureItem();

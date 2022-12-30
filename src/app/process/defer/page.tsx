@@ -1,11 +1,11 @@
 import { useNavigate } from 'react-router-dom';
 
-import TaskEdit from '../components/TaskEdit';
+import TaskEdit from '../../../components/TaskEdit';
 
-import useDeleteLatestCaptureItem from '../data/capture-items/useDeleteLatestCaptureItem';
-import useAddTask from '../data/tasks/useAddTask';
+import useDeleteLatestCaptureItem from '../../../data/capture-items/useDeleteLatestCaptureItem';
+import useAddTask from '../../../data/tasks/useAddTask';
 
-import type { CaptureItem } from '../types';
+import type { CaptureItem } from '../../../types';
 
 type Props = {
   captureItem: CaptureItem;

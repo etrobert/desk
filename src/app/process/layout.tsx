@@ -1,13 +1,11 @@
 import { useEffect } from 'react';
 import { Route, Routes, useNavigate } from 'react-router';
 
-import Actions from './Actions';
-import Delegate from './Delegate';
-import Do from './Do';
-import Incubate from './Incubate';
-import Defer from './Defer';
+import Actions from './page';
+import Do from './do/page';
+import Defer from './defer/page';
 
-import useLatestCaptureItem from '../data/capture-items/useLatestCaptureItem';
+import useLatestCaptureItem from '../../data/capture-items/useLatestCaptureItem';
 
 const Process = () => {
   const { isLoading, latestCaptureItem } = useLatestCaptureItem();
@@ -28,8 +26,6 @@ const Process = () => {
       <Routes>
         <Route index element={<Actions />} />
         <Route path="do" element={<Do />} />
-        <Route path="incubate" element={<Incubate />} />
-        <Route path="delegate" element={<Delegate />} />
         <Route
           path="defer"
           element={<Defer captureItem={latestCaptureItem} />}
