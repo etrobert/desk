@@ -15,6 +15,7 @@ type Task = {
   title: string;
   tags: string[];
   status: Status;
+  dependencies?: string[]; // TODO Make dependencies non-optional
   createdAt: Timestamp | null;
 };
 

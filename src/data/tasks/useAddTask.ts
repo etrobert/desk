@@ -17,6 +17,7 @@ const useAddTask = () => {
         // serverTimestamp is not typed correctly in the firebase package
         createdAt: serverTimestamp() as Timestamp,
         status: 'not started',
+        dependencies: [],
       };
       // Add a new document with a generated id.
       await addDoc(collection(firestore, ...userPath, 'tasks'), newTask);
