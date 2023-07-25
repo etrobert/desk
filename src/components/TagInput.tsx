@@ -6,9 +6,11 @@ type Props = {
   onNewTag: (tag: string) => void;
 };
 
-function ExistingTags() {
-  const existingTags = useExistingTags();
+type ExistingTagsProps = {
+  existingTags: ReturnType<typeof useExistingTags>;
+};
 
+function ExistingTags({ existingTags }: ExistingTagsProps) {
   return (
     <datalist id="existing-tags">
       {existingTags?.map((tag) => (
@@ -20,6 +22,7 @@ function ExistingTags() {
 
 const TagInput = ({ onNewTag }: Props) => {
   const [newTag, setNewTag] = useState('');
+  const existingTags = useExistingTags();
 
   return (
     <>
@@ -31,12 +34,20 @@ const TagInput = ({ onNewTag }: Props) => {
           onNewTag(newTag);
           setNewTag('');
         }}
-        onChange={(event) => setNewTag(event.target.value)}
+        onChange={(event) => {
+          const { value } = event.target;
+          if (existingTags?.some((tag) => tag === value)) {
+            onNewTag(value);
+            setNewTag('');
+            return;
+          }
+          setNewTag(value);
+        }}
         value={newTag}
         id="new-tag"
         list="existing-tags"
       />
-      <ExistingTags />
+      <ExistingTags existingTags={existingTags} />
     </>
   );
 };
