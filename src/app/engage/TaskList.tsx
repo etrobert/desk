@@ -1,8 +1,10 @@
-import { useEffect } from 'react';
+import { useContext, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import ButtonLink from '../../components/ButtonLink';
 import TagList from '../../components/TagList';
+import Button from '../../components/Button';
 import useTasks from '../../data/tasks/useTasks';
+import { TasksFiltersContext } from '../../data/tasks/TasksFiltersContext';
 
 import type { Task } from '../../types';
 
@@ -32,17 +34,22 @@ const TaskList = () => {
   const tasks = useTasks();
   const navigate = useNavigate();
 
+  const { toggleShowDoneTasks } = useContext(TasksFiltersContext);
+
   useEffect(() => {
     if (tasks?.length === 0) navigate('/');
   }, [navigate, tasks]);
 
   if (tasks === null) return <>Loading...</>;
   return (
-    <ul className="TaskList">
-      {tasks.map((task) => (
-        <TaskListItem key={task.id} task={task} />
-      ))}
-    </ul>
+    <>
+      <Button onClick={toggleShowDoneTasks}>Show Done Tasks</Button>
+      <ul className="TaskList">
+        {tasks.map((task) => (
+          <TaskListItem key={task.id} task={task} />
+        ))}
+      </ul>
+    </>
   );
 };
 

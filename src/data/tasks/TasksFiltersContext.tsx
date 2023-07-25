@@ -1,16 +1,16 @@
-import { createContext, ReactNode, useState } from 'react';
+import { createContext, ReactNode, useCallback, useState } from 'react';
 
 type Data = {
   showDoneTasks: boolean;
-  setShowDoneTasks: React.Dispatch<React.SetStateAction<boolean>>;
+  toggleShowDoneTasks: () => void;
 };
 
 const TasksFiltersContext = createContext<Data>({
   get showDoneTasks(): boolean {
     throw new Error('TasksFiltersContext not initialized');
   },
-  get setShowDoneTasks(): React.Dispatch<React.SetStateAction<boolean>> {
-    throw new Error('TasksFiltersContext not initialized');
+  get toggleShowDoneTasks(): never {
+    throw new Error('TaskFiltersContext not initialized');
   },
 });
 
@@ -21,8 +21,15 @@ type Props = {
 function TasksFiltersContextProvider({ children }: Props) {
   const [showDoneTasks, setShowDoneTasks] = useState(true);
 
+  const toggleShowDoneTasks = useCallback(
+    () => setShowDoneTasks((value) => !value),
+    []
+  );
+
   return (
-    <TasksFiltersContext.Provider value={{ showDoneTasks, setShowDoneTasks }}>
+    <TasksFiltersContext.Provider
+      value={{ showDoneTasks, toggleShowDoneTasks }}
+    >
       {children}
     </TasksFiltersContext.Provider>
   );
