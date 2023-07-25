@@ -19,7 +19,7 @@ type Props = {
 };
 
 function TasksFiltersContextProvider({ children }: Props) {
-  const [showDoneTasks, setShowDoneTasks] = useState(true);
+  const [showDoneTasks, setShowDoneTasks] = useState(false);
 
   const toggleShowDoneTasks = useCallback(
     () => setShowDoneTasks((value) => !value),
