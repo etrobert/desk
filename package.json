@@ -4,7 +4,7 @@
   "private": true,
   "homepage": "https://etrobert.github.io/desk",
   "dependencies": {
-    "firebase": "^9.15.0",
+    "firebase": "^10.8.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router": "^6.4.5",
