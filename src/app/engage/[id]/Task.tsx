@@ -1,4 +1,4 @@
-import { Navigate, useParams } from 'react-router-dom';
+import { Navigate } from 'react-router-dom';
 
 import BackButton from '../../../components/BackButton';
 import Button from '../../../components/Button';
