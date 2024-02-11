@@ -1,6 +1,8 @@
 import * as d3 from 'd3';
 import { useRef, useEffect } from 'react';
 
+import './D3Tree.css';
+
 const D3Tree = ({ data }) => {
   const d3Container = useRef(null);
 
@@ -28,10 +30,6 @@ const D3Tree = ({ data }) => {
         .enter()
         .append('path')
         .attr('class', 'link')
-        .attr('fill', 'none')
-        .attr('stroke', '#555')
-        .attr('stroke-opacity', 0.4)
-        .attr('stroke-width', 1.5)
         .attr(
           'd',
           d3
