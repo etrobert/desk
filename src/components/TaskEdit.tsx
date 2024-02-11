@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 import TextInput from './TextInput';
 import TagInput from './TagInput';
@@ -27,11 +27,6 @@ const TaskEdit = <T extends Partial<Task>>({ task, onSubmit }: Props<T>) => {
     add: addDependency,
     remove: removeDependency,
   } = useSet();
-
-  // TODO: Remove
-  useEffect(() => {
-    console.log(dependencies);
-  }, [dependencies]);
 
   return (
     <form
