@@ -1,3 +1,4 @@
+import type { ElementDefinition } from 'cytoscape';
 import CytoscapeComponent from 'react-cytoscapejs';
 
 const stylesheet = [
@@ -6,7 +7,8 @@ const stylesheet = [
     selector: 'node',
     style: {
       'background-color': '#666',
-      label: 'data(id)',
+      color: '#fff',
+      label: 'data(title)',
     },
   },
 
@@ -22,26 +24,11 @@ const stylesheet = [
   },
 ];
 
-const elements = [
-  {
-    // node a
-    data: { id: 'a' },
-  },
-  {
-    // node b
-    data: { id: 'b' },
-  },
-  {
-    // edge ab
-    data: { id: 'ab', source: 'a', target: 'b' },
-  },
-];
-
-const Cytoscape = () => {
+const Cytoscape = ({ elements }: { elements: ElementDefinition[] }) => {
   return (
     <CytoscapeComponent
       stylesheet={stylesheet}
-      layout={{ name: 'grid', rows: 1 }}
+      layout={{ name: 'grid', rows: 3 }}
       style={{ width: '800px', height: '800px', textAlign: 'start' }}
       elements={elements}
     />
