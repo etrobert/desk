@@ -50,8 +50,10 @@ const Task = ({ id }: Props) => {
     <>
       <div className="Task__content">
         <p className="Task__title">{title}</p>
-        <Tags tags={tags} />
-        <Dependencies dependencies={dependencies} />
+        <div className="Task__fields">
+          <Tags tags={tags} />
+          <Dependencies dependencies={dependencies} />
+        </div>
         <ButtonGroup>
           <Button onClick={() => updateTask({ ...task, status: 'done' })}>
             Done

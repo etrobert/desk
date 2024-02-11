@@ -6,3 +6,10 @@
   display: grid;
   gap: 1rem;
 }
+
+.Task__fields {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1rem;
+  align-items: baseline;
+}
