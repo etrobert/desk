@@ -3,6 +3,7 @@ lockfileVersion: 5.4
 specifiers:
   '@types/cytoscape': ^3.19.16
   '@types/react': ^18.0.26
+  '@types/react-cytoscapejs': ^1.2.5
   '@types/react-dom': ^18.2.19
   '@typescript-eslint/eslint-plugin': ^6.21.0
   '@typescript-eslint/parser': ^6.21.0
@@ -14,6 +15,7 @@ specifiers:
   firebase: ^10.8.0
   prettier: ^2.8.1
   react: ^18.2.0
+  react-cytoscapejs: ^2.0.0
   react-dom: ^18.2.0
   react-router: ^6.22.0
   react-router-dom: ^6.22.0
@@ -24,6 +26,7 @@ dependencies:
   cytoscape: 3.28.1
   firebase: 10.8.0
   react: 18.2.0
+  react-cytoscapejs: 2.0.0_6xnwwwiem2s5qzfbz42ynu3gyu
   react-dom: 18.2.0_react@18.2.0
   react-router: 6.22.0_react@18.2.0
   react-router-dom: 6.22.0_biqbaboplfbrettd7655fr4n2y
@@ -31,6 +34,7 @@ dependencies:
 devDependencies:
   '@types/cytoscape': 3.19.16
   '@types/react': 18.0.26
+  '@types/react-cytoscapejs': 1.2.5
   '@types/react-dom': 18.2.19
   '@typescript-eslint/eslint-plugin': 6.21.0_qvx5l6wcv2c6baydm2v34ogvwy
   '@typescript-eslint/parser': 6.21.0_xdgzedli73k7lw4xlyzszm74om
@@ -1262,6 +1266,13 @@ packages:
 
   /@types/prop-types/15.7.5:
     resolution: {integrity: sha512-JCB8C6SnDoQf0cNycqd/35A7MjcnK+ZTqE7judS6o7utxUCg6imJg3QK2qzHKszlTjcj2cn+NwMB2i96ubpj7w==}
+    dev: true
+
+  /@types/react-cytoscapejs/1.2.5:
+    resolution: {integrity: sha512-G9VcGQOlER3njklOu5D0FDGHYfkQJ3yEL95kGbgI/MR08N5dQ7IbLSZI8WqaB4fG0zOURIg0BUtOCrbE5HRZEQ==}
+    dependencies:
+      '@types/cytoscape': 3.19.16
+      '@types/react': 18.0.26
     dev: true
 
   /@types/react-dom/18.2.19:
@@ -2745,7 +2756,6 @@ packages:
   /object-assign/4.1.1:
     resolution: {integrity: sha512-rJgTQnkUnH1sFw8yT6VSU3zD3sWmu6sZhIseY8VX+GRu3P6F7Fu+JNDoXfklElbLJSnc3FUQHVe4cU5hj+BcUg==}
     engines: {node: '>=0.10.0'}
-    dev: true
 
   /object-inspect/1.12.2:
     resolution: {integrity: sha512-z+cPxW0QGUp0mcqcsgQyLVRDoXFQbXOwBaqyF7VIgI4TWNQsDHrBpUQslRmIfAoYWdYzs6UlKJtB2XJpTaNSpQ==}
@@ -2902,7 +2912,6 @@ packages:
       loose-envify: 1.4.0
       object-assign: 4.1.1
       react-is: 16.13.1
-    dev: true
 
   /protobufjs/7.2.6:
     resolution: {integrity: sha512-dgJaEDDL6x8ASUZ1YqWciTRrdOuYNzoOf27oHNfdyvKqHr5i0FV7FSLU+aIeFjyFgVxrpTOtQUi0BLLBymZaBw==}
@@ -2932,6 +2941,17 @@ packages:
     resolution: {integrity: sha512-NuaNSa6flKT5JaSYQzJok04JzTL1CA6aGhv5rfLW3PgqA+M2ChpZQnAC8h8i4ZFkBS8X5RqkDBHA7r4hej3K9A==}
     dev: true
 
+  /react-cytoscapejs/2.0.0_6xnwwwiem2s5qzfbz42ynu3gyu:
+    resolution: {integrity: sha512-t3SSl1DQy7+JQjN+8QHi1anEJlM3i3aAeydHTsJwmjo/isyKK7Rs7oCvU6kZsB9NwZidzZQR21Vm2PcBLG/Tjg==}
+    peerDependencies:
+      cytoscape: ^3.2.19
+      react: '>=15.0.0'
+    dependencies:
+      cytoscape: 3.28.1
+      prop-types: 15.8.1
+      react: 18.2.0
+    dev: false
+
   /react-dom/18.2.0_react@18.2.0:
     resolution: {integrity: sha512-6IMTriUmvsjHUjNtEDudZfuDQUoWXVxKHhlEGSk81n4YFS+r/Kl99wXiwlVXtPBtJenozv2P+hxDsw9eA7Xo6g==}
     peerDependencies:
@@ -2944,7 +2964,6 @@ packages:
 
   /react-is/16.13.1:
     resolution: {integrity: sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==}
-    dev: true
 
   /react-refresh/0.14.0:
     resolution: {integrity: sha512-wViHqhAd8OHeLS/IRMJjTSDHF3U9eWi62F/MledQGPdJGDhodXJ9PBLNGr6WWL7qlH12Mt3TyTpbS+hGXMjCzQ==}
