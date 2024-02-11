@@ -61,6 +61,7 @@ const TaskEdit = <T extends Partial<Task>>({ task, onSubmit }: Props<T>) => {
       </label>
       <DependenciesInput addDependency={addDependency} />
       <label className="TaskEdit__Label">Dependencies:</label>
+      {/* TODO: Change from using _task_list for dependencies */}
       <TagList tags={dependencies} onTagClick={removeDependency} />
       <ButtonGroup className="TaskEdit__Buttons">
         <Button type="submit">Confirm</Button>
