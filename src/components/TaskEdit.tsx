@@ -1,8 +1,9 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import TextInput from './TextInput';
 import TagInput from './TagInput';
 import TagList from './TagList';
+import DependenciesInput from './DependenciesInput';
 import ButtonGroup from './ButtonGroup';
 import Button from './Button';
 import BackButton from './BackButton';
@@ -21,6 +22,16 @@ type Props<T extends Partial<Task>> = {
 const TaskEdit = <T extends Partial<Task>>({ task, onSubmit }: Props<T>) => {
   const [title, setTitle] = useState(task.title ?? '');
   const { set: tags, add: addTag, remove: removeTag } = useSet();
+  const {
+    set: dependencies,
+    add: addDependency,
+    remove: removeDependency,
+  } = useSet();
+
+  // TODO: Remove
+  useEffect(() => {
+    console.log(dependencies);
+  }, [dependencies]);
 
   return (
     <form
@@ -45,6 +56,10 @@ const TaskEdit = <T extends Partial<Task>>({ task, onSubmit }: Props<T>) => {
       <TagInput onNewTag={addTag} />
       <label className="TaskEdit__Label">Tags:</label>
       <TagList tags={tags} onTagClick={removeTag} />
+      <label className="TaskEdit__Label" htmlFor="new-dependency">
+        Add Dependency:
+      </label>
+      <DependenciesInput addDependency={addDependency} />
       <ButtonGroup className="TaskEdit__Buttons">
         <Button type="submit">Confirm</Button>
         <BackButton>Cancel</BackButton>
