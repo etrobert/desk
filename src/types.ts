@@ -14,6 +14,7 @@ type Task = {
   id: string;
   title: string;
   tags: string[];
+  dependencies?: string[];
   status: Status;
   createdAt: Timestamp | null;
 };
