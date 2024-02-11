@@ -6,7 +6,18 @@ const Reflect = () => {
 
   if (tasks === null) return 'Loading...';
 
-  const elements = tasks.map((task) => ({ data: task }));
+  const nodes = tasks.map((task) => ({ data: task }));
+  const edges = tasks
+    .map((task) =>
+      task.dependencies === undefined
+        ? []
+        : task.dependencies.map((dependency) => ({
+            data: { source: dependency, target: task.id },
+          }))
+    )
+    .flat();
+
+  const elements = [...nodes, ...edges];
 
   return (
     <div>
