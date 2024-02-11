@@ -8,7 +8,7 @@ const D3Tree = ({ data }) => {
 
   useEffect(() => {
     if (data && d3Container.current) {
-      const margin = { top: 20, right: 250, bottom: 30, left: 90 };
+      const margin = { top: 20, right: 800, bottom: 30, left: 90 };
       const width = 960 - margin.left - margin.right;
       const height = 500 - margin.top - margin.bottom;
 
@@ -54,7 +54,7 @@ const D3Tree = ({ data }) => {
         .attr('dy', '.35em')
         .attr('x', 19)
         .style('text-anchor', 'start')
-        .text((d) => (d.data.name === 'Root' ? '' : d.data.name));
+        .text((d) => (d.data.title === 'Root' ? '' : d.data.title));
     }
   }, [data]);
 
