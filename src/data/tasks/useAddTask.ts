@@ -10,7 +10,7 @@ const useAddTask = () => {
   const userPath = useUserPath();
 
   return useCallback(
-    async (task: { title: string; tags: string[] }) => {
+    async (task: { title: string; tags: string[]; dependencies: string[] }) => {
       if (!userPath) return;
       const newTask: Omit<Task, 'id'> = {
         ...task,

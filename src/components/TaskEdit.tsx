@@ -16,7 +16,9 @@ import './TaskEdit.css';
 
 type Props<T extends Partial<Task>> = {
   task: T;
-  onSubmit: (task: T & { title: string; tags: string[] }) => void;
+  onSubmit: (
+    task: T & { title: string; tags: string[]; dependencies: string[] }
+  ) => void;
 };
 
 const TaskEdit = <T extends Partial<Task>>({ task, onSubmit }: Props<T>) => {
@@ -34,7 +36,7 @@ const TaskEdit = <T extends Partial<Task>>({ task, onSubmit }: Props<T>) => {
       onSubmit={(event) => {
         event.preventDefault();
         if (title === '') return;
-        onSubmit({ ...task, title, tags });
+        onSubmit({ ...task, title, tags, dependencies });
       }}
     >
       <label className="TaskEdit__Label" htmlFor="title">
