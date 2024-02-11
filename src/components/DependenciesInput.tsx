@@ -14,7 +14,7 @@ const DependenciesInput = ({ addDependency }: Props) => {
 
   return (
     <div>
-      <select ref={selectRef}>
+      <select ref={selectRef} id="new-dependency">
         {tasks.map((task) => (
           <option key={task.id} value={task.id}>
             {task.title}
