@@ -4,12 +4,7 @@ const useSet = () => {
   const [set, setSet] = useState<string[]>([]);
 
   const add = useCallback(
-    (newItem: string) =>
-      setSet((set) =>
-        set.find((item) => item === newItem) === undefined
-          ? [...set, newItem]
-          : set
-      ),
+    (newItem: string) => setSet((set) => [...new Set([...set, newItem])]),
     []
   );
 
