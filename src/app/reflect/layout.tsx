@@ -4,7 +4,7 @@ import Cytoscape from './Cytoscape';
 const Reflect = () => {
   const tasks = useTasks();
 
-  if (tasks === null) return 'Loading...';
+  if (tasks === null) return <>Loading...</>;
 
   const nodes = tasks.map((task) => ({ data: task }));
   const edges = tasks
