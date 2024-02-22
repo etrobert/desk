@@ -1,6 +1,10 @@
 import { useRef } from 'react';
-import type { BreadthFirstLayoutOptions, ElementDefinition } from 'cytoscape';
+import CytoscapePackage from 'cytoscape';
+import type { ElementDefinition } from 'cytoscape';
 import CytoscapeComponent from 'react-cytoscapejs';
+import dagre from 'cytoscape-dagre';
+
+CytoscapePackage.use(dagre);
 
 const stylesheet = [
   // the stylesheet for the graph
@@ -25,16 +29,14 @@ const stylesheet = [
   },
 ];
 
-const layout: BreadthFirstLayoutOptions = {
-  name: 'breadthfirst',
+const layout = {
+  name: 'dagre',
+  rankDir: 'LR',
   nodeDimensionsIncludeLabels: true,
-  spacingFactor: 0,
-  padding: 0,
   animate: true,
-  directed: true,
 };
 
-const Cytoscape = ({ elements }: { elements: ElementDefinition[] }) => {
+const CytoscapeView = ({ elements }: { elements: ElementDefinition[] }) => {
   const cyRef = useRef<cytoscape.Core | null>(null);
 
   return (
@@ -51,4 +53,4 @@ const Cytoscape = ({ elements }: { elements: ElementDefinition[] }) => {
   );
 };
 
-export default Cytoscape;
+export default CytoscapeView;

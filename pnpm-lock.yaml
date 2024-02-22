@@ -2,6 +2,7 @@ lockfileVersion: 5.4
 
 specifiers:
   '@types/cytoscape': ^3.19.16
+  '@types/cytoscape-dagre': ^2.3.3
   '@types/react': ^18.0.26
   '@types/react-cytoscapejs': ^1.2.5
   '@types/react-dom': ^18.2.19
@@ -9,6 +10,7 @@ specifiers:
   '@typescript-eslint/parser': ^6.21.0
   '@vitejs/plugin-react': ^4.2.1
   cytoscape: ^3.28.1
+  cytoscape-dagre: ^2.5.0
   eslint: ^8.56.0
   eslint-plugin-react: ^7.33.2
   eslint-plugin-react-hooks: ^4.6.0
@@ -24,6 +26,7 @@ specifiers:
 
 dependencies:
   cytoscape: 3.28.1
+  cytoscape-dagre: 2.5.0_cytoscape@3.28.1
   firebase: 10.8.0
   react: 18.2.0
   react-cytoscapejs: 2.0.0_6xnwwwiem2s5qzfbz42ynu3gyu
@@ -33,6 +36,7 @@ dependencies:
 
 devDependencies:
   '@types/cytoscape': 3.19.16
+  '@types/cytoscape-dagre': 2.3.3
   '@types/react': 18.0.26
   '@types/react-cytoscapejs': 1.2.5
   '@types/react-dom': 18.2.19
@@ -1248,6 +1252,12 @@ packages:
       '@babel/types': 7.23.9
     dev: true
 
+  /@types/cytoscape-dagre/2.3.3:
+    resolution: {integrity: sha512-FJBsNMbBZpqNwT6rp5leVYMevWUjnyD1QS8erNMAMWoBifvaVUklXIjE+bllLDSowjM3abXuRvljliSXUU+d1A==}
+    dependencies:
+      '@types/cytoscape': 3.19.16
+    dev: true
+
   /@types/cytoscape/3.19.16:
     resolution: {integrity: sha512-A3zkjaZ6cOGyqEvrVuC1YUgiRSJhDZOj8Qhd1ALH2/+YxH2za1BOmR4RWQsKYHsc+aMP/IWoqg1COuUbZ39t/g==}
     dev: true
@@ -1689,11 +1699,27 @@ packages:
     resolution: {integrity: sha512-DJR/VvkAvSZW9bTouZue2sSxDwdTN92uHjqeKVm+0dAqdfNykRzQ95tay8aXMBAAPpUiq4Qcug2L7neoRh2Egw==}
     dev: true
 
+  /cytoscape-dagre/2.5.0_cytoscape@3.28.1:
+    resolution: {integrity: sha512-VG2Knemmshop4kh5fpLO27rYcyUaaDkRw+6PiX4bstpB+QFt0p2oauMrsjVbUamGWQ6YNavh7x2em2uZlzV44g==}
+    peerDependencies:
+      cytoscape: ^3.2.22
+    dependencies:
+      cytoscape: 3.28.1
+      dagre: 0.8.5
+    dev: false
+
   /cytoscape/3.28.1:
     resolution: {integrity: sha512-xyItz4O/4zp9/239wCcH8ZcFuuZooEeF8KHRmzjDfGdXsj3OG9MFSMA0pJE0uX3uCN/ygof6hHf4L7lst+JaDg==}
     engines: {node: '>=0.10'}
     dependencies:
       heap: 0.2.7
+      lodash: 4.17.21
+    dev: false
+
+  /dagre/0.8.5:
+    resolution: {integrity: sha512-/aTqmnRta7x7MCCpExk7HQL2O4owCT2h8NT//9I1OQ9vt29Pa0BzSAkR5lwFUcQ7491yVi/3CXU9jQ5o0Mn2Sw==}
+    dependencies:
+      graphlib: 2.1.8
       lodash: 4.17.21
     dev: false
 
@@ -2320,6 +2346,12 @@ packages:
   /graphemer/1.4.0:
     resolution: {integrity: sha512-EtKwoO6kxCL9WO5xipiHTZlSzBm7WLT627TqC/uVRd0HKmq8NXyebnNYxDoBi7wt8eTWrUrKXCOVaFq9x1kgag==}
     dev: true
+
+  /graphlib/2.1.8:
+    resolution: {integrity: sha512-jcLLfkpoVGmH7/InMC/1hIvOPSUh38oJtGhvrOFGzioE1DZ+0YW16RgmOJhHiuWTvGiJQ9Z1Ik43JvkRPRvE+A==}
+    dependencies:
+      lodash: 4.17.21
+    dev: false
 
   /has-bigints/1.0.2:
     resolution: {integrity: sha512-tSvCKtBr9lkF0Ex0aQiP9N+OpV4zi2r/Nee5VkRDbaqv35RLYMzbwQfFSZZH0kR+Rd6302UJZ2p/bJCEoR3VoQ==}
