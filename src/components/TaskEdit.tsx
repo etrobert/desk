@@ -23,12 +23,12 @@ type Props<T extends Partial<Task>> = {
 
 const TaskEdit = <T extends Partial<Task>>({ task, onSubmit }: Props<T>) => {
   const [title, setTitle] = useState(task.title ?? '');
-  const { set: tags, add: addTag, remove: removeTag } = useSet();
+  const { set: tags, add: addTag, remove: removeTag } = useSet(task.tags);
   const {
     set: dependencies,
     add: addDependency,
     remove: removeDependency,
-  } = useSet();
+  } = useSet(task.dependencies);
 
   return (
     <form

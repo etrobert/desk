@@ -1,7 +1,7 @@
 import { useCallback, useState } from 'react';
 
-const useSet = () => {
-  const [set, setSet] = useState<string[]>([]);
+const useSet = (defaultValue: string[] = []) => {
+  const [set, setSet] = useState<string[]>(defaultValue);
 
   const add = useCallback(
     (newItem: string) => setSet((set) => [...new Set([...set, newItem])]),
