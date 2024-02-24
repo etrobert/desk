@@ -4,6 +4,7 @@ import type { ElementDefinition } from 'cytoscape';
 import CytoscapeComponent from 'react-cytoscapejs';
 import dagre from 'cytoscape-dagre';
 import stylesheet from './cytoscapeStylesheet';
+import Button from '../../components/Button';
 
 CytoscapePackage.use(dagre);
 
@@ -18,7 +19,9 @@ const CytoscapeView = ({ elements }: { elements: ElementDefinition[] }) => {
 
   return (
     <>
-      <button onClick={() => cyRef.current?.layout(layout).run()}>Redo</button>
+      <Button onClick={() => cyRef.current?.layout(layout).run()}>
+        Reset Layout
+      </Button>
       <CytoscapeComponent
         cy={(cy) => (cyRef.current = cy)}
         stylesheet={stylesheet}
