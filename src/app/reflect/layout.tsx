@@ -1,23 +1,10 @@
-import useTasks from '../../data/tasks/useTasks';
 import Cytoscape from './Cytoscape';
+import useCytoscapeElements from './useCytoscapeElements';
 
 const Reflect = () => {
-  const tasks = useTasks();
+  const elements = useCytoscapeElements();
 
-  if (tasks === null) return <>Loading...</>;
-
-  const nodes = tasks.map((task) => ({ data: task }));
-  const edges = tasks
-    .map((task) =>
-      task.dependencies === undefined
-        ? []
-        : task.dependencies.map((dependency) => ({
-            data: { source: dependency, target: task.id },
-          }))
-    )
-    .flat();
-
-  const elements = [...nodes, ...edges];
+  if (elements === null) return <>Loading...</>;
 
   return (
     <div>
