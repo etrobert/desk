@@ -6,6 +6,8 @@ import stylesheet from './cytoscapeStylesheet';
 import Button from '../../components/Button';
 import useCytoscapeElements from './useCytoscapeElements';
 
+import './Cytoscape.css';
+
 CytoscapePackage.use(dagre);
 
 const layout = {
@@ -26,10 +28,10 @@ const CytoscapeView = () => {
         Reset Layout
       </Button>
       <CytoscapeComponent
+        className="Cytoscape"
         cy={(cy) => (cyRef.current = cy)}
         stylesheet={stylesheet}
         layout={layout}
-        style={{ width: '800px', height: '800px', textAlign: 'start' }}
         elements={elements}
       />
     </>
