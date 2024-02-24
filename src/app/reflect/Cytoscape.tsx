@@ -1,10 +1,10 @@
 import { useRef } from 'react';
 import CytoscapePackage from 'cytoscape';
-import type { ElementDefinition } from 'cytoscape';
 import CytoscapeComponent from 'react-cytoscapejs';
 import dagre from 'cytoscape-dagre';
 import stylesheet from './cytoscapeStylesheet';
 import Button from '../../components/Button';
+import useCytoscapeElements from './useCytoscapeElements';
 
 CytoscapePackage.use(dagre);
 
@@ -14,8 +14,11 @@ const layout = {
   nodeDimensionsIncludeLabels: true,
 };
 
-const CytoscapeView = ({ elements }: { elements: ElementDefinition[] }) => {
+const CytoscapeView = () => {
+  const elements = useCytoscapeElements();
   const cyRef = useRef<cytoscape.Core | null>(null);
+
+  if (elements === null) return <>Loading...</>;
 
   return (
     <>
