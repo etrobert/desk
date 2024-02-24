@@ -1,5 +1,5 @@
 .Cytoscape {
-  width: 800px;
-  height: 800px;
+  width: 100vw;
+  height: 60vh;
   text-align: start;
 }
