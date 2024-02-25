@@ -1,4 +1,5 @@
 import useTasks from '../../data/tasks/useTasks';
+import estimateNodeSize from './estimateNodeSize';
 
 const useCytoscapeElements = () => {
   const tasks = useTasks();
@@ -16,7 +17,9 @@ const useCytoscapeElements = () => {
     );
   };
 
-  const nodes = tasks.map((task) => ({ data: task }));
+  const nodes = tasks.map((task) => ({
+    data: { ...task, ...estimateNodeSize(task) },
+  }));
   const edges = tasks.map(getTaskDependencies).flat();
 
   return [...nodes, ...edges];

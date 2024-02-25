@@ -1,4 +1,8 @@
-const stylesheet = [
+import type { Stylesheet } from 'cytoscape';
+
+export const textMaxWidth = 180;
+
+const stylesheet: Stylesheet[] = [
   // the stylesheet for the graph
   {
     selector: 'node',
@@ -6,6 +10,12 @@ const stylesheet = [
       'background-color': '#666',
       color: '#fff',
       label: 'data(title)',
+      'text-valign': 'center',
+      'text-wrap': 'wrap',
+      'text-max-width': `${textMaxWidth}px`,
+      shape: 'round-rectangle',
+      width: 'data(width)',
+      height: 'data(height)',
     },
   },
 
