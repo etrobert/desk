@@ -25,7 +25,11 @@ const Menu = () => {
         ) : (
           <ButtonLink to="engage">Engage</ButtonLink>
         )}
-        <Button disabled>Reflect</Button>
+        {tasks?.length === 0 ? (
+          <Button disabled>Reflect</Button>
+        ) : (
+          <ButtonLink to="reflect">Reflect</ButtonLink>
+        )}
       </ButtonGroup>
     </>
   );

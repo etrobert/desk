@@ -6,6 +6,7 @@ import { TasksFiltersContextProvider } from '../data/tasks/TasksFiltersContext';
 import Capture from './capture/page';
 import Engage from './engage/layout';
 import Process from './process/layout';
+import Reflect from './reflect/layout';
 import Menu from './page';
 import HomeButton from './HomeButton';
 import LogOutButton from './LogOutButton';
@@ -23,6 +24,7 @@ function SignedInLayout() {
             <Route path="capture" element={<Capture />} />
             <Route path="process/*" element={<Process />} />
             <Route path="engage/*" element={<Engage />} />
+            <Route path="reflect/*" element={<Reflect />} />
             <Route path="*" element={<Menu />} />
           </Routes>
         </TasksContextProvider>
