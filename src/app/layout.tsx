@@ -3,7 +3,9 @@ import InnerLayout from './InnerLayout';
 import '../index.css';
 import './layout.css';
 
-function RootLayout({ children }: { children: React.ReactNode }) {
+import type { PropsWithChildren } from 'react';
+
+function RootLayout({ children }: PropsWithChildren) {
   return (
     <html lang="en">
       <head>
@@ -19,7 +21,7 @@ function RootLayout({ children }: { children: React.ReactNode }) {
       <body>
         <div id="root">
           <div className="AppLayout">
-            <InnerLayout />
+            <InnerLayout>{children}</InnerLayout>
           </div>
         </div>
       </body>

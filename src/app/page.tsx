@@ -16,21 +16,21 @@ const Menu = () => {
     <>
       <h1>Menu</h1>
       <ButtonGroup>
-        <ButtonLink to="capture">Capture</ButtonLink>
+        <ButtonLink href="capture">Capture</ButtonLink>
         {itemsCount === 0 ? (
           <Button disabled>Process ({itemsCount})</Button>
         ) : (
-          <ButtonLink to="process">Process ({itemsCount})</ButtonLink>
+          <ButtonLink href="process">Process ({itemsCount})</ButtonLink>
         )}
         {tasks?.length === 0 ? (
           <Button disabled>Engage</Button>
         ) : (
-          <ButtonLink to="engage">Engage</ButtonLink>
+          <ButtonLink href="engage">Engage</ButtonLink>
         )}
         {tasks?.length === 0 ? (
           <Button disabled>Reflect</Button>
         ) : (
-          <ButtonLink to="reflect">Reflect</ButtonLink>
+          <ButtonLink href="reflect">Reflect</ButtonLink>
         )}
       </ButtonGroup>
     </>

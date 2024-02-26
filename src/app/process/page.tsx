@@ -1,3 +1,5 @@
+'use client';
+
 import ButtonGroup from '../../components/ButtonGroup';
 import Button from '../../components/Button';
 import ButtonLink from '../../components/ButtonLink';
@@ -9,9 +11,9 @@ const Actions = () => {
   return (
     <ButtonGroup>
       <Button onClick={deleteLatestCaptureItem}>Delete</Button>
-      <ButtonLink to="do">Do</ButtonLink>
+      <ButtonLink href="process/do">Do</ButtonLink>
       <Button disabled>Delegate</Button>
-      <ButtonLink to="defer">Defer</ButtonLink>
+      <ButtonLink href="process/defer">Defer</ButtonLink>
       <Button disabled>Archive</Button>
       <Button disabled>Incubate</Button>
     </ButtonGroup>

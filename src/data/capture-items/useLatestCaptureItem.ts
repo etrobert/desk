@@ -1,3 +1,5 @@
+'use client';
+
 import useCaptureItems from './useCaptureItems';
 
 const useLatestCaptureItem = () => {

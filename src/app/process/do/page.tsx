@@ -1,13 +1,15 @@
+'use client';
+
+import { useRouter } from 'next/navigation';
 import Button from '../../../components/Button';
 import ButtonGroup from '../../../components/ButtonGroup';
 import BackButton from '../../../components/BackButton';
 import Countdown from './Countdown';
 import useDeleteLatestCaptureItem from '../../../data/capture-items/useDeleteLatestCaptureItem';
-import { useNavigate } from 'react-router';
 
 const Do = () => {
   const deleteLatestCaptureItem = useDeleteLatestCaptureItem();
-  const navigate = useNavigate();
+  const router = useRouter();
 
   return (
     <div>
@@ -16,7 +18,7 @@ const Do = () => {
         <Button
           onClick={() => {
             deleteLatestCaptureItem();
-            navigate(-1);
+            router.back();
           }}
         >
           Done

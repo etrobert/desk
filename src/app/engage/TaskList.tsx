@@ -1,7 +1,7 @@
 'use client';
 
 import { useContext, useEffect } from 'react';
-// import { useNavigate } from 'react-router-dom';
+import { useRouter } from 'next/navigation';
 import ButtonLink from '../../components/ButtonLink';
 import TagList from '../../components/TagList';
 import Button from '../../components/Button';
@@ -25,7 +25,7 @@ const TaskListItem = ({
     }
     key={id}
   >
-    <ButtonLink to={id}>
+    <ButtonLink href={`engage/${id}`}>
       {title}
       {tags.length !== 0 && <TagList tags={tags} />}
     </ButtonLink>
@@ -34,13 +34,13 @@ const TaskListItem = ({
 
 const TaskList = () => {
   const tasks = useTasks();
-  // const navigate = useNavigate();
+  const router = useRouter();
 
   const { toggleShowDoneTasks } = useContext(TasksFiltersContext);
 
-  // useEffect(() => {
-  // if (tasks?.length === 0) navigate('/');
-  // }, [navigate, tasks]);
+  useEffect(() => {
+    if (tasks?.length === 0) router.push('/');
+  }, [router, tasks]);
 
   if (tasks === null) return <>Loading...</>;
   return (
