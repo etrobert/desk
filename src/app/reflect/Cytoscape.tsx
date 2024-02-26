@@ -1,7 +1,10 @@
+'use client';
+
 import { useEffect, useRef } from 'react';
+
+import { useRouter } from 'next/navigation';
 import CytoscapePackage from 'cytoscape';
 import CytoscapeComponent from 'react-cytoscapejs';
-import { useNavigate } from 'react-router-dom';
 import dagre from 'cytoscape-dagre';
 import stylesheet from './cytoscapeStylesheet';
 import Button from '../../components/Button';
@@ -20,13 +23,13 @@ const layout = {
 const CytoscapeView = () => {
   const elements = useCytoscapeElements();
   const cyRef = useRef<cytoscape.Core | null>(null);
-  const navigate = useNavigate();
+  const router = useRouter();
 
   useEffect(() => {
     cyRef.current?.on('tap', 'node', (node) => {
-      navigate(`/engage/${node.target.data('id')}`)
-    })
-  }, [navigate])
+      router.push(`/engage/${node.target.data('id')}`);
+    });
+  }, [router]);
 
   if (elements === null) return <>Loading...</>;
 

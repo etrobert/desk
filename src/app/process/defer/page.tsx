@@ -1,28 +1,31 @@
-import { useNavigate } from 'react-router-dom';
+'use client';
+
+import { useRouter } from 'next/navigation';
 
 import TaskEdit from '../../../components/TaskEdit';
 
 import useDeleteLatestCaptureItem from '../../../data/capture-items/useDeleteLatestCaptureItem';
 import useAddTask from '../../../data/tasks/useAddTask';
 
-import type { CaptureItem } from '../../../types';
+import useLatestCaptureItem from '../../../data/capture-items/useLatestCaptureItem';
 
-type Props = {
-  captureItem: CaptureItem;
-};
-
-const Defer = ({ captureItem }: Props) => {
-  const navigate = useNavigate();
+const Defer = () => {
+  const router = useRouter();
+  const { isLoading, latestCaptureItem } = useLatestCaptureItem();
   const deleteLatestCaptureItem = useDeleteLatestCaptureItem();
   const addTask = useAddTask();
 
+  if (isLoading) return <>Loading...</>;
+  // Layout should be redirecting...
+  if (!latestCaptureItem) return <>No capture item found</>;
+
   return (
     <TaskEdit
-      task={{ title: captureItem.value }}
+      task={{ title: latestCaptureItem.value }}
       onSubmit={(task) => {
         addTask(task);
         deleteLatestCaptureItem();
-        navigate(-1);
+        router.back();
       }}
     />
   );

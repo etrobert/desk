@@ -1,3 +1,5 @@
+'use client';
+
 import { deleteDoc, doc } from 'firebase/firestore';
 import { useCallback } from 'react';
 import { firestore } from '../../firebase';

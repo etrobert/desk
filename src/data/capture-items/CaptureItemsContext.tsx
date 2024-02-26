@@ -1,3 +1,5 @@
+'use client';
+
 import { orderBy } from 'firebase/firestore';
 import { createContext, ReactNode } from 'react';
 import { CaptureItem } from '../../types';

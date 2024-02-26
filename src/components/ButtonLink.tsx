@@ -1,5 +1,5 @@
 import { ComponentProps } from 'react';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 
 import './ButtonLink.css';
 import './ButtonShared.css';

@@ -1,12 +1,10 @@
-import Cytoscape from './Cytoscape';
+import type { PropsWithChildren } from 'react';
 
-const Reflect = () => {
-  return (
-    <div>
-      <h1>Reflect</h1>
-      <Cytoscape />
-    </div>
-  );
-};
+const Reflect = ({ children }: PropsWithChildren) => (
+  <div>
+    <h1>Reflect</h1>
+    {children}
+  </div>
+);
 
 export default Reflect;

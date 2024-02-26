@@ -1,17 +1,21 @@
-import { Navigate, useNavigate, useParams } from 'react-router-dom';
+'use client';
+
+import { useRouter } from 'next/navigation';
 
 import TaskEdit from '../../../../components/TaskEdit';
 
 import useTask from '../../../../data/tasks/useTask';
 import useUpdateTask from '../../../../data/tasks/useUpdateTask';
 
-const TaskEditPage = () => {
-  const { id } = useParams<'id'>();
+const TaskEditPage = ({ params: { id } }: { params: { id: string } }) => {
   const task = useTask(id);
   const updateTask = useUpdateTask();
-  const navigate = useNavigate();
+  const router = useRouter();
 
-  if (id === undefined || task === undefined) return <Navigate to=".." />;
+  if (task === undefined) {
+    router.push('/');
+    return null;
+  }
   if (task === null) return <>Loading...</>;
 
   return (
@@ -19,7 +23,7 @@ const TaskEditPage = () => {
       task={task}
       onSubmit={(task) => {
         updateTask(task);
-        navigate(-1);
+        router.back();
       }}
     />
   );

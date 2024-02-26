@@ -1,3 +1,5 @@
+'use client';
+
 import { createContext, ReactNode, useMemo } from 'react';
 import { Task } from '../../types';
 import useUserCollection from '../useUserCollection';

@@ -1,5 +1,6 @@
-import { Navigate } from 'react-router-dom';
+'use client';
 
+import { useRouter } from 'next/navigation';
 import BackButton from '../../../components/BackButton';
 import Button from '../../../components/Button';
 import ButtonLink from '../../../components/ButtonLink';
@@ -40,8 +41,12 @@ const Task = ({ id }: Props) => {
   const task = useTask(id);
   const updateTask = useUpdateTask();
   const deleteTask = useDeleteTask();
+  const router = useRouter();
 
-  if (task === undefined) return <Navigate to=".." />;
+  if (task === undefined) {
+    router.push('..');
+    return null;
+  }
   if (task === null) return <>Loading...</>;
 
   const { title, tags, dependencies } = task;
@@ -58,7 +63,7 @@ const Task = ({ id }: Props) => {
           <Button onClick={() => updateTask({ ...task, status: 'done' })}>
             Done
           </Button>
-          <ButtonLink to={'edit'}>Edit</ButtonLink>
+          <ButtonLink href={`${id}/edit`}>Edit</ButtonLink>
           <Button onClick={() => deleteTask(id)}>Delete</Button>
           <BackButton>Back</BackButton>
         </ButtonGroup>
