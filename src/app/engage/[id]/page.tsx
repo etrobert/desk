@@ -1,15 +1,17 @@
-import { Navigate, useParams } from 'react-router-dom';
+// import { Navigate, useParams } from 'react-router-dom';
 
 import Task from './Task';
 
 import './Task.css';
 
 const TaskPage = () => {
-  const { id } = useParams<'id'>();
+  // const { id } = useParams<'id'>();
 
-  if (id === undefined) return <Navigate to=".." />;
+  // if (id === undefined) return <Navigate to=".." />;
 
-  return <Task id={id} />;
+  // return <Task id={id} />;
+
+  return null;
 };
 
 export default TaskPage;

@@ -1,5 +1,7 @@
+'use client';
+
 import { useContext, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+// import { useNavigate } from 'react-router-dom';
 import ButtonLink from '../../components/ButtonLink';
 import TagList from '../../components/TagList';
 import Button from '../../components/Button';
@@ -32,13 +34,13 @@ const TaskListItem = ({
 
 const TaskList = () => {
   const tasks = useTasks();
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   const { toggleShowDoneTasks } = useContext(TasksFiltersContext);
 
-  useEffect(() => {
-    if (tasks?.length === 0) navigate('/');
-  }, [navigate, tasks]);
+  // useEffect(() => {
+  // if (tasks?.length === 0) navigate('/');
+  // }, [navigate, tasks]);
 
   if (tasks === null) return <>Loading...</>;
   return (

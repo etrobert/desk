@@ -1,4 +1,4 @@
-import { Navigate } from 'react-router-dom';
+// import { Navigate } from 'react-router-dom';
 
 import BackButton from '../../../components/BackButton';
 import Button from '../../../components/Button';
@@ -41,7 +41,8 @@ const Task = ({ id }: Props) => {
   const updateTask = useUpdateTask();
   const deleteTask = useDeleteTask();
 
-  if (task === undefined) return <Navigate to=".." />;
+  // if (task === undefined) return <Navigate to=".." />;
+  if (task === undefined) return null;
   if (task === null) return <>Loading...</>;
 
   const { title, tags, dependencies } = task;

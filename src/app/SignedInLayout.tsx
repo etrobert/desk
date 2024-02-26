@@ -1,4 +1,4 @@
-import { Route, Routes } from 'react-router';
+// import { Route, Routes } from 'react-router';
 
 import { CaptureItemsContextProvider } from '../data/capture-items/CaptureItemsContext';
 import { TasksContextProvider } from '../data/tasks/TasksContext';
@@ -20,13 +20,13 @@ function SignedInLayout() {
           <HomeButton />
           <LogOutButton />
           <UserEmail />
-          <Routes>
-            <Route path="capture" element={<Capture />} />
-            <Route path="process/*" element={<Process />} />
-            <Route path="engage/*" element={<Engage />} />
-            <Route path="reflect/*" element={<Reflect />} />
-            <Route path="*" element={<Menu />} />
-          </Routes>
+          {/* <Routes> */}
+          {/* <Route path="capture" element={<Capture />} /> */}
+          {/* <Route path="process/*" element={<Process />} /> */}
+          {/* <Route path="engage/*" element={<Engage />} /> */}
+          {/* <Route path="reflect/*" element={<Reflect />} /> */}
+          {/* <Route path="*" element={<Menu />} /> */}
+          {/* </Routes> */}
         </TasksContextProvider>
       </TasksFiltersContextProvider>
     </CaptureItemsContextProvider>

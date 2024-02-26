@@ -1,4 +1,4 @@
-import { useNavigate } from 'react-router-dom';
+// import { useNavigate } from 'react-router-dom';
 
 import TaskEdit from '../../../components/TaskEdit';
 
@@ -12,7 +12,7 @@ type Props = {
 };
 
 const Defer = ({ captureItem }: Props) => {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   const deleteLatestCaptureItem = useDeleteLatestCaptureItem();
   const addTask = useAddTask();
 
@@ -22,7 +22,7 @@ const Defer = ({ captureItem }: Props) => {
       onSubmit={(task) => {
         addTask(task);
         deleteLatestCaptureItem();
-        navigate(-1);
+        // navigate(-1);
       }}
     />
   );

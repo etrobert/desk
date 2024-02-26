@@ -1,3 +1,5 @@
+'use client';
+
 import { useEffect } from 'react';
 import { Route, Routes, useNavigate } from 'react-router';
 

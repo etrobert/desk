@@ -1,3 +1,5 @@
+'use client';
+
 import useAuth from '../useAuth';
 import SignInPage from './SignInPage';
 import SignedInLayout from './SignedInLayout';

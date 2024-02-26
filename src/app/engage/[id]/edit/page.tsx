@@ -1,4 +1,4 @@
-import { Navigate, useNavigate, useParams } from 'react-router-dom';
+// import { Navigate, useNavigate, useParams } from 'react-router-dom';
 
 import TaskEdit from '../../../../components/TaskEdit';
 
@@ -6,12 +6,14 @@ import useTask from '../../../../data/tasks/useTask';
 import useUpdateTask from '../../../../data/tasks/useUpdateTask';
 
 const TaskEditPage = () => {
-  const { id } = useParams<'id'>();
+  // const { id } = useParams<'id'>();
+  const id = 'id';
   const task = useTask(id);
   const updateTask = useUpdateTask();
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
-  if (id === undefined || task === undefined) return <Navigate to=".." />;
+  if (id === undefined || task === undefined) return null;
+  // return <Navigate to=".." />;
   if (task === null) return <>Loading...</>;
 
   return (
