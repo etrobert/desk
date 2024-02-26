@@ -63,7 +63,7 @@ const Task = ({ id }: Props) => {
           <Button onClick={() => updateTask({ ...task, status: 'done' })}>
             Done
           </Button>
-          <ButtonLink href="edit">Edit</ButtonLink>
+          <ButtonLink href={`${id}/edit`}>Edit</ButtonLink>
           <Button onClick={() => deleteTask(id)}>Delete</Button>
           <BackButton>Back</BackButton>
         </ButtonGroup>
