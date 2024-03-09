@@ -64,7 +64,7 @@ const TaskEdit = <T extends Partial<Task>>({ task, onSubmit }: Props<T>) => {
       <TagList tags={dependencies} onTagClick={removeDependency} />
       <ButtonGroup className="TaskEdit__Buttons">
         <Button type="submit">Confirm</Button>
-        <BackButton>Cancel</BackButton>
+        <BackButton variant="secondary">Cancel</BackButton>
       </ButtonGroup>
     </form>
   );

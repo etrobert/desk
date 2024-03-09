@@ -13,7 +13,7 @@ const DependenciesInput = ({ addDependency }: Props) => {
   if (tasks === null) return <>Loading...</>;
 
   return (
-    <div>
+    <div className="flex gap-2">
       <select ref={selectRef} id="new-dependency">
         {tasks.map((task) => (
           <option key={task.id} value={task.id}>
@@ -22,6 +22,7 @@ const DependenciesInput = ({ addDependency }: Props) => {
         ))}
       </select>
       <Button
+        variant="secondary"
         onClick={() => {
           if (selectRef.current === null) return;
           addDependency(selectRef.current?.value);
