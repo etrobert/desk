@@ -11,7 +11,7 @@ import type { PropsWithChildren } from 'react';
 
 function RootLayout({ children }: PropsWithChildren) {
   return (
-    <html className={cn('h-full', inter.className)} lang="en">
+    <html className={cn('h-full dark', inter.className)} lang="en">
       <head>
         <meta charSet="utf-8" />
         <link rel="icon" href="/favicon.svg" />
