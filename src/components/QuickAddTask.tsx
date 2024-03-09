@@ -9,7 +9,7 @@ const QuickAddTask = () => {
 
   return (
     <form
-      className="flex gap-2 items-center"
+      className="flex items-center gap-2"
       onSubmit={(event) => {
         event.preventDefault();
         const form = event.target as HTMLFormElement;
