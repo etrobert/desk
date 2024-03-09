@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
+import { useCallback, useEffect, useRef } from 'react';
 
 import { useRouter } from 'next/navigation';
 import CytoscapePackage from 'cytoscape';
@@ -31,14 +31,17 @@ const CytoscapeView = () => {
     });
   }, [router]);
 
+  const runLayout = useCallback(() => {
+    cyRef.current?.layout(layout).run();
+  }, []);
+
+  useEffect(runLayout, [runLayout, elements]);
+
   if (elements === null) return <>Loading...</>;
 
   return (
     <>
-      <Button
-        variant="outline"
-        onClick={() => cyRef.current?.layout(layout).run()}
-      >
+      <Button variant="outline" onClick={runLayout}>
         Reset Layout
       </Button>
       <CytoscapeComponent
