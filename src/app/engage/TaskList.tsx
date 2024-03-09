@@ -10,8 +10,6 @@ import { TasksFiltersContext } from '../../data/tasks/TasksFiltersContext';
 
 import type { Task } from '../../types';
 
-import './TaskList.css';
-
 type TaskListItemProps = {
   task: Task;
 };
@@ -38,7 +36,7 @@ const TaskList = () => {
       <Button variant="outline" onClick={toggleShowDoneTasks}>
         Show Done Tasks
       </Button>
-      <ul className="TaskList">
+      <ul className="grid gap-2 overflow-auto pb-2">
         {tasks.map((task) => (
           <TaskListItem key={task.id} task={task} />
         ))}
