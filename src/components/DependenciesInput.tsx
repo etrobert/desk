@@ -23,6 +23,7 @@ const DependenciesInput = ({ addDependency }: Props) => {
       </select>
       <Button
         variant="secondary"
+        type="button"
         onClick={() => {
           if (selectRef.current === null) return;
           addDependency(selectRef.current?.value);
