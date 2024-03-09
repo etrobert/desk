@@ -1,18 +1,16 @@
 import { Button } from '../components/ui/button';
 
-import './TagList.css';
-
 type Props = {
   tags: string[];
   onTagClick?: (tag: string) => void;
 };
 
 const TagList = ({ tags, onTagClick }: Props) => (
-  <ul className="TagList">
+  <ul className="flex gap-4">
     {tags.map((tag) => (
       <li key={tag}>
         <Button
-          className="TagList__Tag"
+          variant="outline"
           onClick={onTagClick && (() => onTagClick(tag))}
         >
           {tag}
