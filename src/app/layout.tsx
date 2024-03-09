@@ -22,7 +22,7 @@ function RootLayout({ children }: PropsWithChildren) {
       </head>
       <body className="h-full">
         <div className="h-full" id="root">
-          <div className="h-full text-center bg-slate-800 flex flex-col items-center justify-center text-slate-50 text-2xl">
+          <div className="h-full text-center antialiased bg-slate-800 flex flex-col items-center justify-center text-slate-50 text-2xl">
             <InnerLayout>{children}</InnerLayout>
           </div>
         </div>

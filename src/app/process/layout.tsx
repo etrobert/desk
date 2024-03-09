@@ -4,6 +4,7 @@ import { useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 
 import useLatestCaptureItem from '../../data/capture-items/useLatestCaptureItem';
+import { TypographyH1 } from '@/components/ui/typography';
 
 import type { PropsWithChildren } from 'react';
 
@@ -21,7 +22,7 @@ const Process = ({ children }: PropsWithChildren) => {
 
   return (
     <div>
-      <h1>Process</h1>
+      <TypographyH1>Process</TypographyH1>
       <p>{latestCaptureItem.value}</p>
       {children}
     </div>

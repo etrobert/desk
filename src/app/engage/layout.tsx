@@ -1,8 +1,9 @@
 import { PropsWithChildren } from 'react';
+import { TypographyH1 } from '@/components/ui/typography';
 
 const EngageLayout = ({ children }: PropsWithChildren) => (
   <>
-    <h1>Engage</h1>
+    <TypographyH1>Engage</TypographyH1>
     {children}
   </>
 );

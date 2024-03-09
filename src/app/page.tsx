@@ -1,6 +1,7 @@
 'use client';
 
 import { Button } from '@/components/ui/button';
+import { TypographyH1 } from '@/components/ui/typography';
 import ButtonGroup from '../components/ButtonGroup';
 import ButtonLink from '../components/ButtonLink';
 import useCaptureItemsCount from '../data/capture-items/useCaptureItemsCount';
@@ -14,7 +15,7 @@ const Menu = () => {
 
   return (
     <>
-      <h1>Menu</h1>
+      <TypographyH1>Menu</TypographyH1>
       <ButtonGroup>
         <ButtonLink href="capture">Capture</ButtonLink>
         {itemsCount === 0 ? (

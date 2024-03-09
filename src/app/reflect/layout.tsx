@@ -1,8 +1,10 @@
+import { TypographyH1 } from '@/components/ui/typography';
+
 import type { PropsWithChildren } from 'react';
 
 const Reflect = ({ children }: PropsWithChildren) => (
   <div>
-    <h1>Reflect</h1>
+    <TypographyH1>Reflect</TypographyH1>
     {children}
   </div>
 );

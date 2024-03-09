@@ -3,6 +3,7 @@
 import { useState } from 'react';
 
 import { Button } from '@/components/ui/button';
+import { TypographyH1 } from '@/components/ui/typography';
 import TextInput from '../../components/TextInput';
 import useCaptureItemsCount from '../../data/capture-items/useCaptureItemsCount';
 import useAddCaptureItem from '../../data/capture-items/useAddCaptureItem';
@@ -16,7 +17,7 @@ const Capture = () => {
 
   return (
     <>
-      <h1>Capture</h1>
+      <TypographyH1>Capture</TypographyH1>
       <form
         className="grid gap-2"
         onSubmit={(event) => {
