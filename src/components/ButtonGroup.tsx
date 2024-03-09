@@ -1,13 +1,12 @@
 import { Children, ReactNode } from 'react';
-
-import './ButtonGroup.css';
+import { cn } from '@/lib/utils';
 
 type Props = { className?: string; children: ReactNode };
 
 const ButtonGroup = ({ className, children }: Props) => (
-  <ul className={`${className} ButtonGroup`}>
+  <ul className={cn(className, 'grid grid-cols-2 gap-2')}>
     {Children.map(children, (child) => (
-      <li>{child}</li>
+      <li className="grid">{child}</li>
     ))}
   </ul>
 );
