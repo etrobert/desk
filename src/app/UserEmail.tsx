@@ -1,10 +1,12 @@
 import useAuth from '../useAuth';
 
-import './UserEmail.css';
-
 const UserEmail = () => {
   const { user } = useAuth();
-  return user && <p className="UserEmail">{user.email}</p>;
+  return (
+    user && (
+      <p className="UserEmail absolute bottom-0 right-0 m-4">{user.email}</p>
+    )
+  );
 };
 
 export default UserEmail;
