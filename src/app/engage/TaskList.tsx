@@ -17,10 +17,7 @@ type TaskListItemProps = {
 };
 
 const TaskListItem = ({ task: { id, title, status } }: TaskListItemProps) => (
-  <li
-    className={cn('TaskList__Task', status === 'done' && 'opacity-50')}
-    key={id}
-  >
+  <li className={cn('grid', status === 'done' && 'opacity-50')} key={id}>
     <ButtonLink href={`engage/${id}`}>{title}</ButtonLink>
   </li>
 );

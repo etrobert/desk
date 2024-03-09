@@ -7,12 +7,3 @@
   padding-right: 1rem;
   max-width: 45rem;
 }
-
-.TaskList__Task {
-  display: grid;
-  text-align: start;
-  grid-template-columns: 1fr auto;
-  align-items: baseline;
-  gap: 0.5rem;
-  word-wrap: anywhere;
-}
