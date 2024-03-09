@@ -6,6 +6,7 @@ import { useState } from 'react';
 
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
+import { TypographyH1 } from '@/components/ui/typography';
 import { auth } from '../firebase';
 
 const SignInPage = () => {
@@ -24,7 +25,7 @@ const SignInPage = () => {
 
   return (
     <>
-      <h1>Sign In</h1>
+      <TypographyH1>Sign In</TypographyH1>
       {error?.message}
       <form
         className="grid gap-2"
