@@ -15,6 +15,7 @@ const QuickAddTask = () => {
         const form = event.target as HTMLFormElement;
         const title = new FormData(form).get('title');
         if (typeof title !== 'string' || title === '') return;
+        form.reset();
         addTask({ title, tags: [], dependencies: [] });
       }}
     >
