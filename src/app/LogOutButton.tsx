@@ -3,10 +3,8 @@ import { signOut } from 'firebase/auth';
 import Button from '../components/Button';
 import { auth } from '../firebase';
 
-import './LogOutButton.css';
-
 const LogOutButton = () => (
-  <Button onClick={() => signOut(auth)} className="LogOutButton">
+  <Button onClick={() => signOut(auth)} className="absolute right-0 top-0 m-4">
     Log Out
   </Button>
 );
