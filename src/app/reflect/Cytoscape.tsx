@@ -10,8 +10,6 @@ import stylesheet from './cytoscapeStylesheet';
 import { Button } from '@/components/ui/button';
 import useCytoscapeElements from './useCytoscapeElements';
 
-import './Cytoscape.css';
-
 CytoscapePackage.use(dagre);
 
 const layout = {
@@ -45,7 +43,7 @@ const CytoscapeView = () => {
         Reset Layout
       </Button>
       <CytoscapeComponent
-        className="Cytoscape"
+        className="h-[60vh] w-screen text-start"
         cy={(cy) => (cyRef.current = cy)}
         stylesheet={stylesheet}
         layout={layout}
