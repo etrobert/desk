@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import TextInput from './TextInput';
+import { Input } from '@/components/ui/input';
 import useExistingTags from '../data/useExistingTags';
 
 type Props = {
@@ -26,7 +26,7 @@ const TagInput = ({ onNewTag }: Props) => {
 
   return (
     <>
-      <TextInput
+      <Input
         onKeyDown={(event) => {
           if (event.key !== 'Enter') return;
           event.preventDefault();

@@ -3,8 +3,8 @@
 import { useState } from 'react';
 
 import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
 import { TypographyH1 } from '@/components/ui/typography';
-import TextInput from '../../components/TextInput';
 import useCaptureItemsCount from '../../data/capture-items/useCaptureItemsCount';
 import useAddCaptureItem from '../../data/capture-items/useAddCaptureItem';
 
@@ -27,7 +27,7 @@ const Capture = () => {
           setItem('');
         }}
       >
-        <TextInput
+        <Input
           autoFocus
           value={item}
           onChange={(event) => setItem(event.target.value)}

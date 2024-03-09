@@ -5,7 +5,7 @@ import { signInWithEmailAndPassword } from 'firebase/auth';
 import { useState } from 'react';
 
 import { Button } from '@/components/ui/button';
-import TextInput from '../components/TextInput';
+import { Input } from '@/components/ui/input';
 import { auth } from '../firebase';
 
 const SignInPage = () => {
@@ -33,13 +33,13 @@ const SignInPage = () => {
           signIn();
         }}
       >
-        <TextInput
+        <Input
           value={email}
           onChange={(event) => setEmail(event.target.value)}
           required
           placeholder="Email"
         />
-        <TextInput
+        <Input
           type="password"
           value={password}
           onChange={(event) => setPassword(event.target.value)}

@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 
-import TextInput from './TextInput';
+import { Input } from '@/components/ui/input';
 import TagInput from './TagInput';
 import TagList from './TagList';
 import DependenciesInput from './DependenciesInput';
@@ -44,7 +44,7 @@ const TaskEdit = <T extends Partial<Task>>({ task, onSubmit }: Props<T>) => {
       <label className="TaskEdit__Label" htmlFor="title">
         Title:
       </label>
-      <TextInput
+      <Input
         id="title"
         value={title}
         onChange={(event) => setTitle(event.target.value)}
