@@ -16,7 +16,3 @@
   gap: 0.5rem;
   word-wrap: anywhere;
 }
-
-.TaskList__Task--Done {
-  opacity: 0.5;
-}
