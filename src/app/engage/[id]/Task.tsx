@@ -6,6 +6,7 @@ import { Button } from '@/components/ui/button';
 import ButtonLink from '../../../components/ButtonLink';
 import ButtonGroup from '../../../components/ButtonGroup';
 import TagList from '../../../components/TagList';
+import DependenciesList from '@/components/DependenciesList';
 
 import useUpdateTask from '../../../data/tasks/useUpdateTask';
 import useDeleteTask from '../../../data/tasks/useDeleteTask';
@@ -32,7 +33,7 @@ const Dependencies = ({ dependencies }: { dependencies?: string[] }) => {
   return (
     <>
       <label>Dependencies:</label>
-      <TagList tags={dependencies} />
+      <DependenciesList dependencies={dependencies} />
     </>
   );
 };

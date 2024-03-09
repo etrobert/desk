@@ -5,6 +5,7 @@ import { useState } from 'react';
 import { Input } from '@/components/ui/input';
 import TagInput from './TagInput';
 import TagList from './TagList';
+import DependenciesList from './DependenciesList';
 import DependenciesInput from './DependenciesInput';
 import ButtonGroup from './ButtonGroup';
 import { Button } from '@/components/ui/button';
@@ -58,8 +59,10 @@ const TaskEdit = <T extends Partial<Task>>({ task, onSubmit }: Props<T>) => {
       </label>
       <DependenciesInput addDependency={addDependency} />
       <label className="justify-self-end">Dependencies:</label>
-      {/* TODO: Change from using _task_list for dependencies */}
-      <TagList tags={dependencies} onTagClick={removeDependency} />
+      <DependenciesList
+        dependencies={dependencies}
+        onDependencyClick={removeDependency}
+      />
       <ButtonGroup className="col-start-1 col-end-[-1]">
         <Button type="submit">Confirm</Button>
         <BackButton variant="secondary">Cancel</BackButton>
