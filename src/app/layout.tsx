@@ -7,7 +7,7 @@ import type { PropsWithChildren } from 'react';
 
 function RootLayout({ children }: PropsWithChildren) {
   return (
-    <html lang="en">
+    <html className="h-full" lang="en">
       <head>
         <meta charSet="utf-8" />
         <link rel="icon" href="/favicon.svg" />
@@ -18,8 +18,8 @@ function RootLayout({ children }: PropsWithChildren) {
         <meta name="theme-color" content="#000000" />
         <title>Desk</title>
       </head>
-      <body>
-        <div id="root">
+      <body className="h-full">
+        <div className="h-full" id="root">
           <div className="AppLayout">
             <InnerLayout>{children}</InnerLayout>
           </div>
