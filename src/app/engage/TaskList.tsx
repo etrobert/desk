@@ -3,6 +3,7 @@
 import { useContext, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import ButtonLink from '../../components/ButtonLink';
+import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
 import useTasks from '../../data/tasks/useTasks';
 import { TasksFiltersContext } from '../../data/tasks/TasksFiltersContext';
@@ -17,9 +18,10 @@ type TaskListItemProps = {
 
 const TaskListItem = ({ task: { id, title, status } }: TaskListItemProps) => (
   <li
-    className={
-      'TaskList__Task' + (status === 'done' ? ' TaskList__Task--Done' : '')
-    }
+    className={cn(
+      'TaskList__Task',
+      status === 'done' && ' TaskList__Task--Done',
+    )}
     key={id}
   >
     <ButtonLink href={`engage/${id}`}>{title}</ButtonLink>
