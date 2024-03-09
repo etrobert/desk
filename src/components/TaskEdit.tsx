@@ -14,8 +14,6 @@ import useSet from '../hooks/useSet';
 
 import type { Task } from '../types';
 
-import './TaskEdit.css';
-
 type Props<T extends Partial<Task>> = {
   task: T;
   onSubmit: (
@@ -34,14 +32,14 @@ const TaskEdit = <T extends Partial<Task>>({ task, onSubmit }: Props<T>) => {
 
   return (
     <form
-      className="TaskEdit__Form"
+      className="grid grid-cols-[auto_1fr] items-baseline gap-4"
       onSubmit={(event) => {
         event.preventDefault();
         if (title === '') return;
         onSubmit({ ...task, title, tags, dependencies });
       }}
     >
-      <label className="TaskEdit__Label" htmlFor="title">
+      <label className="justify-self-end" htmlFor="title">
         Title:
       </label>
       <Input
@@ -49,20 +47,20 @@ const TaskEdit = <T extends Partial<Task>>({ task, onSubmit }: Props<T>) => {
         value={title}
         onChange={(event) => setTitle(event.target.value)}
       />
-      <label className="TaskEdit__Label" htmlFor="new-tag">
+      <label className="justify-self-end" htmlFor="new-tag">
         Add Tag:
       </label>
       <TagInput onNewTag={addTag} />
-      <label className="TaskEdit__Label">Tags:</label>
+      <label className="justify-self-end">Tags:</label>
       <TagList tags={tags} onTagClick={removeTag} />
-      <label className="TaskEdit__Label" htmlFor="new-dependency">
+      <label className="justify-self-end" htmlFor="new-dependency">
         Add Dependency:
       </label>
       <DependenciesInput addDependency={addDependency} />
-      <label className="TaskEdit__Label">Dependencies:</label>
+      <label className="justify-self-end">Dependencies:</label>
       {/* TODO: Change from using _task_list for dependencies */}
       <TagList tags={dependencies} onTagClick={removeDependency} />
-      <ButtonGroup className="TaskEdit__Buttons">
+      <ButtonGroup className="col-start-1 col-end-[-1]">
         <Button type="submit">Confirm</Button>
         <BackButton variant="secondary">Cancel</BackButton>
       </ButtonGroup>
