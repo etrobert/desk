@@ -2,7 +2,6 @@ import InnerLayout from './InnerLayout';
 import { Inter } from 'next/font/google';
 
 import '../index.css';
-import './layout.css';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -23,7 +22,7 @@ function RootLayout({ children }: PropsWithChildren) {
       </head>
       <body className="h-full">
         <div className="h-full" id="root">
-          <div className="AppLayout">
+          <div className="h-full text-center bg-slate-800 flex flex-col items-center justify-center text-slate-50 text-2xl">
             <InnerLayout>{children}</InnerLayout>
           </div>
         </div>
