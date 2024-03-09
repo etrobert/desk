@@ -60,12 +60,17 @@ const Task = ({ id }: Props) => {
           <Dependencies dependencies={dependencies} />
         </div>
         <ButtonGroup>
-          <Button onClick={() => updateTask({ ...task, status: 'done' })}>
+          <Button
+            variant="secondary"
+            onClick={() => updateTask({ ...task, status: 'done' })}
+          >
             Done
           </Button>
           <ButtonLink href={`${id}/edit`}>Edit</ButtonLink>
-          <Button onClick={() => deleteTask(id)}>Delete</Button>
-          <BackButton>Back</BackButton>
+          <Button variant="secondary" onClick={() => deleteTask(id)}>
+            Delete
+          </Button>
+          <BackButton variant="secondary">Back</BackButton>
         </ButtonGroup>
       </div>
     </>
