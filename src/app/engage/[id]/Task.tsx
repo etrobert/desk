@@ -12,8 +12,6 @@ import useUpdateTask from '../../../data/tasks/useUpdateTask';
 import useDeleteTask from '../../../data/tasks/useDeleteTask';
 import useTask from '../../../data/tasks/useTask';
 
-import './Task.css';
-
 type Props = {
   id: string;
 };
@@ -54,9 +52,9 @@ const Task = ({ id }: Props) => {
 
   return (
     <>
-      <div className="Task__content">
-        <p className="Task__title">{title}</p>
-        <div className="Task__fields">
+      <div className="grid gap-4">
+        <p>{title}</p>
+        <div className="grid grid-cols-[auto_1fr] items-baseline gap-2">
           <Tags tags={tags} />
           <Dependencies dependencies={dependencies} />
         </div>
