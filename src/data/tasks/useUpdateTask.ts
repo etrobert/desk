@@ -12,10 +12,10 @@ const useUpdateTask = () => {
       userPath &&
         (await updateDoc(
           doc(firestore, ...userPath, 'tasks', id),
-          taskWithoutId
+          taskWithoutId,
         ));
     },
-    [userPath]
+    [userPath],
   );
 };
 

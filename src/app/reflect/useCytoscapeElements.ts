@@ -6,14 +6,14 @@ const useCytoscapeElements = () => {
 
   if (tasks === null) return null;
 
-  const getTaskDependencies = (task: typeof tasks[number]) => {
+  const getTaskDependencies = (task: (typeof tasks)[number]) => {
     if (task.dependencies === undefined) return [];
     const taskEdges = task.dependencies.map((dependency) => ({
       data: { source: dependency, target: task.id },
     }));
     // Filter out edges that don't have a corresponding task
     return taskEdges.filter((edge) =>
-      tasks.some((task) => task.id === edge.data.source)
+      tasks.some((task) => task.id === edge.data.source),
     );
   };
 

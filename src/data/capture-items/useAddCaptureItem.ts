@@ -15,7 +15,7 @@ const useAddCaptureItem = () => {
         ...captureItem,
         createdAt: serverTimestamp(),
       }),
-    [userPath]
+    [userPath],
   );
 };
 

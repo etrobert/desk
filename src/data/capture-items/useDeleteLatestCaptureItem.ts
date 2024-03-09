@@ -13,7 +13,7 @@ const useDeleteLatestCaptureItem = () => {
   return useCallback(async () => {
     if (latestCaptureItem === null || userPath === null) return;
     await deleteDoc(
-      doc(firestore, ...userPath, 'capture-items', latestCaptureItem.id)
+      doc(firestore, ...userPath, 'capture-items', latestCaptureItem.id),
     );
   }, [userPath, latestCaptureItem]);
 };

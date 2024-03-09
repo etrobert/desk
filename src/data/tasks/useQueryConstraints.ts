@@ -6,7 +6,7 @@ const useQueryConstraints = () => {
   const { showDoneTasks } = useContext(TasksFiltersContext);
   return useMemo(
     () => (showDoneTasks ? [] : [where('status', '!=', 'done')]),
-    [showDoneTasks]
+    [showDoneTasks],
   );
 };
 

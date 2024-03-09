@@ -21,7 +21,7 @@ const useAddTask = () => {
       // Add a new document with a generated id.
       await addDoc(collection(firestore, ...userPath, 'tasks'), newTask);
     },
-    [userPath]
+    [userPath],
   );
 };
 

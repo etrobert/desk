@@ -9,7 +9,7 @@ const useDeleteTask = () => {
     async (id: string) => {
       userPath && (await deleteDoc(doc(firestore, ...userPath, 'tasks', id)));
     },
-    [userPath]
+    [userPath],
   );
 };
 

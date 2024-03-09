@@ -19,7 +19,7 @@ import './TaskEdit.css';
 type Props<T extends Partial<Task>> = {
   task: T;
   onSubmit: (
-    task: T & { title: string; tags: string[]; dependencies: string[] }
+    task: T & { title: string; tags: string[]; dependencies: string[] },
   ) => void;
 };
 

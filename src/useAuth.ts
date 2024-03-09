@@ -15,9 +15,9 @@ const useAuth = () => {
   useEffect(
     () =>
       onAuthStateChanged(firebaseAuth, (user) =>
-        setAuth({ initialized: true, user })
+        setAuth({ initialized: true, user }),
       ),
-    []
+    [],
   );
   return auth;
 };

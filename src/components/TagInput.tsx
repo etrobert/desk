@@ -13,9 +13,7 @@ type ExistingTagsProps = {
 function ExistingTags({ existingTags }: ExistingTagsProps) {
   return (
     <datalist id="existing-tags">
-      {existingTags?.map((tag) => (
-        <option key={tag}>{tag}</option>
-      ))}
+      {existingTags?.map((tag) => <option key={tag}>{tag}</option>)}
     </datalist>
   );
 }

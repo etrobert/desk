@@ -25,7 +25,7 @@ function TasksFiltersContextProvider({ children }: Props) {
 
   const toggleShowDoneTasks = useCallback(
     () => setShowDoneTasks((value) => !value),
-    []
+    [],
   );
 
   return (

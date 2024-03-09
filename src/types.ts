@@ -8,7 +8,7 @@ type CaptureItem = {
   createdAt: Timestamp | null;
 };
 
-type Status = typeof statuses[number];
+type Status = (typeof statuses)[number];
 
 type Task = {
   id: string;

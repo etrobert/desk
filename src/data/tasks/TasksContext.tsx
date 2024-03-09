@@ -23,9 +23,9 @@ function TasksContextProvider({ children }: Props) {
       tasks.sort((a, b) =>
         a.createdAt === null || b.createdAt === null
           ? 0
-          : a.createdAt.seconds - b.createdAt.seconds
+          : a.createdAt.seconds - b.createdAt.seconds,
       ),
-    [tasks]
+    [tasks],
   );
 
   return (

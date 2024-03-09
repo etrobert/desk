@@ -6,7 +6,7 @@ import useCollection from './useCollection';
 
 const useUserCollection = <T>(
   path: string[],
-  queryConstraints: QueryConstraint[]
+  queryConstraints: QueryConstraint[],
 ) => {
   const userPath = useUserPath();
 
@@ -14,7 +14,7 @@ const useUserCollection = <T>(
     () =>
       userPath &&
       query(collection(firestore, ...userPath, ...path), ...queryConstraints),
-    [userPath, path, queryConstraints]
+    [userPath, path, queryConstraints],
   );
 
   return useCollection<T>(q);
