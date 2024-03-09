@@ -7,8 +7,6 @@ import TextInput from '../../components/TextInput';
 import useCaptureItemsCount from '../../data/capture-items/useCaptureItemsCount';
 import useAddCaptureItem from '../../data/capture-items/useAddCaptureItem';
 
-import './page.css';
-
 const Capture = () => {
   const [item, setItem] = useState('');
   const itemsCount = useCaptureItemsCount();
@@ -20,7 +18,7 @@ const Capture = () => {
     <>
       <h1>Capture</h1>
       <form
-        className="Capture__form"
+        className="grid gap-2"
         onSubmit={(event) => {
           event.preventDefault();
           if (item.trim() === '') return;
