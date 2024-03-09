@@ -8,8 +8,6 @@ import Button from '../components/Button';
 import TextInput from '../components/TextInput';
 import { auth } from '../firebase';
 
-import './SignInPage.css';
-
 const SignInPage = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -29,7 +27,7 @@ const SignInPage = () => {
       <h1>Sign In</h1>
       {error?.message}
       <form
-        className="SignInPage__form"
+        className="grid gap-2"
         onSubmit={(event) => {
           event.preventDefault();
           signIn();
