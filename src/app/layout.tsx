@@ -1,13 +1,16 @@
 import InnerLayout from './InnerLayout';
+import { Inter } from 'next/font/google';
 
 import '../index.css';
 import './layout.css';
+
+const inter = Inter({ subsets: ['latin'] });
 
 import type { PropsWithChildren } from 'react';
 
 function RootLayout({ children }: PropsWithChildren) {
   return (
-    <html className="h-full" lang="en">
+    <html className={['h-full', inter.className].join(' ')} lang="en">
       <head>
         <meta charSet="utf-8" />
         <link rel="icon" href="/favicon.svg" />
