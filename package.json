@@ -21,7 +21,7 @@
   "scripts": {
     "start": "next start",
     "build": "next build",
-    "dev": "next dev",
+    "dev": "next dev --turbo",
     "preview": "vite preview",
     "check-types": "tsc",
     "lint": "eslint src"
