@@ -1,6 +1,6 @@
 'use client';
 
-import Button from '../components/Button';
+import { Button } from '@/components/ui/button';
 import ButtonGroup from '../components/ButtonGroup';
 import ButtonLink from '../components/ButtonLink';
 import useCaptureItemsCount from '../data/capture-items/useCaptureItemsCount';

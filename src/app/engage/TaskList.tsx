@@ -4,7 +4,7 @@ import { useContext, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import ButtonLink from '../../components/ButtonLink';
 import TagList from '../../components/TagList';
-import Button from '../../components/Button';
+import { Button } from '@/components/ui/button';
 import useTasks from '../../data/tasks/useTasks';
 import { TasksFiltersContext } from '../../data/tasks/TasksFiltersContext';
 

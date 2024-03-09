@@ -4,7 +4,7 @@ import { FirebaseError } from 'firebase/app';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import { useState } from 'react';
 
-import Button from '../components/Button';
+import { Button } from '@/components/ui/button';
 import TextInput from '../components/TextInput';
 import { auth } from '../firebase';
 

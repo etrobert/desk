@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 
-import Button from '../../components/Button';
+import { Button } from '@/components/ui/button';
 import TextInput from '../../components/TextInput';
 import useCaptureItemsCount from '../../data/capture-items/useCaptureItemsCount';
 import useAddCaptureItem from '../../data/capture-items/useAddCaptureItem';

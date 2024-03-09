@@ -1,7 +1,7 @@
 'use client';
 
 import { useRouter } from 'next/navigation';
-import Button from '../../../components/Button';
+import { Button } from '@/components/ui/button';
 import ButtonGroup from '../../../components/ButtonGroup';
 import BackButton from '../../../components/BackButton';
 import Countdown from './Countdown';

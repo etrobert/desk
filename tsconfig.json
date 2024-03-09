@@ -16,7 +16,11 @@
     "noEmit": true,
     "jsx": "preserve",
     "incremental": true,
-    "plugins": [{ "name": "next" }]
+    "plugins": [{ "name": "next" }],
+    "baseUrl": "src/",
+    "paths": {
+      "@/*": ["./*"]
+    }
   },
   "include": ["src", ".next/types/**/*.ts"],
   "exclude": ["node_modules"]

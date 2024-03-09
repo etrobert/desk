@@ -1,13 +1,13 @@
-import { ComponentProps } from 'react';
 import Link from 'next/link';
+import { cn } from '@/lib/utils';
+import { buttonVariants } from '@/components/ui/button';
 
-import './ButtonLink.css';
-import './ButtonShared.css';
+import type { ComponentProps } from 'react';
 
 type Props = ComponentProps<typeof Link>;
 
 const ButtonLink = ({ className, ...props }: Props) => (
-  <Link className={`${className} ButtonShared ButtonLink`} {...props} />
+  <Link className={cn(className, buttonVariants())} {...props} />
 );
 
 export default ButtonLink;

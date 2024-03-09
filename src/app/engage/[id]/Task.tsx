@@ -2,7 +2,7 @@
 
 import { useRouter } from 'next/navigation';
 import BackButton from '../../../components/BackButton';
-import Button from '../../../components/Button';
+import { Button } from '@/components/ui/button';
 import ButtonLink from '../../../components/ButtonLink';
 import ButtonGroup from '../../../components/ButtonGroup';
 import TagList from '../../../components/TagList';

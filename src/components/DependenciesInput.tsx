@@ -1,6 +1,6 @@
 import { useRef } from 'react';
 import useTasks from '../data/tasks/useTasks';
-import Button from './Button';
+import { Button } from '@/components/ui/button';
 
 type Props = {
   addDependency: (id: string) => void;

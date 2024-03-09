@@ -7,7 +7,7 @@ import TagInput from './TagInput';
 import TagList from './TagList';
 import DependenciesInput from './DependenciesInput';
 import ButtonGroup from './ButtonGroup';
-import Button from './Button';
+import { Button } from '@/components/ui/button';
 import BackButton from './BackButton';
 
 import useSet from '../hooks/useSet';

@@ -7,7 +7,7 @@ import CytoscapePackage from 'cytoscape';
 import CytoscapeComponent from 'react-cytoscapejs';
 import dagre from 'cytoscape-dagre';
 import stylesheet from './cytoscapeStylesheet';
-import Button from '../../components/Button';
+import { Button } from '@/components/ui/button';
 import useCytoscapeElements from './useCytoscapeElements';
 
 import './Cytoscape.css';

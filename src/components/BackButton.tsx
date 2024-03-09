@@ -1,7 +1,7 @@
 import { ComponentProps } from 'react';
 import { useRouter } from 'next/navigation';
 
-import Button from './Button';
+import { Button } from '@/components/ui/button';
 
 type Props = Omit<ComponentProps<typeof Button>, 'onClick'>;
 

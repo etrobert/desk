@@ -1,7 +1,7 @@
 'use client';
 
 import ButtonGroup from '../../components/ButtonGroup';
-import Button from '../../components/Button';
+import { Button } from '@/components/ui/button';
 import ButtonLink from '../../components/ButtonLink';
 import useDeleteLatestCaptureItem from '../../data/capture-items/useDeleteLatestCaptureItem';
 

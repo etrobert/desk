@@ -1,6 +1,6 @@
 import { signOut } from 'firebase/auth';
 
-import Button from '../components/Button';
+import { Button } from '@/components/ui/button';
 import { auth } from '../firebase';
 
 const LogOutButton = () => (
