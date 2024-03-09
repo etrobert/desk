@@ -4,7 +4,11 @@ import { Button } from '@/components/ui/button';
 import { auth } from '../firebase';
 
 const LogOutButton = () => (
-  <Button onClick={() => signOut(auth)} className="absolute right-0 top-0 m-4">
+  <Button
+    onClick={() => signOut(auth)}
+    variant="outline"
+    className="absolute right-0 top-0 m-4"
+  >
     Log Out
   </Button>
 );

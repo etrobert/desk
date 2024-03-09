@@ -45,7 +45,9 @@ const TaskList = () => {
   if (tasks === null) return <>Loading...</>;
   return (
     <>
-      <Button onClick={toggleShowDoneTasks}>Show Done Tasks</Button>
+      <Button variant="outline" onClick={toggleShowDoneTasks}>
+        Show Done Tasks
+      </Button>
       <ul className="TaskList">
         {tasks.map((task) => (
           <TaskListItem key={task.id} task={task} />

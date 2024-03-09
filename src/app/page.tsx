@@ -19,7 +19,9 @@ const Menu = () => {
       <ButtonGroup>
         <ButtonLink href="capture">Capture</ButtonLink>
         {itemsCount === 0 ? (
-          <Button disabled>Process ({itemsCount})</Button>
+          <Button variant="outline" disabled>
+            Process ({itemsCount})
+          </Button>
         ) : (
           <ButtonLink href="process">Process ({itemsCount})</ButtonLink>
         )}

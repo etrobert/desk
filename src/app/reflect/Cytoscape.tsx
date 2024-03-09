@@ -35,7 +35,10 @@ const CytoscapeView = () => {
 
   return (
     <>
-      <Button onClick={() => cyRef.current?.layout(layout).run()}>
+      <Button
+        variant="outline"
+        onClick={() => cyRef.current?.layout(layout).run()}
+      >
         Reset Layout
       </Button>
       <CytoscapeComponent

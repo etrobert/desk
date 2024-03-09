@@ -10,12 +10,20 @@ const Actions = () => {
 
   return (
     <ButtonGroup>
-      <Button onClick={deleteLatestCaptureItem}>Delete</Button>
+      <Button variant="secondary" onClick={deleteLatestCaptureItem}>
+        Delete
+      </Button>
       <ButtonLink href="process/do">Do</ButtonLink>
-      <Button disabled>Delegate</Button>
+      <Button variant="secondary" disabled>
+        Delegate
+      </Button>
       <ButtonLink href="process/defer">Defer</ButtonLink>
-      <Button disabled>Archive</Button>
-      <Button disabled>Incubate</Button>
+      <Button variant="secondary" disabled>
+        Archive
+      </Button>
+      <Button variant="secondary" disabled>
+        Incubate
+      </Button>
     </ButtonGroup>
   );
 };
