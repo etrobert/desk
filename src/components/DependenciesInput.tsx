@@ -1,6 +1,13 @@
-import { useRef } from 'react';
+import { useState } from 'react';
 import useTasks from '../data/tasks/useTasks';
 import { Button } from '@/components/ui/button';
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from '@/components/ui/select';
 
 type Props = {
   addDependency: (id: string) => void;
@@ -8,25 +15,30 @@ type Props = {
 
 const DependenciesInput = ({ addDependency }: Props) => {
   const tasks = useTasks();
-  const selectRef = useRef<HTMLSelectElement>(null);
+  const [value, setValue] = useState<string>();
 
   if (tasks === null) return <>Loading...</>;
 
   return (
     <div className="flex gap-2">
-      <select ref={selectRef} id="new-dependency">
-        {tasks.map((task) => (
-          <option key={task.id} value={task.id}>
-            {task.title}
-          </option>
-        ))}
-      </select>
+      <Select onValueChange={setValue}>
+        <SelectTrigger>
+          <SelectValue placeholder="Depencency" />
+        </SelectTrigger>
+        <SelectContent>
+          {tasks.map((task) => (
+            <SelectItem key={task.id} value={task.id}>
+              {task.title}
+            </SelectItem>
+          ))}
+        </SelectContent>
+      </Select>
       <Button
         variant="secondary"
         type="button"
         onClick={() => {
-          if (selectRef.current === null) return;
-          addDependency(selectRef.current?.value);
+          if (!value) return;
+          addDependency(value);
         }}
       >
         Add
