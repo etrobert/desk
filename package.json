@@ -23,7 +23,6 @@
     "start": "next start",
     "build": "next build",
     "dev": "next dev --turbo",
-    "preview": "vite preview",
     "check-types": "tsc",
     "lint": "next lint"
   },
@@ -36,7 +35,6 @@
     "@types/react-dom": "^18.2.21",
     "@typescript-eslint/eslint-plugin": "^7.1.1",
     "@typescript-eslint/parser": "^7.1.1",
-    "@vitejs/plugin-react": "^4.2.1",
     "autoprefixer": "^10.4.18",
     "eslint": "^8.57.0",
     "eslint-plugin-react": "^7.34.0",
@@ -45,7 +43,6 @@
     "prettier": "^3.2.5",
     "prettier-plugin-tailwindcss": "^0.5.12",
     "tailwindcss": "^3.4.1",
-    "typescript": "^5.4.2",
-    "vite": "^5.1.5"
+    "typescript": "^5.4.2"
   }
 }
