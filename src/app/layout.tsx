@@ -22,10 +22,8 @@ function RootLayout({ children }: PropsWithChildren) {
         <meta name="theme-color" content="#000000" />
         <title>Desk</title>
       </head>
-      <body className="h-full">
-        <div className="flex h-full flex-col items-center justify-center gap-4 text-center text-2xl antialiased">
-          <InnerLayout>{children}</InnerLayout>
-        </div>
+      <body className="flex h-full flex-col items-center justify-center gap-4 text-center text-2xl antialiased">
+        <InnerLayout>{children}</InnerLayout>
       </body>
     </html>
   );
