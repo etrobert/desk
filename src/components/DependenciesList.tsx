@@ -1,6 +1,6 @@
-import useTasks from '@/data/tasks/useTasks';
-import TagList from './TagList';
 import { useMemo } from 'react';
+import useTasks from '@/data/tasks/useTasks';
+import { Button } from '@/components/ui/button';
 
 type Props = {
   dependencies: string[];
@@ -22,12 +22,19 @@ const DependenciesList = ({ dependencies, onDependencyClick }: Props) => {
 
   if (dependenciesTasks === null) return <>Loading...</>;
 
-  // TODO: Change from using _task_list for dependencies
   return (
-    <TagList
-      tags={dependenciesTasks.map((d) => d.title)}
-      onTagClick={onDependencyClick}
-    />
+    <ul className="flex gap-4">
+      {dependenciesTasks.map((task) => (
+        <li key={task.id}>
+          <Button
+            variant="outline"
+            onClick={onDependencyClick && (() => onDependencyClick(task.id))}
+          >
+            {task.title}
+          </Button>
+        </li>
+      ))}
+    </ul>
   );
 };
 
