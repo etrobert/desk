@@ -20,7 +20,9 @@ const QuickAddTask = () => {
       }}
     >
       <Input name="title" />
-      <Button variant="secondary">Add</Button>
+      <Button variant="secondary" type="submit">
+        Add
+      </Button>
     </form>
   );
 };
