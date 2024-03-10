@@ -23,7 +23,7 @@ const DependenciesList = ({ dependencies, onDependencyClick }: Props) => {
   if (dependenciesTasks === null) return <>Loading...</>;
 
   return (
-    <ul className="flex gap-4">
+    <ul className="flex gap-4 overflow-auto">
       {dependenciesTasks.map((task) => (
         <li key={task.id}>
           <Button
