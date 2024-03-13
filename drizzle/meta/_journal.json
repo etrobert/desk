@@ -15,6 +15,13 @@
       "when": 1710336819525,
       "tag": "0001_peaceful_banshee",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "5",
+      "when": 1710337115025,
+      "tag": "0002_glamorous_invisible_woman",
+      "breakpoints": true
     }
   ]
 }
