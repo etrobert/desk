@@ -1,3 +1,4 @@
+import { revalidatePath } from 'next/cache';
 import { Button } from './ui/button';
 import { Input } from './ui/input';
 import createTask from '@/db/createTask';
@@ -7,6 +8,7 @@ async function add(formData: FormData) {
   const title = formData.get('title');
   if (typeof title !== 'string' || title === '') return;
   await createTask(title);
+  revalidatePath('/');
 }
 
 const QuickAddTask = () => (
