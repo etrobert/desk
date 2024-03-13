@@ -8,6 +8,13 @@
       "when": 1710331892347,
       "tag": "0000_woozy_lady_deathstrike",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "5",
+      "when": 1710336819525,
+      "tag": "0001_peaceful_banshee",
+      "breakpoints": true
     }
   ]
 }
