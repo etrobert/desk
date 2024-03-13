@@ -1,4 +1,10 @@
-import { pgTable, serial, text, timestamp } from 'drizzle-orm/pg-core';
+import {
+  pgTable,
+  primaryKey,
+  serial,
+  text,
+  timestamp,
+} from 'drizzle-orm/pg-core';
 
 export const users = pgTable('users', {
   id: serial('id').primaryKey(),
@@ -13,3 +19,14 @@ export const tasks = pgTable('tasks', {
     .notNull(),
   createdAt: timestamp('created_at').defaultNow().notNull(),
 });
+
+export const dependencies = pgTable(
+  'dependencies',
+  {
+    taskId: serial('task_id').references(() => tasks.id),
+    dependencyId: serial('dependency_id').references(() => tasks.id),
+  },
+  (table) => ({
+    pk: primaryKey({ columns: [table.taskId, table.dependencyId] }),
+  }),
+);
