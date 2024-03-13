@@ -1,32 +1,17 @@
-'use client';
-
-import { useRouter } from 'next/navigation';
+import { redirect } from 'next/navigation';
 
 import TaskEdit from '../../../../components/TaskEdit';
 
-import useTask from '../../../../data/tasks/useTask';
-import useUpdateTask from '../../../../data/tasks/useUpdateTask';
+import fetchTask from '@/db/fetchTask';
 
 const TaskEditPage = ({ params: { id } }: { params: { id: string } }) => {
-  const task = useTask(id);
-  const updateTask = useUpdateTask();
-  const router = useRouter();
+  const numId = parseInt(id);
 
-  if (task === undefined) {
-    router.push('/');
-    return null;
-  }
-  if (task === null) return <>Loading...</>;
+  if (isNaN(numId)) redirect('/');
 
-  return (
-    <TaskEdit
-      task={task}
-      onSubmit={(task) => {
-        updateTask(task);
-        router.back();
-      }}
-    />
-  );
+  const task = fetchTask(numId);
+
+  return <TaskEdit task={task} />;
 };
 
 export default TaskEditPage;
