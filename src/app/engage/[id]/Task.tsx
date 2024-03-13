@@ -1,19 +1,14 @@
-'use client';
-
-import { useRouter } from 'next/navigation';
+import { redirect } from 'next/navigation';
 import BackButton from '../../../components/BackButton';
 import { Button } from '@/components/ui/button';
 import ButtonLink from '../../../components/ButtonLink';
 import ButtonGroup from '../../../components/ButtonGroup';
 import TagList from '../../../components/TagList';
 import DependenciesList from '@/components/DependenciesList';
-
-import useUpdateTask from '../../../data/tasks/useUpdateTask';
-import useDeleteTask from '../../../data/tasks/useDeleteTask';
-import useTask from '../../../data/tasks/useTask';
+import fetchTask from '@/db/fetchTask';
 
 type Props = {
-  id: string;
+  id: number;
 };
 
 const Tags = ({ tags }: { tags: string[] }) => {
@@ -36,37 +31,35 @@ const Dependencies = ({ dependencies }: { dependencies?: string[] }) => {
   );
 };
 
-const Task = ({ id }: Props) => {
-  const task = useTask(id);
-  const updateTask = useUpdateTask();
-  const deleteTask = useDeleteTask();
-  const router = useRouter();
+const Task = async ({ id }: Props) => {
+  const task = await fetchTask(id);
+  // const updateTask = useUpdateTask();
+  // const deleteTask = useDeleteTask();
 
-  if (task === undefined) {
-    router.push('..');
-    return null;
-  }
-  if (task === null) return <>Loading...</>;
+  if (task === undefined) redirect('/');
 
-  const { title, tags, dependencies } = task;
+  const { title } = task;
 
   return (
     <>
       <div className="grid gap-4">
         <p>{title}</p>
         <div className="grid grid-cols-[auto_1fr] items-baseline gap-2">
-          <Tags tags={tags} />
-          <Dependencies dependencies={dependencies} />
+          {/* <Tags tags={tags} /> */}
+          {/* <Dependencies dependencies={dependencies} /> */}
         </div>
         <ButtonGroup>
           <Button
             variant="secondary"
-            onClick={() => updateTask({ ...task, status: 'done' })}
+            // onClick={() => updateTask({ ...task, status: 'done' })}
           >
             Done
           </Button>
           <ButtonLink href={`${id}/edit`}>Edit</ButtonLink>
-          <Button variant="secondary" onClick={() => deleteTask(id)}>
+          <Button
+            variant="secondary"
+            // onClick={() => deleteTask(id)}
+          >
             Delete
           </Button>
           <BackButton variant="secondary">Back</BackButton>
