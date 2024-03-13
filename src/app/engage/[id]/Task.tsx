@@ -7,6 +7,7 @@ import TagList from '../../../components/TagList';
 import DependenciesList from '@/components/DependenciesList';
 import fetchTask from '@/db/fetchTask';
 import { Task } from '@/db/schema';
+import DeleteTaskButton from './DeleteTaskButton';
 
 type Props = {
   id: number;
@@ -40,10 +41,9 @@ const Dependencies = ({ dependencies }: { dependencies: Task[] }) => {
   );
 };
 
-const Task = async ({ id }: Props) => {
+const TaskComponent = async ({ id }: Props) => {
   const task = await fetchTask(id);
   // const updateTask = useUpdateTask();
-  // const deleteTask = useDeleteTask();
 
   if (task === undefined) redirect('/');
 
@@ -65,12 +65,7 @@ const Task = async ({ id }: Props) => {
             Done
           </Button>
           <ButtonLink href={`${id}/edit`}>Edit</ButtonLink>
-          <Button
-            variant="secondary"
-            // onClick={() => deleteTask(id)}
-          >
-            Delete
-          </Button>
+          <DeleteTaskButton id={id} />
           <BackButton variant="secondary">Back</BackButton>
         </ButtonGroup>
       </div>
@@ -78,4 +73,4 @@ const Task = async ({ id }: Props) => {
   );
 };
 
-export default Task;
+export default TaskComponent;
