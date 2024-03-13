@@ -6,6 +6,7 @@ import ButtonGroup from '../../../components/ButtonGroup';
 import TagList from '../../../components/TagList';
 import DependenciesList from '@/components/DependenciesList';
 import fetchTask from '@/db/fetchTask';
+import { Task } from '@/db/schema';
 
 type Props = {
   id: number;
@@ -21,12 +22,20 @@ const Tags = ({ tags }: { tags: string[] }) => {
   );
 };
 
-const Dependencies = ({ dependencies }: { dependencies?: string[] }) => {
-  if (dependencies === undefined || dependencies.length === 0) return null;
+const Dependencies = ({ dependencies }: { dependencies: Task[] }) => {
+  if (dependencies.length === 0) return null;
   return (
     <>
       <label>Dependencies:</label>
-      <DependenciesList dependencies={dependencies} />
+      {/* <DependenciesList dependencies={dependencies} /> */}
+      {/* TODO: Remove this */}
+      <ul>
+        {dependencies.map(({ id, title }) => (
+          <Button variant="outline" key={id}>
+            {title}
+          </Button>
+        ))}
+      </ul>
     </>
   );
 };
@@ -38,7 +47,7 @@ const Task = async ({ id }: Props) => {
 
   if (task === undefined) redirect('/');
 
-  const { title } = task;
+  const { title, dependencies } = task;
 
   return (
     <>
@@ -46,7 +55,7 @@ const Task = async ({ id }: Props) => {
         <p>{title}</p>
         <div className="grid grid-cols-[auto_1fr] items-baseline gap-2">
           {/* <Tags tags={tags} /> */}
-          {/* <Dependencies dependencies={dependencies} /> */}
+          <Dependencies dependencies={dependencies} />
         </div>
         <ButtonGroup>
           <Button
