@@ -2,6 +2,7 @@ import { Button } from '@/components/ui/button';
 import { type RefObject } from 'react';
 import useSelected from './useSelected';
 import useDrawMode from './useDrawMode';
+import deleteTasksAction from '@/actions/deleteTasksAction';
 
 type Props = {
   runLayout: () => void;
@@ -13,9 +14,7 @@ const Toolbar = ({ runLayout, ehRef, cyRef }: Props) => {
   const selected = useSelected(cyRef);
   const { drawMode, toggleDrawMode } = useDrawMode(ehRef);
 
-  const deleteSelected = () => {
-    console.log('deleting ', { selected });
-  };
+  const deleteSelected = () => deleteTasksAction(selected);
 
   return (
     <div className="absolute bottom-0 right-0 m-4 flex gap-2">
