@@ -8,6 +8,7 @@ import dagre from 'cytoscape-dagre';
 import edgehandles from 'cytoscape-edgehandles';
 import stylesheet from './cytoscapeStylesheet';
 import Toolbar from './Toolbar';
+import createDependencyAction from '@/actions/createDependencyAction';
 
 CytoscapePackage.use(dagre);
 CytoscapePackage.use(edgehandles);
@@ -25,6 +26,13 @@ const CytoscapeView = ({ elements }: { elements: ElementDefinition[] }) => {
   useEffect(() => {
     // @ts-expect-error No idea what's going on here
     ehRef.current = cyRef.current?.edgehandles();
+    cyRef.current?.on(
+      'ehcomplete',
+      async (_, sourceNode, targetNode, addedEdge) => {
+        await createDependencyAction(targetNode.id(), sourceNode.id());
+        cyRef.current?.remove(addedEdge);
+      },
+    );
   }, []);
 
   const runLayout = useCallback(() => {
