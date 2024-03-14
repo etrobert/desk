@@ -1,4 +1,4 @@
-import type { Task } from '../../types';
+import { Task } from '@/db/schema';
 import { textMaxWidth } from './cytoscapeStylesheet';
 
 const averageCharacterWidth = 8;

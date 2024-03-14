@@ -3,12 +3,11 @@
 import { useCallback, useEffect, useRef } from 'react';
 
 import { useRouter } from 'next/navigation';
-import CytoscapePackage from 'cytoscape';
+import CytoscapePackage, { ElementDefinition } from 'cytoscape';
 import CytoscapeComponent from 'react-cytoscapejs';
 import dagre from 'cytoscape-dagre';
 import stylesheet from './cytoscapeStylesheet';
 import { Button } from '@/components/ui/button';
-import useCytoscapeElements from './useCytoscapeElements';
 
 CytoscapePackage.use(dagre);
 
@@ -18,8 +17,7 @@ const layout = {
   nodeDimensionsIncludeLabels: true,
 };
 
-const CytoscapeView = () => {
-  const elements = useCytoscapeElements();
+const CytoscapeView = ({ elements }: { elements: ElementDefinition[] }) => {
   const cyRef = useRef<cytoscape.Core | null>(null);
   const router = useRouter();
 
@@ -34,8 +32,6 @@ const CytoscapeView = () => {
   }, []);
 
   useEffect(runLayout, [runLayout, elements]);
-
-  if (elements === null) return <>Loading...</>;
 
   return (
     <>

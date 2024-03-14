@@ -1,0 +1,34 @@
+{
+  "version": "5",
+  "dialect": "pg",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "5",
+      "when": 1710331892347,
+      "tag": "0000_woozy_lady_deathstrike",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "5",
+      "when": 1710336819525,
+      "tag": "0001_peaceful_banshee",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "5",
+      "when": 1710337115025,
+      "tag": "0002_glamorous_invisible_woman",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "5",
+      "when": 1710337921637,
+      "tag": "0003_broken_loners",
+      "breakpoints": true
+    }
+  ]
+}

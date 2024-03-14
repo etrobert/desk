@@ -1,6 +1,6 @@
-import InnerLayout from './InnerLayout';
 import { Inter } from 'next/font/google';
 
+import HomeButton from './HomeButton';
 import { cn } from '@/lib/utils';
 
 import '../index.css';
@@ -23,7 +23,8 @@ function RootLayout({ children }: PropsWithChildren) {
         <title>Desk</title>
       </head>
       <body className="flex h-full flex-col items-center justify-center gap-4 p-4 text-center text-2xl antialiased">
-        <InnerLayout>{children}</InnerLayout>
+        <HomeButton />
+        {children}
       </body>
     </html>
   );

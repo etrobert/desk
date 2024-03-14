@@ -1,30 +1,23 @@
-'use client';
-
-import useAddTask from '@/data/tasks/useAddTask';
+import { revalidatePath } from 'next/cache';
 import { Button } from './ui/button';
 import { Input } from './ui/input';
+import createTask from '@/db/createTask';
 
-const QuickAddTask = () => {
-  const addTask = useAddTask();
+async function add(formData: FormData) {
+  'use server';
+  const title = formData.get('title');
+  if (typeof title !== 'string' || title === '') return;
+  await createTask(title);
+  revalidatePath('/');
+}
 
-  return (
-    <form
-      className="flex items-center gap-2"
-      onSubmit={(event) => {
-        event.preventDefault();
-        const form = event.target as HTMLFormElement;
-        const title = new FormData(form).get('title');
-        if (typeof title !== 'string' || title === '') return;
-        form.reset();
-        addTask({ title, tags: [], dependencies: [] });
-      }}
-    >
-      <Input name="title" />
-      <Button variant="secondary" type="submit">
-        Add
-      </Button>
-    </form>
-  );
-};
+const QuickAddTask = () => (
+  <form className="flex items-center gap-2" action={add}>
+    <Input name="title" />
+    <Button variant="secondary" type="submit">
+      Add
+    </Button>
+  </form>
+);
 
 export default QuickAddTask;
