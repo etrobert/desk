@@ -1,6 +1,7 @@
 import { Button } from '@/components/ui/button';
-import { useState, type RefObject } from 'react';
+import { type RefObject } from 'react';
 import useSelected from './useSelected';
+import useDrawMode from './useDrawMode';
 
 type Props = {
   runLayout: () => void;
@@ -9,22 +10,8 @@ type Props = {
 };
 
 const Toolbar = ({ runLayout, ehRef, cyRef }: Props) => {
-  const [drawMode, setDrawMode] = useState(false);
-
-  const toggleDrawMode = () => {
-    const eh = ehRef.current;
-    if (!eh) return;
-    // @ts-expect-error edgehandles types are wrong
-    if (eh.drawMode) {
-      eh.disableDrawMode();
-      setDrawMode(false);
-    } else {
-      eh.enableDrawMode();
-      setDrawMode(true);
-    }
-  };
-
   const selected = useSelected(cyRef);
+  const { drawMode, toggleDrawMode } = useDrawMode(ehRef);
 
   const deleteSelected = () => {
     console.log('deleting ', { selected });
