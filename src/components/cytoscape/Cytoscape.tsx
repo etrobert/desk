@@ -36,7 +36,13 @@ const CytoscapeView = ({ tasks, dependencies }: Props) => {
     (tasks, newTask: Task) => [...tasks, newTask],
   );
 
-  const elements = useCytoscapeElements(optimisticTasks, dependencies);
+  const [optimisticTasks2, removeOptimisticTasks] = useOptimistic(
+    optimisticTasks,
+    (tasks, taskIds: number[]) =>
+      tasks.filter((task) => !taskIds.includes(task.id)),
+  );
+
+  const elements = useCytoscapeElements(optimisticTasks2, dependencies);
 
   useEffect(() => {
     // @ts-expect-error No idea what's going on here
@@ -65,7 +71,12 @@ const CytoscapeView = ({ tasks, dependencies }: Props) => {
         layout={layout}
         elements={elements}
       />
-      <Toolbar cyRef={cyRef} runLayout={runLayout} ehRef={ehRef} />
+      <Toolbar
+        cyRef={cyRef}
+        removeOptimisticTasks={removeOptimisticTasks}
+        runLayout={runLayout}
+        ehRef={ehRef}
+      />
       <QuickAddTask addOptimisticTask={addOptimisticTask} />
     </>
   );

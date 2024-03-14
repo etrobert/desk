@@ -1,5 +1,5 @@
 import { Button } from '@/components/ui/button';
-import { type RefObject } from 'react';
+import { useTransition, type RefObject } from 'react';
 import useSelected from './useSelected';
 import useDrawMode from './useDrawMode';
 import deleteTasksAction from '@/actions/deleteTasksAction';
@@ -7,15 +7,22 @@ import { Hand, RefreshCcw, Spline, Trash2 } from 'lucide-react';
 
 type Props = {
   runLayout: () => void;
+  removeOptimisticTasks: (taskIds: number[]) => void;
   ehRef: RefObject<cytoscapeEdgehandles.EdgeHandlesInstance>;
   cyRef: RefObject<cytoscape.Core>;
 };
 
-const Toolbar = ({ runLayout, ehRef, cyRef }: Props) => {
+const Toolbar = ({ runLayout, removeOptimisticTasks, ehRef, cyRef }: Props) => {
+  const [_, startTransition] = useTransition();
   const selected = useSelected(cyRef);
   const { drawMode, toggleDrawMode } = useDrawMode(ehRef);
 
-  const deleteSelected = () => deleteTasksAction(selected);
+  const deleteSelected = () => {
+    startTransition(() => {
+      removeOptimisticTasks(selected);
+      deleteTasksAction(selected);
+    });
+  };
 
   return (
     <div className="absolute bottom-0 right-0 m-4 flex gap-2">
