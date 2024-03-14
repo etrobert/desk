@@ -2,7 +2,7 @@
 
 import { useRouter } from 'next/navigation';
 import { Button } from '@/components/ui/button';
-import deleteTask from '@/db/deleteTask';
+import deleteTaskAction from '@/actions/deleteTaskAction';
 
 const DeleteTaskButton = ({ id }: { id: number }) => {
   const router = useRouter();
@@ -10,7 +10,7 @@ const DeleteTaskButton = ({ id }: { id: number }) => {
   return (
     <Button
       onClick={async () => {
-        await deleteTask(id);
+        await deleteTaskAction(id);
         router.back();
       }}
       variant="outline"
