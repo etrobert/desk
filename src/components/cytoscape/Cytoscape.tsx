@@ -42,7 +42,7 @@ const CytoscapeView = ({ elements }: { elements: ElementDefinition[] }) => {
         layout={layout}
         elements={elements}
       />
-      <Toolbar runLayout={runLayout} ehRef={ehRef} />
+      <Toolbar cyRef={cyRef} runLayout={runLayout} ehRef={ehRef} />
     </>
   );
 };

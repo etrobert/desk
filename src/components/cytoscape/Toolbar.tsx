@@ -1,12 +1,14 @@
 import { Button } from '@/components/ui/button';
 import { useState, type RefObject } from 'react';
+import useSelected from './useSelected';
 
 type Props = {
   runLayout: () => void;
   ehRef: RefObject<cytoscapeEdgehandles.EdgeHandlesInstance>;
+  cyRef: RefObject<cytoscape.Core>;
 };
 
-const Toolbar = ({ runLayout, ehRef }: Props) => {
+const Toolbar = ({ runLayout, ehRef, cyRef }: Props) => {
   const [drawMode, setDrawMode] = useState(false);
 
   const toggleDrawMode = () => {
@@ -22,6 +24,12 @@ const Toolbar = ({ runLayout, ehRef }: Props) => {
     }
   };
 
+  const selected = useSelected(cyRef);
+
+  const deleteSelected = () => {
+    console.log('deleting ', { selected });
+  };
+
   return (
     <div className="absolute bottom-0 right-0 m-4 flex gap-2">
       <Button variant="outline" onClick={runLayout}>
@@ -29,6 +37,13 @@ const Toolbar = ({ runLayout, ehRef }: Props) => {
       </Button>
       <Button variant="outline" onClick={toggleDrawMode}>
         {drawMode ? 'Stop Draw' : 'Draw'}
+      </Button>
+      <Button
+        disabled={selected.length === 0}
+        variant="outline"
+        onClick={deleteSelected}
+      >
+        Delete
       </Button>
     </div>
   );
