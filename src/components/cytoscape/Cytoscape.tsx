@@ -31,14 +31,6 @@ const CytoscapeView = ({ elements }: { elements: ElementDefinition[] }) => {
     cyRef.current?.layout(layout).run();
   }, []);
 
-  const toggleDrawMode = useCallback(() => {
-    if (!ehRef.current) return;
-    const eh = ehRef.current;
-    // @ts-expect-error edgehandles types are wrong
-    if (eh.drawMode) eh.disableDrawMode();
-    else eh.enableDrawMode();
-  }, []);
-
   useEffect(runLayout, [runLayout, elements]);
 
   return (
@@ -50,7 +42,7 @@ const CytoscapeView = ({ elements }: { elements: ElementDefinition[] }) => {
         layout={layout}
         elements={elements}
       />
-      <Toolbar runLayout={runLayout} toggleDrawMode={toggleDrawMode} />
+      <Toolbar runLayout={runLayout} ehRef={ehRef} />
     </>
   );
 };
