@@ -7,7 +7,7 @@ import CytoscapeComponent from 'react-cytoscapejs';
 import dagre from 'cytoscape-dagre';
 import edgehandles from 'cytoscape-edgehandles';
 import stylesheet from './cytoscapeStylesheet';
-import { Button } from '@/components/ui/button';
+import Toolbar from './Toolbar';
 
 CytoscapePackage.use(dagre);
 CytoscapePackage.use(edgehandles);
@@ -50,20 +50,7 @@ const CytoscapeView = ({ elements }: { elements: ElementDefinition[] }) => {
         layout={layout}
         elements={elements}
       />
-      <Button
-        className="absolute right-0 top-0 m-4"
-        variant="outline"
-        onClick={runLayout}
-      >
-        Reset Layout
-      </Button>
-      <Button
-        className="absolute left-0 top-0 m-4"
-        variant="outline"
-        onClick={toggleDrawMode}
-      >
-        Draw
-      </Button>
+      <Toolbar runLayout={runLayout} toggleDrawMode={toggleDrawMode} />
     </>
   );
 };
