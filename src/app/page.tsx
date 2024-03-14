@@ -1,26 +1,15 @@
-'use client';
+import QuickAddTask from '@/components/QuickAddTask';
+import Cytoscape from '@/components/cytoscape/Cytoscape';
+import getCytoscapeElements from '@/components/cytoscape/getCytoscapeElements';
 
-import { Button } from '@/components/ui/button';
-import { TypographyH1 } from '@/components/ui/typography';
-import ButtonGroup from '../components/ButtonGroup';
-import ButtonLink from '../components/ButtonLink';
-
-const Menu = () => {
+const Reflect = async () => {
+  const elements = await getCytoscapeElements();
   return (
     <>
-      <TypographyH1>Menu</TypographyH1>
-      <ButtonGroup>
-        <Button variant="secondary" disabled>
-          Capture
-        </Button>
-        <Button variant="secondary" disabled>
-          Process
-        </Button>
-        <ButtonLink href="engage">Engage</ButtonLink>
-        <ButtonLink href="reflect">Reflect</ButtonLink>
-      </ButtonGroup>
+      <Cytoscape elements={elements} />
+      <QuickAddTask />
     </>
   );
 };
 
-export default Menu;
+export default Reflect;
