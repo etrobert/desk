@@ -7,8 +7,8 @@ const stylesheet: Stylesheet[] = [
   {
     selector: 'node',
     style: {
-      'background-color': '#1e293b',
-      color: '#fff',
+      // 'background-color': '#1e293b',
+      // color: '#fff',
       label: 'data(title)',
       'text-valign': 'center',
       'text-wrap': 'wrap',
