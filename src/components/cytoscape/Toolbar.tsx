@@ -3,6 +3,7 @@ import { type RefObject } from 'react';
 import useSelected from './useSelected';
 import useDrawMode from './useDrawMode';
 import deleteTasksAction from '@/actions/deleteTasksAction';
+import { Hand, RefreshCcw, Spline, Trash2 } from 'lucide-react';
 
 type Props = {
   runLayout: () => void;
@@ -18,18 +19,19 @@ const Toolbar = ({ runLayout, ehRef, cyRef }: Props) => {
 
   return (
     <div className="absolute bottom-0 right-0 m-4 flex gap-2">
-      <Button variant="outline" onClick={runLayout}>
-        Reset Layout
+      <Button variant="outline" size="icon" onClick={runLayout}>
+        <RefreshCcw />
       </Button>
-      <Button variant="outline" onClick={toggleDrawMode}>
-        {drawMode ? 'Stop Draw' : 'Draw'}
+      <Button variant="outline" size="icon" onClick={toggleDrawMode}>
+        {drawMode ? <Hand /> : <Spline />}
       </Button>
       <Button
         disabled={selected.length === 0}
         variant="outline"
+        size="icon"
         onClick={deleteSelected}
       >
-        Delete
+        <Trash2 />
       </Button>
     </div>
   );
