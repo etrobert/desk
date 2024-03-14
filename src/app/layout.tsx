@@ -1,6 +1,5 @@
 import { Inter } from 'next/font/google';
 
-import HomeButton from './HomeButton';
 import { cn } from '@/lib/utils';
 
 import '../index.css';
@@ -22,10 +21,7 @@ function RootLayout({ children }: PropsWithChildren) {
         <meta name="theme-color" content="#000000" />
         <title>Desk</title>
       </head>
-      <body className="h-full text-2xl antialiased">
-        <HomeButton />
-        {children}
-      </body>
+      <body className="h-full text-2xl antialiased">{children}</body>
     </html>
   );
 }
