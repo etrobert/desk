@@ -12,7 +12,7 @@ async function add(formData: FormData) {
 }
 
 const QuickAddTask = () => (
-  <form className="flex items-center gap-2" action={add}>
+  <form className="absolute bottom-0 m-4 flex items-center gap-2" action={add}>
     <Input name="title" />
     <Button variant="secondary" type="submit">
       Add

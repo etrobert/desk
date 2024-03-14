@@ -35,7 +35,11 @@ const CytoscapeView = ({ elements }: { elements: ElementDefinition[] }) => {
 
   return (
     <>
-      <Button variant="outline" onClick={runLayout}>
+      <Button
+        className="absolute right-0 top-0 m-4"
+        variant="outline"
+        onClick={runLayout}
+      >
         Reset Layout
       </Button>
       <CytoscapeComponent
