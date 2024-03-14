@@ -22,7 +22,7 @@ function RootLayout({ children }: PropsWithChildren) {
         <meta name="theme-color" content="#000000" />
         <title>Desk</title>
       </head>
-      <body className="flex h-full flex-col items-center justify-center gap-4 p-4 text-center text-2xl antialiased">
+      <body className="h-full text-2xl antialiased">
         <HomeButton />
         {children}
       </body>

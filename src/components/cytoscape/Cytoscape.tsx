@@ -43,7 +43,7 @@ const CytoscapeView = ({ elements }: { elements: ElementDefinition[] }) => {
         Reset Layout
       </Button>
       <CytoscapeComponent
-        className="h-[60vh] w-screen text-start"
+        className="h-full w-screen"
         cy={(cy) => (cyRef.current = cy)}
         stylesheet={stylesheet}
         layout={layout}
