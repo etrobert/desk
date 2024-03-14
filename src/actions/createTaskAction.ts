@@ -3,10 +3,7 @@
 import createTask from '@/db/createTask';
 import { revalidatePath } from 'next/cache';
 
-export async function createTaskAction(formData: FormData) {
-  const title = formData.get('title');
-  if (typeof title !== 'string' || title === '')
-    throw new Error('Title is required');
+export async function createTaskAction(title: string) {
   await createTask(title);
   revalidatePath('/');
 }

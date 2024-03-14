@@ -1,15 +1,12 @@
-import QuickAddTask from '@/components/QuickAddTask';
 import Cytoscape from '@/components/cytoscape/Cytoscape';
-import getCytoscapeElements from '@/components/cytoscape/getCytoscapeElements';
+import { fetchDependencies } from '@/db/fetchDependencies';
+import fetchTasks from '@/db/fetchTasks';
 
 const Reflect = async () => {
-  const elements = await getCytoscapeElements();
-  return (
-    <>
-      <Cytoscape elements={elements} />
-      <QuickAddTask />
-    </>
-  );
+  // TODO: Parallelize these requests
+  const tasks = await fetchTasks();
+  const dependencies = await fetchDependencies();
+  return <Cytoscape tasks={tasks} dependencies={dependencies} />;
 };
 
 export default Reflect;

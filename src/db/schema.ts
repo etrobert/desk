@@ -32,3 +32,5 @@ export const dependencies = pgTable(
     pk: primaryKey({ columns: [table.taskId, table.dependencyId] }),
   }),
 );
+
+export type Dependency = typeof dependencies.$inferSelect;

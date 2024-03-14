@@ -1,14 +1,17 @@
 'use client';
 
-import { useCallback, useEffect, useRef } from 'react';
+import { useCallback, useEffect, useOptimistic, useRef } from 'react';
 
-import CytoscapePackage, { ElementDefinition } from 'cytoscape';
+import CytoscapePackage from 'cytoscape';
 import CytoscapeComponent from 'react-cytoscapejs';
 import dagre from 'cytoscape-dagre';
 import edgehandles from 'cytoscape-edgehandles';
 import stylesheet from './cytoscapeStylesheet';
 import Toolbar from './Toolbar';
 import createDependencyAction from '@/actions/createDependencyAction';
+import { Dependency, Task } from '@/db/schema';
+import useCytoscapeElements from './useCytoscapeElements';
+import QuickAddTask from '@/components/QuickAddTask';
 
 CytoscapePackage.use(dagre);
 CytoscapePackage.use(edgehandles);
@@ -19,9 +22,21 @@ const layout = {
   nodeDimensionsIncludeLabels: true,
 };
 
-const CytoscapeView = ({ elements }: { elements: ElementDefinition[] }) => {
+type Props = {
+  tasks: Task[];
+  dependencies: Dependency[];
+};
+
+const CytoscapeView = ({ tasks, dependencies }: Props) => {
   const cyRef = useRef<cytoscape.Core | null>(null);
   const ehRef = useRef<cytoscapeEdgehandles.EdgeHandlesInstance>(null);
+
+  const [optimisticTasks, addOptimisticTask] = useOptimistic(
+    tasks,
+    (tasks, newTask: Task) => [...tasks, newTask],
+  );
+
+  const elements = useCytoscapeElements(optimisticTasks, dependencies);
 
   useEffect(() => {
     // @ts-expect-error No idea what's going on here
@@ -51,6 +66,7 @@ const CytoscapeView = ({ elements }: { elements: ElementDefinition[] }) => {
         elements={elements}
       />
       <Toolbar cyRef={cyRef} runLayout={runLayout} ehRef={ehRef} />
+      <QuickAddTask addOptimisticTask={addOptimisticTask} />
     </>
   );
 };
