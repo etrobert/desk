@@ -3,7 +3,8 @@ import { useTransition, type RefObject } from 'react';
 import useSelected from './useSelected';
 import useDrawMode from './useDrawMode';
 import deleteTasksAction from '@/actions/deleteTasksAction';
-import { Hand, RefreshCcw, Spline, Trash2 } from 'lucide-react';
+import { RefreshCcw, Spline, Trash2 } from 'lucide-react';
+import { Toggle } from '@/components/ui/toggle';
 
 type Props = {
   runLayout: () => void;
@@ -15,7 +16,7 @@ type Props = {
 const Toolbar = ({ runLayout, removeOptimisticTasks, ehRef, cyRef }: Props) => {
   const [_, startTransition] = useTransition();
   const selected = useSelected(cyRef);
-  const { drawMode, toggleDrawMode } = useDrawMode(ehRef);
+  const { toggleDrawMode } = useDrawMode(ehRef);
 
   const deleteSelected = () => {
     startTransition(() => {
@@ -29,9 +30,9 @@ const Toolbar = ({ runLayout, removeOptimisticTasks, ehRef, cyRef }: Props) => {
       <Button variant="outline" size="icon" onClick={runLayout}>
         <RefreshCcw />
       </Button>
-      <Button variant="outline" size="icon" onClick={toggleDrawMode}>
-        {drawMode ? <Hand /> : <Spline />}
-      </Button>
+      <Toggle variant="outline" size="icon" onClick={toggleDrawMode}>
+        <Spline />
+      </Toggle>
       <Button
         disabled={selected.length === 0}
         variant="outline"
