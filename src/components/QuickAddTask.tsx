@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef, useTransition } from 'react';
+import { useRef, useTransition } from 'react';
 import { Plus } from 'lucide-react';
 import { Button } from './ui/button';
 import { Input } from './ui/input';
@@ -14,12 +14,7 @@ type Props = {
 const QuickAddTask = ({ addOptimisticTask }: Props) => {
   const ref = useRef<HTMLFormElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
-  const [isPending, startTransition] = useTransition();
-
-  // Refocus the input when task has been added
-  useEffect(() => {
-    if (!isPending) inputRef.current?.focus();
-  }, [isPending]);
+  const [_, startTransition] = useTransition();
 
   return (
     <form
@@ -38,14 +33,7 @@ const QuickAddTask = ({ addOptimisticTask }: Props) => {
         startTransition(() => createTaskAction(title));
       }}
     >
-      <Input
-        ref={inputRef}
-        required
-        name="title"
-        className="h-10"
-        placeholder={isPending ? 'Adding...' : undefined}
-        disabled={isPending}
-      />
+      <Input ref={inputRef} required name="title" className="h-10" autoFocus />
       <Button variant="secondary" size="icon" type="submit">
         <Plus />
       </Button>
