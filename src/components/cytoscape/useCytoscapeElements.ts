@@ -7,7 +7,15 @@ const useCytoscapeElements = (tasks: Task[], dependencies: Dependency[]) =>
     const nodes = tasks.map((task) => ({
       data: { ...task, id: task.id.toString(), ...estimateNodeSize(task) },
     }));
-    const edges = dependencies.map((dependency) => ({
+
+    // This is useful when dealing with optimistic deletion of tasks
+    const filteredDependencies = dependencies.filter(
+      (dependency) =>
+        tasks.some((task) => task.id === dependency.taskId) &&
+        tasks.some((task) => task.id === dependency.dependencyId),
+    );
+
+    const edges = filteredDependencies.map((dependency) => ({
       data: {
         source: dependency.dependencyId.toString(),
         target: dependency.taskId.toString(),
