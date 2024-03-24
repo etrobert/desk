@@ -1,8 +1,14 @@
 'use client';
 
-import { useCallback, useEffect, useOptimistic, useRef } from 'react';
+import {
+  useCallback,
+  useEffect,
+  useOptimistic,
+  useRef,
+  useTransition,
+} from 'react';
 
-import CytoscapePackage from 'cytoscape';
+import CytoscapePackage, { EdgeSingular, NodeSingular } from 'cytoscape';
 import CytoscapeComponent from 'react-cytoscapejs';
 import dagre from 'cytoscape-dagre';
 import edgehandles from 'cytoscape-edgehandles';
@@ -42,19 +48,43 @@ const CytoscapeView = ({ tasks, dependencies }: Props) => {
       tasks.filter((task) => !taskIds.includes(task.id)),
   );
 
-  const elements = useCytoscapeElements(optimisticTasks2, dependencies);
+  const [optimisticDependencies, addOptimisticDependency] = useOptimistic(
+    dependencies,
+    (dependencies, newDependency: Dependency) => [
+      ...dependencies,
+      newDependency,
+    ],
+  );
+
+  const elements = useCytoscapeElements(
+    optimisticTasks2,
+    optimisticDependencies,
+  );
+
+  const [_, startTransition] = useTransition();
 
   useEffect(() => {
     // @ts-expect-error No idea what's going on here
     ehRef.current = cyRef.current?.edgehandles();
     cyRef.current?.on(
       'ehcomplete',
-      async (_, sourceNode, targetNode, addedEdge) => {
-        await createDependencyAction(targetNode.id(), sourceNode.id());
+      async (
+        _,
+        sourceNode: NodeSingular,
+        targetNode: NodeSingular,
+        addedEdge: EdgeSingular,
+      ) => {
         cyRef.current?.remove(addedEdge);
+        const dependency = {
+          taskId: parseInt(targetNode.id()),
+          dependencyId: parseInt(sourceNode.id()),
+        };
+
+        createDependencyAction(dependency.taskId, dependency.dependencyId);
+        startTransition(() => addOptimisticDependency(dependency));
       },
     );
-  }, []);
+  }, [addOptimisticDependency]);
 
   const runLayout = useCallback(() => {
     cyRef.current?.layout(layout).run();
