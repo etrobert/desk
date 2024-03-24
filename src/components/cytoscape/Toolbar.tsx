@@ -2,9 +2,9 @@ import { Button } from '@/components/ui/button';
 import { useTransition, type RefObject } from 'react';
 import useSelected from './useSelected';
 import useDrawMode from './useDrawMode';
-import deleteTasksAction from '@/actions/deleteTasksAction';
 import { RefreshCcw, Spline, Trash2 } from 'lucide-react';
 import { Toggle } from '@/components/ui/toggle';
+import deleteElementsAction from '@/actions/deleteElementsAction';
 
 type Props = {
   runLayout: () => void;
@@ -21,7 +21,7 @@ const Toolbar = ({ runLayout, removeOptimisticTasks, ehRef, cyRef }: Props) => {
   const deleteSelected = () => {
     startTransition(() => {
       removeOptimisticTasks(selected.tasks);
-      deleteTasksAction(selected.tasks);
+      deleteElementsAction(selected.tasks, selected.dependencies);
     });
   };
 
@@ -34,7 +34,9 @@ const Toolbar = ({ runLayout, removeOptimisticTasks, ehRef, cyRef }: Props) => {
         <Spline />
       </Toggle>
       <Button
-        disabled={selected.tasks.length === 0}
+        disabled={
+          selected.tasks.length === 0 && selected.dependencies.length === 0
+        }
         variant="outline"
         size="icon"
         onClick={deleteSelected}
