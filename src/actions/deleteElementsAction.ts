@@ -6,10 +6,10 @@ import deleteElements from '@/db/deleteElements';
 import type { Dependency } from '@/db/schema';
 
 async function deleteElementsAction(
-  ids: number[],
+  taskIds: number[],
   dependenciesToDelete: Dependency[],
 ) {
-  await deleteElements(ids, dependenciesToDelete);
+  await deleteElements(taskIds, dependenciesToDelete);
   revalidatePath('/');
 }
 

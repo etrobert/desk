@@ -5,7 +5,7 @@ import { and, eq, inArray, or } from 'drizzle-orm';
 import type { Dependency } from '@/db/schema';
 
 async function deleteElements(
-  ids: number[],
+  taskIds: number[],
   dependenciesToDelete: Dependency[],
 ) {
   await db.transaction(async (tx) => {
@@ -19,15 +19,16 @@ async function deleteElements(
           ),
         );
     }
+    if (taskIds.length === 0) return;
     await tx
       .delete(dependencies)
       .where(
         or(
-          inArray(dependencies.taskId, ids),
-          inArray(dependencies.dependencyId, ids),
+          inArray(dependencies.taskId, taskIds),
+          inArray(dependencies.dependencyId, taskIds),
         ),
       );
-    await tx.delete(tasks).where(inArray(tasks.id, ids));
+    await tx.delete(tasks).where(inArray(tasks.id, taskIds));
   });
 }
 
