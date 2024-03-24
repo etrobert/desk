@@ -9,16 +9,21 @@ const stylesheet: Stylesheet[] = [
     style: {
       // 'background-color': '#1e293b',
       // color: '#fff',
-      label: 'data(title)',
       'text-valign': 'center',
       'text-wrap': 'wrap',
       'text-max-width': `${textMaxWidth}px`,
       shape: 'round-rectangle',
+    },
+  },
+  // Makes sure that the ghost node created by edgehandles doesn't use title/width/height
+  {
+    selector: 'node[title]',
+    style: {
+      label: 'data(title)',
       width: 'data(width)',
       height: 'data(height)',
     },
   },
-
   {
     selector: 'edge',
     style: {
