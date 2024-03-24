@@ -20,8 +20,8 @@ const Toolbar = ({ runLayout, removeOptimisticTasks, ehRef, cyRef }: Props) => {
 
   const deleteSelected = () => {
     startTransition(() => {
-      removeOptimisticTasks(selected);
-      deleteTasksAction(selected);
+      removeOptimisticTasks(selected.tasks);
+      deleteTasksAction(selected.tasks);
     });
   };
 
@@ -34,7 +34,7 @@ const Toolbar = ({ runLayout, removeOptimisticTasks, ehRef, cyRef }: Props) => {
         <Spline />
       </Toggle>
       <Button
-        disabled={selected.length === 0}
+        disabled={selected.tasks.length === 0}
         variant="outline"
         size="icon"
         onClick={deleteSelected}
