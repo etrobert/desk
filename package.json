@@ -30,7 +30,9 @@
     "check-types": "tsc",
     "lint": "next lint",
     "db:generate": "drizzle-kit generate:pg",
-    "db:migrate": "bun src/db/migrate.ts"
+    "db:migrate": "bun src/db/migrate.ts",
+    "knip": "knip",
+    "knip:ci": "knip --reporter compact --no-progress"
   },
   "devDependencies": {
     "@types/cytoscape": "^3.19.16",
@@ -43,6 +45,7 @@
     "drizzle-kit": "^0.20.14",
     "eslint": "8.57.0",
     "eslint-config-next": "14.1.3",
+    "knip": "^5.62.0",
     "postcss": "^8.4.35",
     "prettier": "^3.2.5",
     "prettier-plugin-tailwindcss": "^0.5.12",
